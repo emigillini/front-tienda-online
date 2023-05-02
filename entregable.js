@@ -90,7 +90,6 @@ const utf ="utf-8"
     }
   }
   
-  
 const productManager1 = new ProductManager();
   
   productManager1.addProduct("lechuga", "muy fresca", 100, "www.imagen", 1, 1000);
