@@ -106,9 +106,6 @@ const productManager1 = new ProductManager();
 
 
 
-  
-
-
 
 
 
