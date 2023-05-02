@@ -69,7 +69,7 @@ const utf ="utf-8"
     }
 
 
-    async updateProduct(id,title,description,price,thumbnail,code,stock){
+    updateProduct(id,title,description,price,thumbnail,code,stock){
       const data = fs.readFileSync(path, utf)
       const product= JSON.parse(data)
       let indexOf = product.findIndex ((p) => p.id === id)
