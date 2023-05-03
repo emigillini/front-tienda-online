@@ -64,7 +64,7 @@ const utf ="utf-8"
       const product=  JSON.parse(data)
       let indexOf =  product.findIndex ((p) => p.id === id)
       product.splice(indexOf, 1)
-       fs.writeFileSync(path, JSON.stringify(product));
+      fs.writeFileSync(path, JSON.stringify(product));
       console.log(`Se eliminó el producto con id ${id}.`)
 
 
