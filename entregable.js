@@ -40,6 +40,7 @@ const utf ="utf-8"
       let mostarProd = fs.readFileSync(path, utf);
       let productos =  JSON.parse(mostarProd)
       console.log(productos)
+      return productos
     
     }
 
@@ -50,6 +51,7 @@ const utf ="utf-8"
       const products = product.find((p) => p.id === id);
       if (products) {
          console.log("Este es su producto:", products);
+         return products
       } else {
         console.error(`Error: Producto con id ${id} no encontrado.`);
         
@@ -102,6 +104,7 @@ const productManager1 = new ProductManager();
   productManager1.getProductById(3)
   productManager1.deleteProd(1)
   productManager1.deleteProd(2)
+  
 
 
 
