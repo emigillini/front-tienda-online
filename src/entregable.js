@@ -1,4 +1,5 @@
-const fs = require("fs");
+
+import fs from 'fs'
 const path = "productos.json";
 const utf = "utf-8";
 
@@ -90,6 +91,15 @@ const productManager1 = new ProductManager();
 productManager1.addProduct("lechuga", "muy fresca", 100, "www.imagen", 1, 1000);
 productManager1.addProduct("tomate", "muy fresca", 100, "www.imagen", 2, 1000);
 productManager1.addProduct("pepino", "muy fresca", 1000, "www.imagen", 3, 1000);
+productManager1.addProduct("banana", "muy fresca", 500, "www.imagen", 4, 1000);
+productManager1.addProduct("manzana", "muy fresca", 500, "www.imagen", 5, 1000);
+productManager1.addProduct("apio", "muy fresca", 500, "www.imagen", 6, 1000);
+productManager1.addProduct("pera", "muy fresca", 500, "www.imagen", 7, 1000);
+productManager1.addProduct("cebolla", "muy fresca", 500, "www.imagen", 8, 1000);
+productManager1.addProduct("remolacha", "muy fresca", 500, "www.imagen", 9, 1000);
+productManager1.addProduct("naranja", "muy fresca", 500, "www.imagen", 10, 1000);
+productManager1.addProduct("mandarina", "muy fresca", 500, "www.imagen", 11, 1000);
+productManager1.addProduct("anana", "muy fresca", 500, "www.imagen", 12, 1000);
 productManager1.updateProduct(
   3,
   "papa",
