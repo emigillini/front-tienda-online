@@ -1,16 +1,14 @@
 import express from "express";
-import fs from "fs/promises";
+import { ProductManager } from "./entregable.js";
 
-const path = "productos.json";
-const utf = "utf-8";
 
+const ProductManager1 = new ProductManager()
+const products = await ProductManager1.getProducts()
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
   try {
-    const data = await fs.readFile(path, utf);
-    const products = JSON.parse(data);
     res.send(products);
   } catch (error) {
     console.error(error);
@@ -20,10 +18,7 @@ app.get("/", async (req, res) => {
 
 app.get("/products", async (req, res) => {
   try {
-    const data = await fs.readFile(path, utf);
-    const products = JSON.parse(data);
     const limit = parseInt(req.query.limit);
-
     if (limit) {
       const firstProducts = products.slice(0, limit);
       res.send(firstProducts);
@@ -38,8 +33,6 @@ app.get("/products", async (req, res) => {
 
 app.get("/products/:id", async (req, res) => {
   try {
-    const data = await fs.readFile(path, utf);
-    const products = JSON.parse(data);
     const id = req.params.id;
     const prod = products.find((prod) => prod.id === parseInt(id));
     if (!prod) {
@@ -53,3 +46,4 @@ app.get("/products/:id", async (req, res) => {
 });
 
 const server = app.listen(8080, () => console.log("conectado"));
+
