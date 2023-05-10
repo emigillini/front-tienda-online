@@ -5,6 +5,7 @@ import { ProductManager } from "./entregable.js";
 const ProductManager1 = new ProductManager()
 const products = await ProductManager1.getProducts()
 const app = express();
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {

@@ -108,7 +108,5 @@ export class ProductManager {
     }
   }
 }
-const ppp = new ProductManager()
-await ppp.getProductById(5)
 
 
