@@ -2,13 +2,12 @@ import {Router} from "express";
 import { ProductManager } from "../entregable.js";
 
 const ProductManager1 = new ProductManager();
-const products = await ProductManager1.getProducts();
+
 const prodRouter = Router();
 
 prodRouter.get("/:id", async (req, res) => {
   try {
-    const id = req.params.id;
-    const prod = products.find((prod) => prod.id === parseInt(id));
+    const prod = await ProductManager1.getProductById(req.params.id);
     if (!prod) {
       return res.send({ id: id, message: `id ${id} no encontrado ` });
     }
@@ -21,6 +20,7 @@ prodRouter.get("/:id", async (req, res) => {
 
 prodRouter.get("/", async (req, res) => {
   try {
+    const products = await ProductManager1.getProducts();
     const limit = parseInt(req.query.limit);
     if (limit) {
       const firstProducts = products.slice(0, limit);

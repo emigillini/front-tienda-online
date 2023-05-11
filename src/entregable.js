@@ -53,7 +53,7 @@ export class ProductManager {
     try {
       const data = await fs.promises.readFile(path, utf);
       const product = JSON.parse(data);
-      const products = product.find((p) => p.id === id);
+      const products = product.find((p) => p.id ===parseInt(id));
       if (products) {
         console.log("Este es su producto:", products);
         return products;
