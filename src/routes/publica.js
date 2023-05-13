@@ -10,5 +10,5 @@ pubRouter.post('/', (req, res) => {
     const ultimoNombre = nombres.length > 0 ? nombres[nombres.length - 1].nombre : '';
     console.log(`Se ha recibido el nombre: ${ultimoNombre}`);
     res.send(`Se ha recibido el nombre: ${ultimoNombre}`);
-    console.log(nombres);
+    console.log(nombres);       
 });
