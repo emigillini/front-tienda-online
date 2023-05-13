@@ -10,7 +10,7 @@ export class ProductManager {
     this.path = path;
   }
 
-  async addProduct(title, description, price, thumbnail, code, stock) {
+  async addProduct(title, description, code, price, status = true, stock, category, thumbnail) {
     ProductManager.id++;
     try {
       const data = await fs.promises.readFile(path, utf);
@@ -21,13 +21,15 @@ export class ProductManager {
         return;
       }
       const product = {
+        id: ProductManager.id,
         title,
         description,
-        price,
-        thumbnail,
         code,
+        price,
+        status,
         stock,
-        id: ProductManager.id,
+        category,
+        thumbnail
       };
       products.push(product);
       await fs.promises.writeFile(path, JSON.stringify(products));
@@ -41,7 +43,6 @@ export class ProductManager {
     try {
       let mostarProd = await fs.promises.readFile(path, utf);
       let productos = JSON.parse(mostarProd);
-      console.log(productos);
       return productos;
     } catch (error) {
       console.error(error);

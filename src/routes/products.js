@@ -5,7 +5,17 @@ const ProductManager1 = new ProductManager();
 
 const prodRouter = Router();
 
-prodRouter.get("/:id", async (req, res) => {
+prodRouter.use((req, res, next)=>{
+  console.log("gracias")
+  next()
+})
+
+const logRequest = (req, res, next) => {
+  console.log(`Request recibida: ${new Date()}`);
+  next();
+}
+
+prodRouter.get("/:id", logRequest,async (req, res) => {
   try {
     const prod = await ProductManager1.getProductById(req.params.id);
     if (!prod) {
@@ -18,16 +28,29 @@ prodRouter.get("/:id", async (req, res) => {
   }
 });
 
-prodRouter.get("/", async (req, res) => {
+prodRouter.get("/", logRequest, async (req, res) => {
   try {
     const products = await ProductManager1.getProducts();
     const limit = parseInt(req.query.limit);
     if (limit) {
       const firstProducts = products.slice(0, limit);
       res.send(firstProducts);
+      console.log(firstProducts)
     } else {
       res.send(products);
+      console.log(products)
     }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
+});
+
+prodRouter.post("/", logRequest, async (req, res) => {
+  try {
+    const { title, description, code, price, stock, category, thumbnails } = req.body;
+    await ProductManager1.addProduct(title, description, code, price, true, stock, category, thumbnails);
+    res.send({ message: "Producto agregado exitosamente." });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
