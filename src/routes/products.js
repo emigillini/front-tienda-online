@@ -57,17 +57,17 @@ prodRouter.post("/", logRequest, async (req, res) => {
   }
 });
 
-prodRouter.post("/:id", logRequest, async (req, res) => {
+prodRouter.put("/:id", logRequest, async (req, res) => {
   try {
-    const {  title, description, code, price, stock, category, thumbnails } = req.body;
-    await ProductManager1.updateProduct(id, title,description, code, price, stock, category, thumbnails)
-    res.send({ message: "Producto Actualizado exitosamente." });
+    const { title, description, code, price, stock, category, thumbnails } = req.body;
+    const { id } = req.params;
+    await ProductManager1.updateProduct(id, title, description, code, price, stock, category, thumbnails);
+    res.send({ message: "Producto actualizado exitosamente." });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
   }
 });
-
 prodRouter.delete("/:id", logRequest, async (req, res) => {
 try{
   await ProductManager1.deleteProd(req.params.id)

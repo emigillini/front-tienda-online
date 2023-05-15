@@ -2,6 +2,11 @@ import fs from "fs";
 const path = "productos.json";
 const utf = "utf-8";
 
+if (!fs.existsSync(path)) {
+  fs.writeFileSync(path, "[]", utf);
+  console.log(`El archivo ${path} no existía, se ha creado un array vacío.`);
+}
+
 export class ProductManager {
   static id = 0;
 
@@ -79,36 +84,30 @@ export class ProductManager {
       
     }
   }
-
-  async updateProduct(id, title, description, price, thumbnail, code, stock) {
+  async updateProduct(id, title, description, code, price, stock, category, thumbnails) {
     try {
-      const data = await fs.promises.readFile(path, utf);
+      const data = await fs.promises.readFile(path, "utf-8");
       const products = JSON.parse(data);
-      let product = products.find((p) => p.id === id);
-      if (product) {
-        const prodUpd = {
-          title: title || product.title,
-          description: description || product.description,
-          price: price || product.price,
-          thumbnail: thumbnail || product.thumbnail,
-          code: code || product.code,
-          stock: stock || product.stock,
-          id: id,
-        };
-        let indexOf = products.findIndex((p) => p.id === id);
-        products[indexOf] = prodUpd;
-        await fs.promises.writeFile(path, JSON.stringify(products));
-        console.log(`Se actualizó ${prodUpd.title}`);
-      } else {
-        console.error(`Error: Producto con id ${id} no encontrado.`);
+      const productIndex = products.findIndex((p) => p.id === parseInt(id));
+      if (productIndex === -1) {
+        console.error(`Error: No se encontró el producto con id ${id}.`);
+        return;
       }
+      const updatedProduct = {
+        id: parseInt(id),
+        title,
+        description,
+        code,
+        price,
+        stock,
+        category,
+        thumbnails,
+      };
+      products[productIndex] = updatedProduct;
+      await fs.promises.writeFile(path, JSON.stringify(products));
+      console.log(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
       console.error(error);
-      
     }
   }
 }
-  
-
-
-
