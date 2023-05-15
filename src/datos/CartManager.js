@@ -26,6 +26,32 @@ export class CartManager {
       }
     }
 
+    async getCarts() {
+      try {
+        let data = await fs.promises.readFile(path, utf);
+        let carts = JSON.parse(data);
+        return carts;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    async getCartById(id) {
+      try {
+      
+        const carts = await this.getCarts()
+        const cart = carts.find((p) => p.id ===parseInt(id));
+        if (cart) {
+          console.log("Este es su cart:", cart);
+          return cart;
+        } else {
+          console.error(`Error: Cart con id ${id} no encontrado.`);
+        }
+      } catch (error) {
+        console.error(error);
+      
+      }
+    }
+
     async addCart() {
       let cartId= await this.getNextId()
       try {
@@ -48,33 +74,6 @@ export class CartManager {
       }
     }
     
-    async getCarts() {
-        try {
-          let data = await fs.promises.readFile(path, utf);
-          let carts = JSON.parse(data);
-          return carts;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    
-      async getCartById(id) {
-        try {
-        
-          const carts = await this.getCarts()
-          const cart = carts.find((p) => p.id ===parseInt(id));
-          if (cart) {
-            console.log("Este es su cart:", cart);
-            return cart;
-          } else {
-            console.error(`Error: Cart con id ${id} no encontrado.`);
-          }
-        } catch (error) {
-          console.error(error);
-        
-        }
-      }
-
       async addProductToCart(cartId, productId, quantity) {
         try {
           

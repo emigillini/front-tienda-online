@@ -25,6 +25,31 @@ export class ProductManager {
       console.error(error);
     }
   }
+  async getProducts() {
+    try {
+      let mostarProd = await fs.promises.readFile(path, utf);
+      let productos = JSON.parse(mostarProd);
+      return productos;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async getProductById(id) {
+    try {
+      const products = await this.getProducts()
+      const product = products.find((p) => p.id ===parseInt(id));
+      if (product) {
+        console.log("Este es su producto:", product);
+        return product;
+      } else {
+        console.error(`Error: Producto con id ${id} no encontrado.`);
+      }
+    } catch (error) {
+      console.error(error);
+    
+    }
+  }
 
   async addProduct(title, description, code, price, status = true, stock, category, thumbnail) {
     const prodId = await this.getNextId()
@@ -52,32 +77,6 @@ export class ProductManager {
       console.log(`Se agregó el producto "${title}" al archivo ${path}.`);
     } catch (error) {
       console.error(error);
-    }
-  }
-
-  async getProducts() {
-    try {
-      let mostarProd = await fs.promises.readFile(path, utf);
-      let productos = JSON.parse(mostarProd);
-      return productos;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  async getProductById(id) {
-    try {
-      const products = await this.getProducts()
-      const product = products.find((p) => p.id ===parseInt(id));
-      if (product) {
-        console.log("Este es su producto:", product);
-        return product;
-      } else {
-        console.error(`Error: Producto con id ${id} no encontrado.`);
-      }
-    } catch (error) {
-      console.error(error);
-    
     }
   }
 
