@@ -1,5 +1,6 @@
 import {Router} from "express";
-import { ProductManager } from "../entregable.js";
+import { ProductManager } from "../datos/ProductManager.js";
+
 
 const ProductManager1 = new ProductManager();
 
@@ -49,6 +50,10 @@ prodRouter.get("/", logRequest, async (req, res) => {
 prodRouter.post("/", logRequest, async (req, res) => {
   try {
     const { title, description, code, price, stock, category, thumbnails } = req.body;
+    if (!title || !description || !code || !price || !stock || !category || !thumbnails) {
+      res.status(400).send({ message: "Faltan campos requeridos para agregar el producto." });
+      return;
+    }
     await ProductManager1.addProduct(title, description, code, price, true, stock, category, thumbnails);
     res.send({ message: "Producto agregado exitosamente." });
   } catch (error) {
@@ -68,6 +73,7 @@ prodRouter.put("/:id", logRequest, async (req, res) => {
     res.status(500).send("Error interno del servidor");
   }
 });
+
 prodRouter.delete("/:id", logRequest, async (req, res) => {
 try{
   await ProductManager1.deleteProd(req.params.id)

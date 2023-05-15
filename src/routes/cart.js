@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { CartManager } from "../CartManager.js";
-import { ProductManager } from "../entregable.js";
+import { CartManager } from "../datos/CartManager.js";
+import { ProductManager } from "../datos/ProductManager.js";
 
 const CartManager1 = new CartManager();
 

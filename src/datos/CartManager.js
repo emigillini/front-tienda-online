@@ -15,23 +15,34 @@ export class CartManager {
       this.path = path;
     }
 
-    async addCart() {
-      CartManager.id++;
+    async getNextId (){
       try {
-        const data = await fs.promises.readFile(path, utf);
-        const carts = JSON.parse(data);
+        const carts= await this.getCarts()
+        const lastCart = carts[carts.length - 1];
+        return lastCart ? lastCart.id + 1 : 1;
+        
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    async addCart() {
+      let cartId= await this.getNextId()
+      try {
+        
+        const carts = await this.getCarts()
         const cartExists = carts.some((p) => p.id === CartManager.id);
         if (cartExists) {
-          console.error(`Error: El código ${CartManager.id} ya existe.`);
+          console.error(`Error: El código ${cartId} ya existe.`);
           return;
         }
         const newCart = {
-          id: CartManager.id,
+          id: cartId,
           products: []
         }
         carts.push(newCart);
         await fs.promises.writeFile(path, JSON.stringify(carts));
-        console.log(`Se agregó el carrito "${CartManager.id}" al archivo ${path}.`);
+        console.log(`Se agregó el carrito "${cartId}" al archivo ${path}.`);
       } catch (error) {
         console.error(error);
       }
@@ -49,8 +60,8 @@ export class CartManager {
     
       async getCartById(id) {
         try {
-          const data = await fs.promises.readFile(path, utf);
-          const carts = JSON.parse(data);
+        
+          const carts = await this.getCarts()
           const cart = carts.find((p) => p.id ===parseInt(id));
           if (cart) {
             console.log("Este es su cart:", cart);
@@ -66,8 +77,8 @@ export class CartManager {
 
       async addProductToCart(cartId, productId, quantity) {
         try {
-          const data = await fs.promises.readFile(this.path, utf);
-          const carts = JSON.parse(data);
+          
+          const carts = await this.getCarts()
           const cartIndex = carts.findIndex((c) => c.id === cartId);
           if (cartIndex === -1) {
             console.error(`Error: Carrito con ID ${cartId} no encontrado.`);
