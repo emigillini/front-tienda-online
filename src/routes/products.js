@@ -1,18 +1,14 @@
-import {Router} from "express";
+import { Router } from "express";
 import { ProductManager } from "../datos/ProductManager.js";
-import { logRequest } from "../utils/midleware.js";
+import { logRequest, msg } from "../utils/midleware.js";
 
 const ProductManager1 = new ProductManager();
 
 const prodRouter = Router();
 
-prodRouter.use((req, res, next)=>{
-  console.log("gracias")
-  next()
-})
+prodRouter.use(msg);
 
-
-prodRouter.get("/:id", logRequest,async (req, res) => {
+prodRouter.get("/:id", logRequest, async (req, res) => {
   try {
     const prod = await ProductManager1.getProductById(req.params.id);
     if (!prod) {
@@ -32,10 +28,10 @@ prodRouter.get("/", logRequest, async (req, res) => {
     if (limit) {
       const firstProducts = products.slice(0, limit);
       res.send(firstProducts);
-      console.log(firstProducts)
+      console.log(firstProducts);
     } else {
       res.send(products);
-      console.log(products)
+      console.log(products);
     }
   } catch (error) {
     console.error(error);
@@ -45,12 +41,34 @@ prodRouter.get("/", logRequest, async (req, res) => {
 
 prodRouter.post("/", logRequest, async (req, res) => {
   try {
-    const { title, description, code, price, stock, category, thumbnails } = req.body;
-    if (!title || !description || !code || !price || !stock || !category || !thumbnails) {
-      res.status(400).send({ message: "Faltan campos requeridos para agregar el producto." });
+    const { title, description, code, price, stock, category, thumbnails } =
+      req.body;
+    if (
+      !title ||
+      !description ||
+      !code ||
+      !price ||
+      !stock ||
+      !category ||
+      !thumbnails
+    ) {
+      res
+        .status(400)
+        .send({
+          message: "Faltan campos requeridos para agregar el producto.",
+        });
       return;
     }
-    await ProductManager1.addProduct(title, description, code, price, true, stock, category, thumbnails);
+    await ProductManager1.addProduct(
+      title,
+      description,
+      code,
+      price,
+      true,
+      stock,
+      category,
+      thumbnails
+    );
     res.send({ message: "Producto agregado exitosamente." });
   } catch (error) {
     console.error(error);
@@ -60,9 +78,19 @@ prodRouter.post("/", logRequest, async (req, res) => {
 
 prodRouter.put("/:id", logRequest, async (req, res) => {
   try {
-    const { title, description, code, price, stock, category, thumbnails } = req.body;
+    const { title, description, code, price, stock, category, thumbnails } =
+      req.body;
     const { id } = req.params;
-    await ProductManager1.updateProduct(id, title, description, code, price, stock, category, thumbnails);
+    await ProductManager1.updateProduct(
+      id,
+      title,
+      description,
+      code,
+      price,
+      stock,
+      category,
+      thumbnails
+    );
     res.send({ message: "Producto actualizado exitosamente." });
   } catch (error) {
     console.error(error);
@@ -71,16 +99,13 @@ prodRouter.put("/:id", logRequest, async (req, res) => {
 });
 
 prodRouter.delete("/:id", logRequest, async (req, res) => {
-try{
-  await ProductManager1.deleteProd(req.params.id)
-  res.send({ message: "Producto Eliminado exitosamente." });
-
-}catch (error) {
-  console.error(error);
-  res.status(500).send("Error interno del servidor");
-}
-
-
-})
+  try {
+    await ProductManager1.deleteProd(req.params.id);
+    res.send({ message: "Producto Eliminado exitosamente." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
+});
 
 export default prodRouter;

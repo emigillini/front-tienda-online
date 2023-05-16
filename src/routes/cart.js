@@ -1,23 +1,24 @@
 import { Router } from "express";
 import { CartManager } from "../datos/CartManager.js";
 import { ProductManager } from "../datos/ProductManager.js";
-import { logRequest } from "../utils/midleware.js";
+import { logRequest, msg } from "../utils/midleware.js";
 
 const CartManager1 = new CartManager();
 
 const cartRouter = Router();
 
-cartRouter.use((req, res, next) => {
-  console.log("gracias por consultar");
-  next();
-});
-
+cartRouter.use(msg);
 
 cartRouter.get("/:id", logRequest, async (req, res) => {
   try {
     const cart = await CartManager1.getCartById(req.params.id);
     if (!cart) {
-      return res.status(404).send({ id: req.params.id, message: `id ${req.params.id} no encontrado` });
+      return res
+        .status(404)
+        .send({
+          id: req.params.id,
+          message: `id ${req.params.id} no encontrado`,
+        });
     }
     res.send(cart);
   } catch (error) {
@@ -36,25 +37,27 @@ cartRouter.post("/", logRequest, async (req, res) => {
   }
 });
 
-cartRouter.post('/:cid/product/:pid', logRequest, async (req, res) => {
-    const { cid, pid } = req.params;
-    const quantity = 1;
-    const cartManager = new CartManager();
-    const productManager = new ProductManager();
-  
-    try {
-      const product = await productManager.getProductById(pid);
-      if (!product) {
-        console.error(`Error: Producto con ID ${pid} no encontrado.`);
-        return res.status(404).send(`Error: Producto con ID ${pid} no encontrado.`);
-      }
-  
-      await cartManager.addProductToCart(parseInt(cid), parseInt(pid), quantity);
-      res.send(`Producto ${pid} agregado al carrito ${cid}.`);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error al agregar el producto al carrito.');
-    }
-  });
+cartRouter.post("/:cid/product/:pid", logRequest, async (req, res) => {
+  const { cid, pid } = req.params;
+  const quantity = 1;
+  const cartManager = new CartManager();
+  const productManager = new ProductManager();
 
-export default cartRouter
+  try {
+    const product = await productManager.getProductById(pid);
+    if (!product) {
+      console.error(`Error: Producto con ID ${pid} no encontrado.`);
+      return res
+        .status(404)
+        .send(`Error: Producto con ID ${pid} no encontrado.`);
+    }
+
+    await cartManager.addProductToCart(parseInt(cid), parseInt(pid), quantity);
+    res.send(`Producto ${pid} agregado al carrito ${cid}.`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error al agregar el producto al carrito.");
+  }
+});
+
+export default cartRouter;
