@@ -4,6 +4,7 @@ import { pubRouter } from "./routes/publica.js";
 import cartRouter from "./routes/cart.js";
 
 
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

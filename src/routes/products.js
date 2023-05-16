@@ -1,6 +1,6 @@
 import {Router} from "express";
 import { ProductManager } from "../datos/ProductManager.js";
-
+import { logRequest } from "../utils/midleware.js";
 
 const ProductManager1 = new ProductManager();
 
@@ -11,10 +11,6 @@ prodRouter.use((req, res, next)=>{
   next()
 })
 
-const logRequest = (req, res, next) => {
-  console.log(`Request recibida: ${new Date()}`);
-  next();
-}
 
 prodRouter.get("/:id", logRequest,async (req, res) => {
   try {

@@ -1,11 +1,9 @@
 import fs from "fs";
+import { createEmptyArray } from "../utils/index.js";
 const path = "carts.json";
 const utf = "utf-8";
 
-if (!fs.existsSync(path)) {
-  fs.writeFileSync(path, "[]", utf);
-  console.log(`El archivo ${path} no existía, se ha creado un array vacío.`);
-}
+createEmptyArray(path, utf)
 
 export class CartManager {
     static id = 0;

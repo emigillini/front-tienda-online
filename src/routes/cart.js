@@ -1,20 +1,17 @@
 import { Router } from "express";
 import { CartManager } from "../datos/CartManager.js";
 import { ProductManager } from "../datos/ProductManager.js";
+import { logRequest } from "../utils/midleware.js";
 
 const CartManager1 = new CartManager();
 
 const cartRouter = Router();
 
 cartRouter.use((req, res, next) => {
-  console.log("gracias");
+  console.log("gracias por consultar");
   next();
 });
 
-const logRequest = (req, res, next) => {
-  console.log(`Request recibida: ${new Date()}`);
-  next();
-};
 
 cartRouter.get("/:id", logRequest, async (req, res) => {
   try {
