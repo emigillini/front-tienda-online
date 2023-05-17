@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { ProductManager } from "../datos/ProductManager.js";
-import { logRequest, msg } from "../utils/midleware.js";
+import { logRequest, msg } from "../midleware/midleware.js";
 
 const ProductManager1 = new ProductManager();
 

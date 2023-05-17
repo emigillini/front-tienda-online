@@ -9,7 +9,7 @@ export const msg = (req, res, next) => {
   next();
 };
 const storage = multer.diskStorage({
-  destination: 'public/uploads/',
+  destination: 'src/public/uploads/',
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },
