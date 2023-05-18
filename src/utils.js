@@ -13,3 +13,4 @@ export const createEmptyArray=(path, utf ) =>{
       console.log(`El archivo ${path} no existía, se ha creado un array vacío.`);
     }
   }
+
