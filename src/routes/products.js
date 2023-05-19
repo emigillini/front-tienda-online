@@ -81,6 +81,10 @@ prodRouter.put("/:id", logRequest, async (req, res) => {
     const { title, description, code, price, stock, category, thumbnails } =
       req.body;
     const { id } = req.params;
+    const prod = await ProductManager1.getProductById(id);
+    if (!prod) {
+      return res.status(404).send({ message: `Producto con ID ${id} no encontrado.` });
+    }
     await ProductManager1.updateProduct(
       id,
       title,
@@ -100,7 +104,12 @@ prodRouter.put("/:id", logRequest, async (req, res) => {
 
 prodRouter.delete("/:id", logRequest, async (req, res) => {
   try {
-    await ProductManager1.deleteProd(req.params.id);
+    const prodId = req.params.id;
+    const prod = await ProductManager1.getProductById(prodId);
+    if (!prod) {
+      return res.status(404).send({ message: `Producto con ID ${prodId} no encontrado.` });
+    }
+    await ProductManager1.deleteProd(prodId);
     res.send({ message: "Producto Eliminado exitosamente." });
   } catch (error) {
     console.error(error);

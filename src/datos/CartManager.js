@@ -51,11 +51,6 @@ export class CartManager {
     let cartId = await this.getNextId();
     try {
       const carts = await this.getCarts();
-      const cartExists = carts.some((p) => p.id === CartManager.id);
-      if (cartExists) {
-        console.error(`Error: El código ${cartId} ya existe.`);
-        return;
-      }
       const newCart = {
         id: cartId,
         products: [],
