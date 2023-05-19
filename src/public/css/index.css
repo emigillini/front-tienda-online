@@ -49,3 +49,13 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #444;
 }
+.prods{
+    display: flex;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+  }

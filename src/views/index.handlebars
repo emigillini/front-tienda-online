@@ -1,6 +1,21 @@
 
 <h1>Formulario de productos</h1>
 
+<div class="prods">
+  {{#each prod}}
+  <div class="card">
+    <h3>{{this.title}}</h3>
+    <p>ID: {{this.id}}</p>
+    <p>Description: {{this.description}}</p>
+  </div>
+  {{/each}}
+</div>
+
+
+
+
+
+
 <form action="/src/public/uploads/" enctype="multipart/form-data" method="POST">
   <label for="nombre">{{testUser.name}}:</label>
   <input type="file" name="Archivo" id="nombre" />
@@ -8,6 +23,8 @@
 <p id="aa">dsdsadasdasdasd</p>
   <button onclick="alert('esta')">apre</button>
 </form>
+
+
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/index.js"></script>

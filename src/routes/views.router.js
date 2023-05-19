@@ -1,12 +1,17 @@
 import {Router} from "express";
 
 import { upload } from "../midleware/midleware.js";
+import { ProductManager } from "../datos/ProductManager.js";
+
 
 export const viewRouter = Router();
 
+const x = new ProductManager()
+const prod =await  x.getProducts()
+console.log(prod)
+
 viewRouter.get('/', (req, res)=>{
-let testUser= {name:"pedro" ,lastName:"jota", rol:"user"}
-res.render('index', {testUser, style:"index.css"})
+res.render('index', {prod, style:"index.css"})
 })
 
 
