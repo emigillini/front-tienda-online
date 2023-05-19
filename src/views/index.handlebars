@@ -5,13 +5,15 @@
   {{#each prod}}
   <div class="card">
     <h3>{{this.title}}</h3>
-    <p>ID: {{this.id}}</p>
+    <img src="{{this.thumbnail}}" alt="{{this.title}}">
     <p>Description: {{this.description}}</p>
+    <p>ID: {{this.id}}</p>
+    <p>Precio: $ {{this.price}}</p>
+    <p>Stock: {{this.stock}}</p>
+    <p>Categoria: {{this.category}}</p>
   </div>
   {{/each}}
 </div>
-
-
 
 
 
