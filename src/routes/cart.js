@@ -13,12 +13,10 @@ cartRouter.get("/:id", logRequest, async (req, res) => {
   try {
     const cart = await CartManager1.getCartById(req.params.id);
     if (!cart) {
-      return res
-        .status(404)
-        .send({
-          id: req.params.id,
-          message: `id ${req.params.id} no encontrado`,
-        });
+      return res.status(404).send({
+        id: req.params.id,
+        message: `id ${req.params.id} no encontrado`,
+      });
     }
     res.send(cart);
   } catch (error) {

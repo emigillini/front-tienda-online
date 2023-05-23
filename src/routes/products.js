@@ -2,7 +2,6 @@ import { Router } from "express";
 import { ProductManager } from "../datos/ProductManager.js";
 import { logRequest, msg } from "../midleware/midleware.js";
 
-
 const ProductManager1 = new ProductManager();
 
 const prodRouter = Router();
@@ -53,11 +52,9 @@ prodRouter.post("/", logRequest, async (req, res) => {
       !category ||
       !thumbnails
     ) {
-      res
-        .status(400)
-        .send({
-          message: "Faltan campos requeridos para agregar el producto.",
-        });
+      res.status(400).send({
+        message: "Faltan campos requeridos para agregar el producto.",
+      });
       return;
     }
     await ProductManager1.addProduct(
@@ -71,7 +68,7 @@ prodRouter.post("/", logRequest, async (req, res) => {
       thumbnails
     );
     res.send({ message: "Producto agregado exitosamente." });
-    socketServer.emit('productAdded', product);
+    socketServer.emit("productAdded", product);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
@@ -85,7 +82,9 @@ prodRouter.put("/:id", logRequest, async (req, res) => {
     const { id } = req.params;
     const prod = await ProductManager1.getProductById(id);
     if (!prod) {
-      return res.status(404).send({ message: `Producto con ID ${id} no encontrado.` });
+      return res
+        .status(404)
+        .send({ message: `Producto con ID ${id} no encontrado.` });
     }
     await ProductManager1.updateProduct(
       id,
@@ -109,11 +108,13 @@ prodRouter.delete("/:id", logRequest, async (req, res) => {
     const prodId = req.params.id;
     const prod = await ProductManager1.getProductById(prodId);
     if (!prod) {
-      return res.status(404).send({ message: `Producto con ID ${prodId} no encontrado.` });
+      return res
+        .status(404)
+        .send({ message: `Producto con ID ${prodId} no encontrado.` });
     }
     await ProductManager1.deleteProd(prodId);
     res.send({ message: "Producto Eliminado exitosamente." });
-    socketServer.emit('productDeleted', prodId);
+    socketServer.emit("productDeleted", prodId);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
