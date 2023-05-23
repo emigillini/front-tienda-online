@@ -2,6 +2,7 @@ import { Router } from "express";
 import { ProductManager } from "../datos/ProductManager.js";
 import { logRequest, msg } from "../midleware/midleware.js";
 
+
 const ProductManager1 = new ProductManager();
 
 const prodRouter = Router();
@@ -70,6 +71,7 @@ prodRouter.post("/", logRequest, async (req, res) => {
       thumbnails
     );
     res.send({ message: "Producto agregado exitosamente." });
+    socketServer.emit('productAdded', product);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
@@ -111,6 +113,7 @@ prodRouter.delete("/:id", logRequest, async (req, res) => {
     }
     await ProductManager1.deleteProd(prodId);
     res.send({ message: "Producto Eliminado exitosamente." });
+    socketServer.emit('productDeleted', prodId);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");

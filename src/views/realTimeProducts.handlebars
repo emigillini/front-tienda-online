@@ -15,14 +15,5 @@
   {{/each}}
 </div>
 
-
-<form action="/src/public/uploads/" enctype="multipart/form-data" method="POST">
-  <label for="nombre">{{testUser.name}}:</label>
-  <input type="file" name="Archivo" id="nombre" />
-  <input  type="submit" value="subir archivo" />
-</form>
-
-
-
-
+<script src="/socket.io/socket.io.js"></script>
 <script src="js/index.js"></script>
