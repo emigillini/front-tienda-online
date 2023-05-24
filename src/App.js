@@ -25,21 +25,26 @@ const httpServer = app.listen(8080, () => console.log("conectado"));
 const mang = new ProductManager();
 let messageChat=[];
 
+
 export const socketServer = new Server(httpServer);
 
 socketServer.on("connect", socket => {
   console.log("Nuevo cliente conectado");
 
+
   socket.on("message", data => {
     console.log(data);
   });
-
+  socket.on("newUser", (data) => {
+    const { user } = data;
+    socket.broadcast.emit("userConnected", { username: user }); // Emite el nombre del usuario al evento "userConnected"
+  });
   socket.on("getProducts", async () => {
     const products = await mang.getProducts();
     socket.emit("updateProducts", products);
   });
   socket.on("messageChat", (data) => {
     messageChat.push(data);
-    socket.emit("messageLogs", messageChat);
+    socketServer.emit("messageLogs", messageChat);
   })
 });

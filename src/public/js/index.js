@@ -69,10 +69,8 @@ Swal.fire({
 })
 .then((result) => {
   user = result.value;
-  return user
-})
-.then((user)=>{
   socket.emit("newUser", {user})
+  return user
 })
 .catch((error)=>{console.log(error)})
 ;
@@ -94,9 +92,19 @@ socket.on("messageLogs", (data) => {
       messageChat + `${message.user} dice: ${message.messageChat}</br>`;
   });
   log.innerHTML = messageChat;
+
 });
 
 
-socket.on("connect", ()=>{
-  alert("nuevo")
-})
+socket.on("userConnected", (user) => {
+  const newUser = user.username;
+  Swal.fire({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 5000,
+    title: "Nuevo usuario conectado",
+    text: `${newUser} se ha conectado`,
+    icon: "success",  
+  });
+});
