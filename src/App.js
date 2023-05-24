@@ -23,13 +23,14 @@ app.use(logRequest);
 const httpServer = app.listen(8080, () => console.log("conectado"));
 
 const mang = new ProductManager();
+let messageChat=[];
 
 export const socketServer = new Server(httpServer);
 
-socketServer.on("connect", (socket) => {
+socketServer.on("connect", socket => {
   console.log("Nuevo cliente conectado");
 
-  socket.on("message", (data) => {
+  socket.on("message", data => {
     console.log(data);
   });
 
@@ -37,4 +38,8 @@ socketServer.on("connect", (socket) => {
     const products = await mang.getProducts();
     socket.emit("updateProducts", products);
   });
+  socket.on("messageChat", (data) => {
+    messageChat.push(data);
+    socket.emit("messageLogs", messageChat);
+  })
 });

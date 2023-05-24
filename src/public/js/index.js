@@ -1,3 +1,4 @@
+
 const socket = io();
 socket.emit("message", "Hola, WebSocket emitiendo");
 
@@ -51,3 +52,51 @@ const removeProductCard = (productId) => {
     productElement.remove();
   }
 };
+
+/*Aqui comienza config del Chat*/
+
+let user;
+let chatBox = document.getElementById("chatBox");
+
+Swal.fire({
+  title: "identificacion",
+  input: "text",
+  text: "Ingresa usuario",
+  inputValidator: (value) => {
+    return !value && "Tienes que ingresar el usuario";
+  },
+  allowOutsideClick: false,
+})
+.then((result) => {
+  user = result.value;
+  return user
+})
+.then((user)=>{
+  socket.emit("newUser", {user})
+})
+.catch((error)=>{console.log(error)})
+;
+
+chatBox.addEventListener("keyup", (evt) => {
+  if (evt.key === "Enter") {
+    if (chatBox.value.trim().length >= 0) {
+      socket.emit("messageChat", { user: user, messageChat: chatBox.value });
+      chatBox.value = "";
+    }
+  }
+});
+
+socket.on("messageLogs", (data) => {
+  let log = document.getElementById("messageLogs");
+  let messageChat = "";
+  data.forEach((message) => {
+    messageChat =
+      messageChat + `${message.user} dice: ${message.messageChat}</br>`;
+  });
+  log.innerHTML = messageChat;
+});
+
+
+socket.on("connect", ()=>{
+  alert("nuevo")
+})

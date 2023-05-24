@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { logRequest, msg, upload } from "../midleware/midleware.js";
+import {  upload } from "../midleware/midleware.js";
 import { ProductManager } from "../datos/ProductManager.js";
 
 export const viewRouter = Router();
@@ -14,6 +14,10 @@ viewRouter.get("/", (req, res) => {
 
 viewRouter.get("/realtimeproducts", (req, res) => {
   res.render("realtimeproducts", { prod, style: "index.css" });
+});
+
+viewRouter.get("/chat", (req, res) => {
+  res.render("chat", { prod, style: "chat.css" });
 });
 
 viewRouter.post("/src/public/uploads", upload.single("Archivo"), (req, res) => {
