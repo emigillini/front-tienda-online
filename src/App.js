@@ -4,6 +4,7 @@ import { __dirname } from "./utils.js";
 import prodRouter from "./DAO/routes/products.js";
 import cartRouter from "./DAO/routes/cart.js";
 import viewRouter from "./DAO/routes/views.router.js";
+import prodBDRouter from "./DAO/routes/productsBD.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
@@ -16,8 +17,10 @@ app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/products", prodRouter);
+app.use("/productsBD", prodBDRouter);
 app.use("/cart", cartRouter);
 app.use("/", viewRouter);
+
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
 
@@ -52,7 +55,8 @@ socketServer.on("connect", socket => {
 
 const connectToDatabase = async () => {
     try {
-      await mongoose.connect("mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/your-database-name");
+      await mongoose.connect("mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce");
+
       console.log("Conectado a la base de datos");
     } catch (error) {
       console.log("No se puede acceder a la base de datos:", error);

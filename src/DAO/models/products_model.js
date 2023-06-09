@@ -11,7 +11,7 @@ const productsSchema= new mongoose.Schema({
     },
     title: String,
     description: String,
-    code: Number,
+    code: String,
     price: Number,
     status:{
         type:Boolean,
@@ -19,10 +19,8 @@ const productsSchema= new mongoose.Schema({
     },
     stock: Number,
     category: String,
-    thumbnail: String,
-    nombre: String,
-    apellido:String,
-    edad:Number
+    thumbnail: [],
+  
     
 })
 
