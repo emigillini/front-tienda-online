@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { CartManager } from "../datos/CartManager.js";
-import { ProductManager } from "../datos/ProductManager.js";
-import { logRequest, msg } from "../midleware/midleware.js";
+import { CartManager } from "../CartManager.js";
+import { ProductManager } from "../ProductManager.js";
+import { logRequest,msg } from "../midleware/midleware.js"; 
 
 const CartManager1 = new CartManager();
 

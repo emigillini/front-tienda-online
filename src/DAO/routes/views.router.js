@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-import {  upload } from "../midleware/midleware.js";
-import { ProductManager } from "../datos/ProductManager.js";
+import { upload } from "../midleware/midleware.js";
+import { ProductManager } from "../ProductManager.js";
 
 export const viewRouter = Router();
 
