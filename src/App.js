@@ -7,6 +7,7 @@ import viewRouter from "./DAO/routes/views.router.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
+import mongoose from "mongoose";
 
 const app = express();
 app.engine("handlebars", handlebars.engine());
@@ -48,3 +49,15 @@ socketServer.on("connect", socket => {
     socketServer.emit("messageLogs", messageChat);
   })
 });
+
+const connectToDatabase = async () => {
+    try {
+      await mongoose.connect("mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/your-database-name");
+      console.log("Conectado a la base de datos");
+    } catch (error) {
+      console.log("No se puede acceder a la base de datos:", error);
+      process.exit(1);
+    }
+  };
+  
+  connectToDatabase();
