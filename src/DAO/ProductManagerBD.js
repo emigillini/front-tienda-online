@@ -1,9 +1,6 @@
 import { productsModel } from "./models/products_model.js";
 
-
-
 export class ProductManagerBD {
- 
   constructor() {
     this.model = productsModel;
   }
@@ -19,7 +16,7 @@ export class ProductManagerBD {
   }
   async getProducts() {
     try {
-      let products = await this.model.find()
+      let products = await this.model.find();
       return products;
     } catch (error) {
       console.error(error);
@@ -28,7 +25,7 @@ export class ProductManagerBD {
 
   async getProductById(id) {
     try {
-      const product = await this.model.findOne({id:id})
+      const product = await this.model.findOne({ id: id });
       if (product) {
         console.log("Este es su producto:", product);
         return product;
@@ -39,7 +36,6 @@ export class ProductManagerBD {
       console.error(error);
     }
   }
-
 
   async addProduct(
     title,
@@ -53,8 +49,7 @@ export class ProductManagerBD {
   ) {
     const prodId = await this.getNextId();
     try {
-      
-      const product = await productsModel.create( {
+      const product = await productsModel.create({
         id: prodId,
         title,
         description,
@@ -66,7 +61,7 @@ export class ProductManagerBD {
         thumbnail,
       });
       console.log(`Se agregó el producto "${title}" a la base de datos`);
-      return product
+      return product;
     } catch (error) {
       console.error(error);
     }
@@ -74,8 +69,8 @@ export class ProductManagerBD {
 
   async deleteProd(id) {
     try {
-    await this.model.findOneAndDelete({id:id})
-     
+      await this.model.findOneAndDelete({ id: id });
+
       return console.log(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
       console.error(error);
@@ -92,7 +87,7 @@ export class ProductManagerBD {
     thumbnail
   ) {
     try {
-      const productToUpdate = await this.model.findOne({id:id});
+      const productToUpdate = await this.model.findOne({ id: id });
       if (!productToUpdate) {
         console.error(`Error: No se encontró el producto con id ${id}.`);
         return;
@@ -106,7 +101,7 @@ export class ProductManagerBD {
         category: category || productToUpdate.category,
         thumbnail: thumbnail || productToUpdate.thumbnail,
       };
-      await this.model.updateOne({id:id}, updatedProduct);
+      await this.model.updateOne({ id: id }, updatedProduct);
       console.log(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
       console.error(error);

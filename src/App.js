@@ -10,6 +10,7 @@ import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
 import mongoose from "mongoose";
 import cartBDRouter from "./DAO/routes/cartsBD.js";
+import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 
 const app = express();
 app.engine("handlebars", handlebars.engine());
@@ -29,21 +30,19 @@ app.use(logRequest);
 const httpServer = app.listen(8080, () => console.log("conectado"));
 
 const mang = new ProductManager();
-let messageChat=[];
-
+let messageChat = [];
 
 export const socketServer = new Server(httpServer);
 
-socketServer.on("connect", socket => {
+socketServer.on("connect", (socket) => {
   console.log("Nuevo cliente conectado");
 
-
-  socket.on("message", data => {
+  socket.on("message", (data) => {
     console.log(data);
   });
   socket.on("newUser", (data) => {
     const { user } = data;
-    socket.broadcast.emit("userConnected", { username: user }); // Emite el nombre del usuario al evento "userConnected"
+    socket.broadcast.emit("userConnected", { username: user });
   });
   socket.on("getProducts", async () => {
     const products = await mang.getProducts();
@@ -52,18 +51,32 @@ socketServer.on("connect", socket => {
   socket.on("messageChat", (data) => {
     messageChat.push(data);
     socketServer.emit("messageLogs", messageChat);
-  })
+  });
+  socket.on("messageChat", async (data) => {
+    const { user, messageChat } = data;
+
+    try {
+      const messageManager = new MessageManagerBD();
+      await messageManager.addMessages({ user, message: messageChat });
+
+      console.log("Mensaje guardado correctamente:", data);
+    } catch (error) {
+      console.error("Error al guardar el mensaje:", error);
+    }
+  });
 });
 
 const connectToDatabase = async () => {
-    try {
-      await mongoose.connect("mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce");
+  try {
+    await mongoose.connect(
+      "mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce"
+    );
 
-      console.log("Conectado a la base de datos");
-    } catch (error) {
-      console.log("No se puede acceder a la base de datos:", error);
-      process.exit(1);
-    }
-  };
-  
-  connectToDatabase();
+    console.log("Conectado a la base de datos");
+  } catch (error) {
+    console.log("No se puede acceder a la base de datos:", error);
+    process.exit(1);
+  }
+};
+
+connectToDatabase();

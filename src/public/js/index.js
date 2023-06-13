@@ -1,4 +1,3 @@
-
 const socket = io();
 socket.emit("message", "Hola, WebSocket emitiendo");
 
@@ -67,13 +66,14 @@ Swal.fire({
   },
   allowOutsideClick: false,
 })
-.then((result) => {
-  user = result.value;
-  socket.emit("newUser", {user})
-  return user
-})
-.catch((error)=>{console.log(error)})
-;
+  .then((result) => {
+    user = result.value;
+    socket.emit("newUser", { user });
+    return user;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 chatBox.addEventListener("keyup", (evt) => {
   if (evt.key === "Enter") {
@@ -92,9 +92,7 @@ socket.on("messageLogs", (data) => {
       messageChat + `${message.user} dice: ${message.messageChat}</br>`;
   });
   log.innerHTML = messageChat;
-
 });
-
 
 socket.on("userConnected", (user) => {
   const newUser = user.username;
@@ -105,6 +103,6 @@ socket.on("userConnected", (user) => {
     timer: 5000,
     title: "Nuevo usuario conectado",
     text: `${newUser} se ha conectado`,
-    icon: "success",  
+    icon: "success",
   });
 });

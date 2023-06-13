@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { logRequest,msg } from "../midleware/midleware.js"; 
+import { logRequest, msg } from "../midleware/midleware.js";
 import { CartManagerBD } from "../CartManagerBD.js";
 import { ProductManagerBD } from "../ProductManagerBD.js";
 
@@ -10,22 +10,22 @@ const cartBDRouter = Router();
 cartBDRouter.use(msg);
 
 cartBDRouter.get("/", logRequest, async (req, res) => {
-    try {
-      const carts = await CartManager1.getCarts();
-      const limit = parseInt(req.query.limit);
-      if (limit) {
-        const firstCarts = carts.slice(0, limit);
-        res.send(firstCarts);
-        console.log(firstCarts);
-      } else {
-        res.send({status:'succes',payload:carts});
-        console.log(carts);
-      }
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Error interno del servidor");
+  try {
+    const carts = await CartManager1.getCarts();
+    const limit = parseInt(req.query.limit);
+    if (limit) {
+      const firstCarts = carts.slice(0, limit);
+      res.send(firstCarts);
+      console.log(firstCarts);
+    } else {
+      res.send({ status: "succes", payload: carts });
+      console.log(carts);
     }
-  });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
+});
 
 cartBDRouter.get("/:id", logRequest, async (req, res) => {
   try {
@@ -36,7 +36,7 @@ cartBDRouter.get("/:id", logRequest, async (req, res) => {
         message: `id ${req.params.id} no encontrado`,
       });
     }
-    res.send({status:'succes',payload:cart});
+    res.send({ status: "succes", payload: cart });
   } catch (error) {
     console.error(error);
     res.status(404).send("Error id no encontrado");
@@ -46,7 +46,7 @@ cartBDRouter.get("/:id", logRequest, async (req, res) => {
 cartBDRouter.post("/", logRequest, async (req, res) => {
   try {
     await CartManager1.addCart();
-    res.send({status:"carro agregado"});
+    res.send({ status: "carro agregado" });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
@@ -68,7 +68,11 @@ cartBDRouter.post("/:cid/product/:pid", logRequest, async (req, res) => {
         .send(`Error: Producto con ID ${pid} no encontrado.`);
     }
 
-    await cartManager.addProductToCart(parseInt(cid), parseInt(pid), parseInt(quantity));
+    await cartManager.addProductToCart(
+      parseInt(cid),
+      parseInt(pid),
+      parseInt(quantity)
+    );
     res.send(`Producto ${pid} agregado al carrito ${cid}.`);
   } catch (error) {
     console.error(error);

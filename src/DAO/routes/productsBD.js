@@ -14,7 +14,7 @@ prodBDRouter.get("/:id", logRequest, async (req, res) => {
     if (!prod) {
       return res.send({ id: id, message: `id ${id} no encontrado ` });
     }
-    res.send({status:'succes',payload:prod});
+    res.send({ status: "succes", payload: prod });
   } catch (error) {
     console.error(error);
     res.status(404).send("Error id no encontrado");
@@ -30,7 +30,7 @@ prodBDRouter.get("/", logRequest, async (req, res) => {
       res.send(firstProducts);
       console.log(firstProducts);
     } else {
-      res.send({status:'succes',payload:products});
+      res.send({ status: "succes", payload: products });
       console.log(products);
     }
   } catch (error) {
@@ -43,21 +43,21 @@ prodBDRouter.post("/", logRequest, async (req, res) => {
   try {
     let { title, description, code, price, stock, category, thumbnail } =
       req.body;
-      if (
-        !title ||
-        !description ||
-        !code ||
-        !price ||
-        !stock ||
-        !category ||
-        !thumbnail
-      ) {
-        res.status(400).send({
-          message: "Faltan campos requeridos para agregar el producto.",
-        });
-        return;
-      }
-  
+    if (
+      !title ||
+      !description ||
+      !code ||
+      !price ||
+      !stock ||
+      !category ||
+      !thumbnail
+    ) {
+      res.status(400).send({
+        message: "Faltan campos requeridos para agregar el producto.",
+      });
+      return;
+    }
+
     const product = await ProductManager1.addProduct(
       title,
       description,
@@ -68,7 +68,7 @@ prodBDRouter.post("/", logRequest, async (req, res) => {
       category,
       thumbnail
     );
-    res.send({ status: "Producto agregado exitosamente." , payload:product});
+    res.send({ status: "Producto agregado exitosamente.", payload: product });
     //socketServer.emit("productAdded", product);
   } catch (error) {
     console.error(error);
