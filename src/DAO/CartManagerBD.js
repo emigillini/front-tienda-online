@@ -17,7 +17,7 @@ export class CartManagerBD {
 
   async getCarts() {
     try {
-      let carts = await this.model.find();
+      let carts = await this.model.find().populate("products");
       return carts;
     } catch (error) {
       console.error(error);

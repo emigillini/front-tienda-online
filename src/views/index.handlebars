@@ -1,5 +1,6 @@
 <h1>Formulario de productos</h1>
 
+<button onclick="createCart()">Crear nuevo carrito</button>
 <div class="prods">
   {{#each payload.products}}
     <div class="card">
@@ -10,6 +11,8 @@
       <p>Precio: $ {{this.price}}</p>
       <p>Stock: {{this.stock}}</p>
       <p>Categoria: {{this.category}}</p>
+      
+       <button onclick="addToCart('{{this.id}}')">Agregar al carrito</button>
     </div>
   {{/each}}
 </div>

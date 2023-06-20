@@ -52,6 +52,8 @@ const removeProductCard = (productId) => {
   }
 };
 
+
+
 /*Aqui comienza config del Chat*/
 
 let user;
