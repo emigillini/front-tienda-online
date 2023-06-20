@@ -52,12 +52,62 @@ export class CartManagerBD {
     }
   }
 
+  async deleteCart(cartId) {
+    try {
+      const cart = await this.getCartById(cartId);
+      await this.model.findOneAndDelete({ _id: cart._id });
+      console.log(`Carrito ${cartId} eliminado con éxito.`);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async deleteCartProduct(cartId, productId) {
+    try {
+      const cart = await this.getCartById(cartId);
+      const updateCart= await this.model.findOneAndUpdate(
+        { _id: cart._id, "products.id": productId },
+        { $pull: { products: { id: productId } } },
+        { new: true }
+      );
+  
+      if (updateCart) {
+        console.log(`Producto ${productId} eliminado del carrito ${cartId} con éxito.`);
+      } else {
+        console.log(`Producto con id=${productId} no encontrado en el carrito ${cartId}`);
+      }
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  async deleteAllCartProduct(cartId) {
+    try {
+      const cart = await this.getCartById(cartId);
+      const updateCart= await this.model.findOneAndUpdate(
+        { _id: cart._id },
+        { $set: { products: [] } },
+        { new: true }
+      );
+  
+      if (updateCart) {
+        console.log(`Productos ${cartId} con éxito.`);
+      } else {
+        console.log(`Producto con id=${productId} no encontrado en el carrito ${cartId}`);
+      }
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  
   async addProductToCart(cartId, productId, quantity) {
     try {
       const cart = await this.getCartById(cartId);
       const productToAdd = await this.model.findOneAndUpdate(
         { _id: cart._id, "products.id": productId },
-        { $inc: { "products.$.quantity": 1 } },
+        { $inc: { "products.$.quantity":  1 } },
         { new: true }
       );
 
@@ -74,4 +124,27 @@ export class CartManagerBD {
       console.error(error);
     }
   }
+  async UpadatesProductsToCart(cartId, productId, quantity) {
+    try {
+      const cart = await this.getCartById(cartId);
+      const update = await this.model.findOneAndUpdate(
+        { _id: cart._id, "products.id": parseInt( productId) },
+        { $inc: { "products.$.quantity": parseInt(quantity) } },
+        { new: true }
+      );
+  
+      if (update) {
+        console.log(`Cantidad del producto ${productId} actualizada en el carrito ${cartId} con éxito.`);
+        return update;
+      } else {
+
+        console.log(`Producto ${productId} no existe en carrito ${cartId}`);
+        
+      }
+    } catch (error) {
+      console.log("Error updating product quantity.");
+    }
+  }
+  
+
 }

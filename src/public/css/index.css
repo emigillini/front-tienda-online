@@ -94,3 +94,27 @@ button:hover {
   font-size: 14px;
   color: #555;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: lightgray;
+  color: black;
+}
+
+.pagination li a:hover {
+  background-color: gray;
+  color: white;
+}
+

@@ -16,7 +16,7 @@ export class ProductManagerBD {
   }
   async getProducts() {
     try {
-      let products = await this.model.find();
+      let products = await productsModel.find();
       return products;
     } catch (error) {
       console.error(error);

@@ -30,6 +30,7 @@ app.use(logRequest);
 const httpServer = app.listen(8080, () => console.log("conectado"));
 
 const mang = new ProductManager();
+
 let messageChat = [];
 
 export const socketServer = new Server(httpServer);
