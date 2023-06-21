@@ -1,6 +1,8 @@
 <h1>Formulario de productos</h1>
 
-<button onclick="createCart()">Crear nuevo carrito</button>
+
+
+<button id="createCardBtn">Crear carrito</button>
 <div class="prods">
   {{#each payload.products}}
     <div class="card">
@@ -11,19 +13,19 @@
       <p>Precio: $ {{this.price}}</p>
       <p>Stock: {{this.stock}}</p>
       <p>Categoria: {{this.category}}</p>
-      
-       <button onclick="addToCart('{{this.id}}')">Agregar al carrito</button>
+
+      <button onclick="addToCart('{{this.id}}')">Agregar al carrito</button>
     </div>
   {{/each}}
 </div>
 
 <ul class="pagination">
   {{#if payload.hasPrevPage}}
-    <li >
+    <li>
       <a href="{{payload.prevLink}}">Anterior</a>
     </li>
   {{/if}}
-  
+
   {{#if payload.hasNextPage}}
     <li>
       <a href="{{payload.nextLink}}">Siguiente</a>

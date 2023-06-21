@@ -1,3 +1,5 @@
+
+
 const socket = io();
 socket.emit("message", "Hola, WebSocket emitiendo");
 
@@ -52,7 +54,26 @@ const removeProductCard = (productId) => {
   }
 };
 
+const createCardBtn = document.getElementById('createCardBtn');
+createCardBtn.addEventListener('click', () => {
+  createCard();
+});
 
+const createCard = () => {
+  try {
+    const CartManager1 = new CartManagerBD();
+    CartManager1.addCart()
+      .then(cart => {
+        const cartId = cart.id;
+        console.log(`Carrito creado con ID: ${cartId}`);
+      })
+      .catch(error => {
+        console.error('Error al crear el carrito:', error);
+      });
+  } catch (error) {
+    console.error('Error al crear el carrito:', error);
+  }
+}
 
 /*Aqui comienza config del Chat*/
 

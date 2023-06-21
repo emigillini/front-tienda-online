@@ -30,7 +30,7 @@ cartBDRouter.get("/", logRequest, async (req, res) => {
 cartBDRouter.get("/:id", logRequest, async (req, res) => {
   try {
     const cart = await CartManager1.getCartById(req.params.id);
-    
+
     if (!cart) {
       return res.status(404).send({
         id: req.params.id,
@@ -44,8 +44,7 @@ cartBDRouter.get("/:id", logRequest, async (req, res) => {
   }
 });
 
-
-cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) =>{
+cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) => {
   const { cid, pid } = req.params;
   try {
     await CartManager1.deleteCartProduct(parseInt(cid), parseInt(pid));
@@ -56,19 +55,16 @@ cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) =>{
   }
 });
 
-cartBDRouter.delete("/deletecart/:cid", logRequest, async(req, res) =>{
-  const {cid} = req.params;
-  try{
-    await CartManager1.deleteCart(parseInt(cid))
+cartBDRouter.delete("/deletecart/:cid", logRequest, async (req, res) => {
+  const { cid } = req.params;
+  try {
+    await CartManager1.deleteCart(parseInt(cid));
     res.send(`cart ${cid} eliminado correctamente`);
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
     res.status(500).send("Error al eliminar el carrito.");
   }
-
-  
-} )
+});
 
 cartBDRouter.delete("/:cid", logRequest, async (req, res) => {
   const { cid } = req.params;
@@ -107,7 +103,6 @@ cartBDRouter.put("/:cid/product/:pid", logRequest, async (req, res) => {
         .status(404)
         .send(`Error: Producto con ID ${pid} no encontrado.`);
     }
-    
 
     await cartManager.addProductToCart(
       parseInt(cid),
@@ -126,17 +121,22 @@ cartBDRouter.put("/:cid/products/:pid", logRequest, async (req, res) => {
   const { quantity } = req.body;
 
   try {
-    const updatedCart = await CartManager1.UpadatesProductsToCart(cid, pid, quantity);
+    const updatedCart = await CartManager1.UpadatesProductsToCart(
+      cid,
+      pid,
+      quantity
+    );
     if (updatedCart) {
       res.send("se ha actualizado" + updatedCart);
     } else {
-      res.status(404).json({ error: `Product with ID ${pid} not found in cart ${cid}.` });
+      res
+        .status(404)
+        .json({ error: `Product with ID ${pid} not found in cart ${cid}.` });
     }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error updating product quantity." });
   }
 });
-
 
 export default cartBDRouter;
