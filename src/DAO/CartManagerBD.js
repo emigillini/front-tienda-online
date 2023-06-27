@@ -45,8 +45,8 @@ export class CartManagerBD {
         products: [],
       });
 
-      console.log(`Se agregó el carrito "${cartId}" `);
-      return cart;
+      console.log(`Se agregó el carrito${cart}" `);
+      return cartId;
     } catch (error) {
       console.error(error);
     }

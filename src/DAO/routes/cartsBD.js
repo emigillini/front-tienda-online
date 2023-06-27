@@ -82,7 +82,7 @@ cartBDRouter.delete("/:cid", logRequest, async (req, res) => {
 cartBDRouter.post("/", logRequest, async (req, res) => {
   try {
     await CartManager1.addCart();
-    res.send({ status: "carro agregado" });
+    res.send({ status: "carro agregado"});
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");

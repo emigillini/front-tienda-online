@@ -14,7 +14,7 @@
       <p>Stock: {{this.stock}}</p>
       <p>Categoria: {{this.category}}</p>
 
-      <button onclick="addToCart('{{this.id}}')">Agregar al carrito</button>
+       <button id="agregarCart" cartId="{{this.id}}" productId="{{this.id}}">Agregar al carrito</button>
     </div>
   {{/each}}
 </div>
@@ -40,3 +40,5 @@
 </form>
 
 <script src="js/index.js"></script>
+<script src="js/cart.js"></script>
+
