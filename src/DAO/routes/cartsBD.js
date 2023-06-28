@@ -47,6 +47,22 @@ cartBDRouter.get("/:id", logRequest, async (req, res) => {
 cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) => {
   const { cid, pid } = req.params;
   try {
+    const cart = await CartManager1.getCartById(parseInt(cid));
+    if (!cart) {
+      return res.status(404).send({
+        status: "error",
+        message: `Carrito con ID ${cid} no encontrado.`
+      });
+    }
+
+    const product = await CartManager1.getProductInCart(parseInt(cid), parseInt(pid));
+    if (!product) {
+      return res.status(404).send({
+        status: "error",
+        message: `Producto con ID ${pid} no encontrado en el carrito ${cid}.`
+      });
+    }
+
     await CartManager1.deleteCartProduct(parseInt(cid), parseInt(pid));
     res.send(`Producto ${pid} eliminado del carrito ${cid}.`);
   } catch (error) {
@@ -58,8 +74,16 @@ cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) => {
 cartBDRouter.delete("/deletecart/:cid", logRequest, async (req, res) => {
   const { cid } = req.params;
   try {
+    const cart = await CartManager1.getCartById(parseInt(cid));
+    if (!cart) {
+      return res.status(404).send({
+        status: "error",
+        message: `Carrito con ID ${cid} no encontrado.`
+      });
+    }
+
     await CartManager1.deleteCart(parseInt(cid));
-    res.send(`cart ${cid} eliminado correctamente`);
+    res.send(`Carrito ${cid} eliminado correctamente.`);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error al eliminar el carrito.");
@@ -68,8 +92,15 @@ cartBDRouter.delete("/deletecart/:cid", logRequest, async (req, res) => {
 
 cartBDRouter.delete("/:cid", logRequest, async (req, res) => {
   const { cid } = req.params;
-
   try {
+    const cart = await CartManager1.getCartById(parseInt(cid));
+    if (!cart) {
+      return res.status(404).send({
+        status: "error",
+        message: `Carrito con ID ${cid} no encontrado.`
+      });
+    }
+
     await CartManager1.deleteAllCartProduct(cid);
     console.log(`Se eliminaron todos los productos del carrito ${cid}.`);
     res.send(`Se eliminaron todos los productos del carrito ${cid}.`);
@@ -78,6 +109,7 @@ cartBDRouter.delete("/:cid", logRequest, async (req, res) => {
     res.status(500).send("Error al eliminar los productos del carrito.");
   }
 });
+
 
 cartBDRouter.post("/", logRequest, async (req, res) => {
   try {

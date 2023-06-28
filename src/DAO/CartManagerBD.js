@@ -127,6 +127,16 @@ export class CartManagerBD {
       console.error(error);
     }
   }
+
+  async getProductInCart(cartId, productId) {
+    const cart = await this.getCartById(cartId);
+    if (cart) {
+      const product = cart.products.find((p) => p.id === productId);
+      return product;
+    }
+    return null;
+  }
+
   async UpadatesProductsToCart(cartId, productId, quantity) {
     try {
       const cart = await this.getCartById(cartId);
@@ -149,3 +159,4 @@ export class CartManagerBD {
     }
   }
 }
+
