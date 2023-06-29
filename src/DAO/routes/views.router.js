@@ -9,33 +9,44 @@ const x = new ProductManagerBD();
 const prod = await x.getProducts();
 
 viewRouter.get("/", async (req, res) => {
-  const { limit = 3, page = 1, sort, category, stock } = req.query;
-  const queryOptions = {};
+  const limit = req.query.limit || 3;
+  const page = req.query.page || 1;
+  const category = req.query.category || null;
+  const price = req.query.price || null;
+  const stock = req.query.stock || null;
 
-  if (category) {
-    queryOptions.category = category;
-  }
-  if (stock) {
-    queryOptions.stock = stock;
-  }
-
-  let sortOptions = {};
-
-  if (sort === "asc") {
-    sortOptions.price = 1;
-  } else if (sort === "desc") {
-    sortOptions.price = -1;
-  }
-
-  const options = {
-    page: page,
-    limit: limit,
-    sort: sortOptions,
-    lean: true
-  };
+  const sort = req.query.sort || null;
 
   try {
-    const result = await productsModel.paginate(queryOptions, options);
+    let query = {};
+
+    if (category) {
+      query.category = category;
+    }
+    if (price) {
+      query.price = price;
+    }
+    if (stock) {
+      query.stock = stock;
+    }
+
+    let sortOptions = {};
+
+    if (sort) {
+      if (sort === "asc") {
+        sortOptions = { price: 1 };
+      } else if (sort === "desc") {
+        sortOptions = { price: -1 };
+      }
+    }
+
+    const result = await productsModel.paginate(query, {
+      page,
+      limit,
+      sort: sortOptions,
+      lean: true,
+      leanWithId: false
+    });
 
     const totalPages = result.totalPages;
     const hasPrevPage = result.hasPrevPage;
@@ -45,25 +56,23 @@ viewRouter.get("/", async (req, res) => {
     const prevLink = hasPrevPage ? `/?page=${prevPage}` : null;
     const nextLink = hasNextPage ? `/?page=${nextPage}` : null;
 
-    const response = {
-      status: "success",
-      limit: limit,
-      page: page,
-      prevPage: prevPage,
-      nextPage: nextPage,
-      totalProducts: result.totalDocs,
-      totalPages: totalPages,
-      hasPrevPage: hasPrevPage,
-      hasNextPage: hasNextPage,
-      prevLink: prevLink,
-      nextLink: nextLink,
-      products: result.docs
+    const payload = {
+      status: "succes",
+      products: result.docs,
+      hasPrevPage,
+      prevPage,
+      hasNextPage,
+      page,
+      nextPage,
+      totalPages,
+      prevLink,
+      nextLink,
     };
 
-    console.log(response.products);
+    console.log(payload);
 
     res.render("index", {
-      payload: response,
+      payload,
       style: "index.css",
     });
   } catch (error) {
@@ -71,7 +80,6 @@ viewRouter.get("/", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 viewRouter.get("/realtimeproducts", (req, res) => {
   res.render("realtimeproducts", { prod, style: "index.css" });

@@ -24,8 +24,7 @@ const createCard = async () => {
       });
   
       if (response.ok) {
-        const result = await response.json();
-        console.log(result);
+        console.log("producto agregado");
       } else {
         console.error('Error al agregar el producto al carrito:', response.status);
       }
@@ -41,24 +40,25 @@ boton.addEventListener("click",()=>{
     alert("carro creado")
 })
 
-document.getElementById("agregarCart").addEventListener("click", async (event) => {
-  try {
-    const response = await fetch(`/cartBD/lastCart`, {
-      method: "GET"
-    });
+document.querySelectorAll(".agregarCart").forEach((btn) => {
+  btn.addEventListener("click", async (event) => {
+    try {
+      const response = await fetch(`/cartBD/lastCart`, {
+        method: "GET"
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      const cartId = data.payload;
-      const productId = event.target.getAttribute("productId");
-      addProd(cartId, productId);
-      console.log(cartId);
-    } else {
-      console.error('Error al agregar el producto al carrito:', response.status);
+      if (response.ok) {
+        const data = await response.json();
+        const cartId = data.payload;
+        const productId = event.target.getAttribute("productId");
+        addProd(cartId, productId);
+        console.log(cartId);
+      } else {
+        console.error('Error al agregar el producto al carrito:', response.status);
+      }
+    } catch (error) {
+      console.error('Error al agregar el producto al carrito:', error);
     }
-  } catch (error) {
-    console.error('Error al agregar el producto al carrito:', error);
-  }
-  console.log("papa")
+    console.log("papa");
+  });
 });
-

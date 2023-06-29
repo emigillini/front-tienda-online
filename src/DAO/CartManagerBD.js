@@ -131,6 +131,8 @@ export class CartManagerBD {
       );
 
       if (productToAdd) {
+        console.log(`Producto ${productId} actualizado en el carrito ${cartId}.`);
+        return cart;
       } else {
         const newProduct = { id: productId, quantity };
         cart.products.push(newProduct);
@@ -139,6 +141,7 @@ export class CartManagerBD {
       console.log(
         `Producto ${productId} agregado al carrito ${cartId} con éxito.`
       );
+      return cart
     } catch (error) {
       console.error(error);
     }

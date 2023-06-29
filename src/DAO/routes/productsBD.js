@@ -47,7 +47,7 @@ prodBDRouter.get("/", logRequest, async (req, res) => {
       page: page,
       limit: limit,
       sort: sortOptions,
-      lean: true
+      lean: false
     };
 
     const result = await productsModel.paginate(queryOptions, options);
