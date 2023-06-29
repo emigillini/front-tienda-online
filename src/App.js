@@ -10,7 +10,10 @@ import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
 import mongoose from "mongoose";
 import cartBDRouter from "./DAO/routes/cartsBD.js";
+import cookieRouter from "./DAO/routes/cookies.js";
 import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
+import cookieParser from "cookie-parser";
+
 
 const app = express();
 app.engine("handlebars", handlebars.engine());
@@ -23,15 +26,18 @@ app.use("/productsBD", prodBDRouter);
 app.use("/cartBD", cartBDRouter);
 app.use("/cart", cartRouter);
 app.use("/", viewRouter);
-
+app.use(cookieParser())
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
+app.use("/cookies", cookieRouter);
+
 
 const httpServer = app.listen(8080, () => console.log("conectado"));
 
 const mang = new ProductManager();
 
 let messageChat = [];
+
 
 export const socketServer = new Server(httpServer);
 
