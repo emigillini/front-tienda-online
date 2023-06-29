@@ -9,12 +9,12 @@
       <h3>{{this.title}}</h3>
       <img src="{{this.thumbnail}}" alt="{{this.title}}" />
       <p>Description: {{this.description}}</p>
-      <p>ID: {{this.id}}</p>
+      <p>ID: {{this._id}}</p>
       <p>Precio: $ {{this.price}}</p>
       <p>Stock: {{this.stock}}</p>
       <p>Categoria: {{this.category}}</p>
 
-       <button id="agregarCart" cartId="{{this.id}}" productId="{{this.id}}">Agregar al carrito</button>
+       <button id="agregarCart"  productId="{{this.id}}">Agregar al carrito</button>
     </div>
   {{/each}}
 </div>

@@ -33,14 +33,32 @@ const createCard = async () => {
       console.error('Error al agregar el producto al carrito:', error);
     }
   };
+  
 
 let boton=document.getElementById("createCardBtn")
 boton.addEventListener("click",()=>{
     createCard ()
+    alert("carro creado")
 })
 
-/*document.getElementById("agregarCart").addEventListener("click", async () => {
-  const cartId = event.target.getAttribute("cart.Id");
-  const productId = event.target.getAttribute("product.Id");
-  addProd(cartId, productId);
-});*/
+document.getElementById("agregarCart").addEventListener("click", async (event) => {
+  try {
+    const response = await fetch(`/cartBD/lastCart`, {
+      method: "GET"
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const cartId = data.payload;
+      const productId = event.target.getAttribute("productId");
+      addProd(cartId, productId);
+      console.log(cartId);
+    } else {
+      console.error('Error al agregar el producto al carrito:', response.status);
+    }
+  } catch (error) {
+    console.error('Error al agregar el producto al carrito:', error);
+  }
+  console.log("papa")
+});
+

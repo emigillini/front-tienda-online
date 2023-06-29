@@ -11,29 +11,17 @@ prodBDRouter.use(msg);
 
 prodBDRouter.get("/:id", logRequest, async (req, res) => {
   try {
-    const prod = await ProductManager1.getProductById(req.params.id);
-    if (!prod) {
+    const product = await ProductManager1.getProductById(req.params.id);
+    if (!product) {
       return res.send({ id: id, message: `id ${id} no encontrado ` });
     }
-    res.send({ status: "succes", payload: prod });
+    res.send({ status: "succes", payload: product});
   } catch (error) {
     console.error(error);
     res.status(404).send("Error id no encontrado");
   }
 });
 
-prodBDRouter.get("/:id", logRequest, async (req, res) => {
-  try {
-    const prod = await ProductManager1.getProductById(req.params.id);
-    if (!prod) {
-      return res.send({ id: id, message: `id ${id} no encontrado` });
-    }
-    res.send({ status: "success", payload: prod });
-  } catch (error) {
-    console.error(error);
-    res.status(404).send("Error id no encontrado");
-  }
-});
 
 prodBDRouter.get("/", logRequest, async (req, res) => {
   try {
@@ -63,6 +51,21 @@ prodBDRouter.get("/", logRequest, async (req, res) => {
     };
 
     const result = await productsModel.paginate(queryOptions, options);
+    
+
+    const transformedDocs = result.docs.map((doc) => ({
+      _id: doc._id,
+      id:doc.id,
+      title: doc.title,
+      description: doc.description,
+      code:doc.code,
+      price:doc.price,
+      status:doc.status,
+      stock:doc.stock,
+      category:doc.category,
+      thumbnail:doc.thumbnail
+      
+    }));
 
     const totalPages = result.totalPages;
     const hasPrevPage = result.hasPrevPage;
@@ -84,11 +87,13 @@ prodBDRouter.get("/", logRequest, async (req, res) => {
       hasNextPage: hasNextPage,
       prevLink: prevLink,
       nextLink: nextLink,
-      payload: result.docs
+      payload: transformedDocs,
+      
     };
 
     res.send(response);
     console.log(result.docs);
+    
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");

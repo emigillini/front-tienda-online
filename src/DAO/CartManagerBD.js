@@ -17,12 +17,27 @@ export class CartManagerBD {
 
   async getCarts() {
     try {
-      let carts = await this.model.find().populate("products");
+      let carts = await this.model.find()
       return carts;
     } catch (error) {
       console.error(error);
     }
   }
+  async getLastCartId() {
+    try {
+      const carts = await this.model.find().sort({ id: -1 }).limit(1);
+      if (carts.length > 0) {
+        const lastCart = carts[0];
+        return lastCart
+      } else {
+        console.log("No se encontraron carritos.");
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async getCartById(id) {
     try {
       const cart = await this.model.findOne({ id: id });
@@ -36,6 +51,7 @@ export class CartManagerBD {
       console.error(error);
     }
   }
+
 
   async addCart() {
     let cartId = await this.getNextId();

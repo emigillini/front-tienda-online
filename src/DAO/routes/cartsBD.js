@@ -27,6 +27,16 @@ cartBDRouter.get("/", logRequest, async (req, res) => {
   }
 });
 
+cartBDRouter.get('/lastCart', async (req, res) => {
+  try {
+    const lastCartId = await CartManager1.getLastCartId();
+    res.send({ status: "succes", payload: lastCartId.id});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+
 cartBDRouter.get("/:id", logRequest, async (req, res) => {
   try {
     const cart = await CartManager1.getCartById(req.params.id);
@@ -147,6 +157,9 @@ cartBDRouter.put("/:cid/product/:pid", logRequest, async (req, res) => {
     res.status(500).send("Error al agregar el producto al carrito.");
   }
 });
+
+
+
 
 cartBDRouter.put("/:cid/products/:pid", logRequest, async (req, res) => {
   const { cid, pid } = req.params;
