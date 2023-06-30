@@ -1,4 +1,5 @@
 import express from "express";
+import session from "express-session";
 import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
 import prodRouter from "./DAO/routes/products.js";
@@ -13,7 +14,7 @@ import cartBDRouter from "./DAO/routes/cartsBD.js";
 import cookieRouter from "./DAO/routes/cookies.js";
 import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
-
+import sessionRouter from "./DAO/routes/sessions.js";
 
 const app = express();
 app.engine("handlebars", handlebars.engine());
@@ -25,12 +26,18 @@ app.use("/products", prodRouter);
 app.use("/productsBD", prodBDRouter);
 app.use("/cartBD", cartBDRouter);
 app.use("/cart", cartRouter);
+
 app.use("/", viewRouter);
-app.use(cookieParser())
+app.use(cookieParser("secreto"))
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
 app.use("/cookies", cookieRouter);
-
+app.use(session({
+  secret:"secreto",
+  resave:true,
+  saveUninitialized:true
+}))
+app.use("/session", sessionRouter);
 
 const httpServer = app.listen(8080, () => console.log("conectado"));
 

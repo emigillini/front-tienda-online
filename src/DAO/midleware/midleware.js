@@ -15,4 +15,12 @@ const storage = multer.diskStorage({
   },
 });
 
+export const auth = (req, res, next) => {
+  if (req.session?.user === 'pepe' && req.session?.admin) {
+    return next();
+  }
+  return res.status(401).send('Error de autorización!');
+};
+
+ 
 export const upload =multer({storage:storage})
