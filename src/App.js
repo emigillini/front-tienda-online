@@ -15,8 +15,9 @@ import cookieRouter from "./DAO/routes/cookies.js";
 import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
 import sessionRouter from "./DAO/routes/sessions.js";
+import MongoStore from "connect-mongo";
 
-const app = express();
+const app = express();  
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
@@ -32,7 +33,13 @@ app.use(cookieParser("secreto"))
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
 app.use("/cookies", cookieRouter);
+
 app.use(session({
+  store: MongoStore.create({
+    mongoUrl: "mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce",
+    mongoOptions:{ useUnifiedTopology:true},
+    ttl:3600
+  }),
   secret:"secreto",
   resave:true,
   saveUninitialized:true
@@ -43,7 +50,10 @@ const httpServer = app.listen(8080, () => console.log("conectado"));
 
 const mang = new ProductManager();
 
+
+
 let messageChat = [];
+
 
 
 export const socketServer = new Server(httpServer);

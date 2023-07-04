@@ -6,7 +6,7 @@ cookieRouter.use(cookieParser());
 
 
 cookieRouter.get("/setCookies", (req, res) => {
-    res.cookie("nombressss", "lo que guarda").send("Cookiessss");
+    res.cookie("nombres", "Emiliano").send("Cookiessss");
   });
   
   cookieRouter.get("/setSignedCookies", (req, res) => {

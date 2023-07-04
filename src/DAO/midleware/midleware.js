@@ -22,5 +22,12 @@ export const auth = (req, res, next) => {
   return res.status(401).send('Error de autorización!');
 };
 
+export const authMiddleware = (req, res, next) => {
+  if(req.session.user){
+      next()
+  }else{
+      res.render('login', { status: 'failed'})
+  }
+}
  
 export const upload =multer({storage:storage})
