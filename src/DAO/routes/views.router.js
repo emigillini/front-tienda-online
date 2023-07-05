@@ -8,7 +8,11 @@ export const viewRouter = Router();
 const x = new ProductManagerBD();
 const prod = await x.getProducts();
 
-viewRouter.get("/", async (req, res) => {
+viewRouter.get("/", (req, res) => {
+  res.render("login", { });
+});
+
+viewRouter.get("/index", async (req, res) => {
   const limit = req.query.limit || 3;
   const page = req.query.page || 1;
   const category = req.query.category || null;
@@ -74,6 +78,7 @@ viewRouter.get("/", async (req, res) => {
     res.render("index", {
       payload,
       style: "index.css",
+      user: req.session.user
     });
   } catch (error) {
     console.error(error);

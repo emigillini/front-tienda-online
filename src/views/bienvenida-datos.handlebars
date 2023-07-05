@@ -1,8 +1,8 @@
 <div class="container text-center my-3">
     <div class="jumbotron" style="background-color: green;color: white;">
         <h1>USER OK LOGIN!</h1>
-        <h2><i>Bienvenido {{ user }}</i></h2>
-        <button class="btn btn-danger my-5" onclick="location.href='/'">INGRESAR AL SITIO</button>
+        <h2><i>Bienvenido {{ user.email }}, {{user.role}}</i></h2>
+        <button class="btn btn-danger my-5" onclick="location.href='/index'">INGRESAR AL SITIO</button>
         <button class="btn btn-danger my-5" onclick="location.href='/session/logout'">LOGOUT</button>
     </div>
 </div>

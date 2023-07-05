@@ -23,16 +23,10 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/products", prodRouter);
-app.use("/productsBD", prodBDRouter);
-app.use("/cartBD", cartBDRouter);
-app.use("/cart", cartRouter);
-
-app.use("/", viewRouter);
 app.use(cookieParser("secreto"))
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
-app.use("/cookies", cookieRouter);
+
 
 app.use(session({
   store: MongoStore.create({
@@ -45,6 +39,12 @@ app.use(session({
   saveUninitialized:true
 }))
 app.use("/session", sessionRouter);
+app.use("/products", prodRouter);
+app.use("/productsBD", prodBDRouter);
+app.use("/cartBD", cartBDRouter);
+app.use("/cart", cartRouter);
+app.use("/cookies", cookieRouter);
+app.use("/", viewRouter);
 
 const httpServer = app.listen(8080, () => console.log("conectado"));
 

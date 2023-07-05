@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     last_name: String,
     email: { type: String, unique: true},
     password: String,
-    age: Number
+    age: Number,
+    role: { type: String, default: "usuario" }
 });
 
 export const userModel = mongoose.model(usersCollection, userSchema)

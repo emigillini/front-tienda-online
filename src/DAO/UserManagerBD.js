@@ -23,6 +23,7 @@ export class UserManagerBD{
         let result;
         try {
             result = await userModel.findOne({ email })
+            
         } catch (error) {
             console.log(error)
         }

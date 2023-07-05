@@ -1,4 +1,8 @@
-<h1>Formulario de productos</h1>
+<div>
+  <h1>Bienvenido, {{ user.email }}, {{ user.role }}</h1>
+  <h1>Formulario de productos</h1>
+</div>
+<button class="btn btn-warning" onclick="location.href = '/session/logout'">Cerrar sesión</button>
 
 
 
@@ -32,6 +36,9 @@
     </li>
   {{/if}}
 </ul>
+
+
+
 
 <form action="/src/public/uploads/" enctype="multipart/form-data" method="POST">
   <label for="nombre">{{testUser.name}}:</label>
