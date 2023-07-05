@@ -1,6 +1,7 @@
   import { Router } from "express";
   import { authMiddleware , auth} from "../midleware/midleware.js";
   import { UserManagerBD } from "../UserManagerBD.js";
+  import { createHash , isValidPassword} from "../../utils.js";
 
   const sessionRouter = Router();
   const userManager1= new UserManagerBD()
@@ -16,6 +17,7 @@
     if(userFound){
         return res.render('register-error', {})
     }
+    user.password = createHash(user.password);
     let result = await userManager1.createUser(user)
     console.log(result)
     res.render('login', {})
@@ -31,9 +33,10 @@
     if (!result) {
       return res.render('login-error', {});
     }
-    if (user.password !== result.password) {
-      return res.render('login-error', {});
-    }
+    let passwordMatch = isValidPassword(result, user.password);
+  if (!passwordMatch) {
+    return res.render('login-error', {});
+  }
     
     let role = "usuario";
     if (user.email === "adminCoder@coder.com" && user.password === "adminCod3r123") {

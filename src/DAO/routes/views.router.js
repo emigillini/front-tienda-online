@@ -57,8 +57,8 @@ viewRouter.get("/index", async (req, res) => {
     const hasNextPage = result.hasNextPage;
     const prevPage = result.prevPage;
     const nextPage = result.nextPage;
-    const prevLink = hasPrevPage ? `/?page=${prevPage}` : null;
-    const nextLink = hasNextPage ? `/?page=${nextPage}` : null;
+    const prevLink = hasPrevPage ? `/index?page=${prevPage}` : null;
+    const nextLink = hasNextPage ? `/index?page=${nextPage}` : null;
 
     const payload = {
       status: "succes",
