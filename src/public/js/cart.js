@@ -60,5 +60,6 @@ document.querySelectorAll(".agregarCart").forEach((btn) => {
       console.error('Error al agregar el producto al carrito:', error);
     }
     console.log("papa");
+    
   });
 });
