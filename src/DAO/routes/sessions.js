@@ -63,8 +63,19 @@
   })
 
   sessionRouter.get('/restore-password', (req, res) => {
-    res.render('restore-password');
+    res.render('restore-password', {});
   });
+
+  sessionRouter.post('/restore-password', async (req, res) => {
+    let user = req.body;
+    let userFound = await  userManager1.getByEmail(user.email)
+    if(!userFound){
+        return res.render('register', {})
+    }
+    let newPassword= createHash(user.password);
+    await userManager1.updatePassword(user.email, newPassword)
+    res.render('login', {})
+  })
 
 
   export default sessionRouter;

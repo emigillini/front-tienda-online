@@ -41,6 +41,18 @@ export class UserManagerBD{
 
     return result;
 }
+    async updatePassword(email,newPassword){
+    let result;
+    try {
+        result = await userModel.updateOne({email:email},{$set:{password: newPassword}})
+    } catch (error) {
+        console.log(error)
+    }
+
+    }
+
+
+    
 }
 
 
