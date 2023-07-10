@@ -22,8 +22,18 @@ export class UserManagerBD{
     async getByEmail (email) {
         let result;
         try {
-            result = await userModel.findOne({ email })
+            result = await userModel.findOne({ email: email })
             
+        } catch (error) {
+            console.log(error)
+        }
+    
+        return result;
+    }
+    async getById (id) {
+        let result;
+        try {
+            result = await userModel.findOne({ _id: id })
         } catch (error) {
             console.log(error)
         }
@@ -48,7 +58,7 @@ export class UserManagerBD{
     } catch (error) {
         console.log(error)
     }
-
+    return result;
     }
 
 

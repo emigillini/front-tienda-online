@@ -16,6 +16,8 @@ import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
 import sessionRouter from "./DAO/routes/sessions.js";
 import MongoStore from "connect-mongo";
+import passport from "passport";
+import { initializePassport } from "./config.js/passport-config.js";
 
 const app = express();  
 app.engine("handlebars", handlebars.engine());
@@ -45,6 +47,9 @@ app.use("/cartBD", cartBDRouter);
 app.use("/cart", cartRouter);
 app.use("/cookies", cookieRouter);
 app.use("/", viewRouter);
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session())
 
 const httpServer = app.listen(8080, () => console.log("conectado"));
 
@@ -104,3 +109,12 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+/*Owned by: @emigillini
+
+App ID: 359008
+
+Client ID: Iv1.6feaa2bc46883067
+
+client secret:ed9cf008bd382819dc251189d080c9e0444d63d9
+*/
