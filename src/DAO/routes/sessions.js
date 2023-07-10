@@ -69,7 +69,14 @@ import passport from "passport";
     let newPassword= createHash(user.password);
     await userManager1.updatePassword(user.email, newPassword)
     res.render('login', {})
-  })
+  });
+
+  sessionRouter.get('/github', passport.authenticate('github', { scope: ['user:email']}), async (req, res) => {});
+
+  sessionRouter.get('/githubcallback', passport.authenticate('github', { failureRedirect: '/login'}), async (req, res) => {
+    req.session.user = req.user;
+    res.redirect('/index');
+});
 
 
   export default sessionRouter;

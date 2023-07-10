@@ -58,7 +58,7 @@ export class UserManagerBD{
     } catch (error) {
         console.log(error)
     }
-
+    return result;
     }
 
 

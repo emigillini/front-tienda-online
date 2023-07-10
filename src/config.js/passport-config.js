@@ -2,6 +2,7 @@ import passport from "passport";
 import local from "passport-local";
 import { createHash, isValidPassword } from "../utils.js";
 import { UserManagerBD } from "../DAO/UserManagerBD.js";
+import GithubStrategy from 'passport-github2';
 
 const userman1 = new UserManagerBD();
 
@@ -50,6 +51,37 @@ export const initializePassport = () => {
       }
     })
   );
+
+  passport.use('github', new GithubStrategy({
+    clientID: "Iv1.6feaa2bc46883067" ,
+    clientSecret:"ed9cf008bd382819dc251189d080c9e0444d63d9" ,
+    callbackURL: "http://localhost:8080/session/githubcallback",
+    scope: ['user:email']
+  },async (accesToken, refreshToken, profile, done) => {
+      try {
+        console.log(profile)
+        let userEmail = profile.emails[0].value;
+        let user = await userman1.getByEmail(userEmail);
+       
+        if (!user) {
+          let newUser = {
+            first_name: profile._json.login,
+            last_name: profile._json.public_repos,
+            email: userEmail,
+            password: "",
+            age: 20
+        }
+        let result = await userman1.createUser(newUser);
+         return done(null, result)
+        }
+      else{  return done(null, user);}
+      } catch (error) {
+        console.error("Error: " + error);
+        return done(error);
+      }
+    }
+  )
+);
 
   passport.serializeUser((user, done) => {
     done(null, user._id)

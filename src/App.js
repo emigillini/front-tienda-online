@@ -109,3 +109,12 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+/*Owned by: @emigillini
+
+App ID: 359008
+
+Client ID: Iv1.6feaa2bc46883067
+
+client secret:ed9cf008bd382819dc251189d080c9e0444d63d9
+*/

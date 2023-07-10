@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { productsModel } from "../models/products_model.js";
-import { upload } from "../midleware/midleware.js";
+import { authMiddleware, upload } from "../midleware/midleware.js";
 import { ProductManagerBD } from "../ProductManagerBD.js";
 
 export const viewRouter = Router();
@@ -12,7 +12,7 @@ viewRouter.get("/", (req, res) => {
   res.render("login", { });
 });
 
-viewRouter.get("/index", async (req, res) => {
+viewRouter.get("/index", authMiddleware, async (req, res) => {
   const limit = req.query.limit || 3;
   const page = req.query.page || 1;
   const category = req.query.category || null;
@@ -86,7 +86,7 @@ viewRouter.get("/index", async (req, res) => {
   }
 });
 
-viewRouter.get("/realtimeproducts", (req, res) => {
+viewRouter.get("/realtimeproducts",authMiddleware, (req, res) => {
   res.render("realtimeproducts", { prod, style: "index.css" });
 });
 
