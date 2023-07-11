@@ -18,6 +18,7 @@ import sessionRouter from "./DAO/routes/sessions.js";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import { initializePassport } from "./config.js/passport-config.js";
+import { jwtRouter } from "./DAO/routes/jwt.js";
 
 const app = express();  
 app.engine("handlebars", handlebars.engine());
@@ -46,6 +47,7 @@ app.use("/productsBD", prodBDRouter);
 app.use("/cartBD", cartBDRouter);
 app.use("/cart", cartRouter);
 app.use("/cookies", cookieRouter);
+app.use("/jwt", jwtRouter);
 app.use("/", viewRouter);
 initializePassport();
 app.use(passport.initialize());
