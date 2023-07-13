@@ -27,13 +27,18 @@ export const generateToken=(user)=>{
   return token
 }
 
-export const authToken = (req, res, next) => {
-  const authHeader = req.headers.authorization ? req.headers.authorization: req.headers.Authorization   ;
-  if(!authHeader) return res.status(401).send({ error: 'Not authenticated'})
-  const token = authHeader.split(' ')[1];
-  jwt.verify(token, Private_key, (error, credentials) => {
-      if(error) return res.status(403).send({ error: 'Not authorized'})
-      req.user = credentials.user;
+
+export const auth = (req, res, next) => {
+  const token = req.cookies.authToken ;
+  if(!token) return res.status(401).send({ error: 'Not authenticated'})
+  try {
+    req.user= jwt.verify(token, Private_key)
+    
+  }
+  catch{
+return res.status(403).send({ error: 'Not valido'})
+ 
+  }
       next()
-  })
+  
 }

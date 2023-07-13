@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { generateToken, authToken } from "../../utils.js";
+import { generateToken } from "../../utils.js";
+import passport from "passport";
 
 export const jwtRouter = Router();
 
@@ -24,9 +25,15 @@ jwtRouter.post('/login', (req, res) => {
     const user = users.find(user => user.email === email && user.password === password);
     if(!user) return res.status(400).send({ status: 'error', error: 'Invalid credentials'});
     const access_token = generateToken(user);
-    res.send({status: 'success', access_token})
+    res.cookie('auth', access_token,{ maxAge:60*60*1000, httpOnly:true}).send({message:"logueado" })
 })
 
-jwtRouter.get('/datos', authToken ,(req, res) => {
+jwtRouter.get('/datos', passport.authenticate('jwt',{ session:false})  ,(req, res) => {
     res.send({status: 'success', payload: req.user})
 })
+
+jwtRouter.get('/current', passport.authenticate('jwt',{ session:false}) ,(req, res) => {
+    res.send("algo")
+})
+
+{ }
