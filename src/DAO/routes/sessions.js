@@ -46,10 +46,11 @@ import passport from "passport";
     res.render('login-error', {})
   })
 
-  sessionRouter.get('/profile', authMiddleware, async (req, res) => {
-    let user = await userManager1.getByEmail(req.session.user.email);
+  sessionRouter.get('/current', authMiddleware, async (req, res) => {
+    let user = req.session.user;
     res.render('bienvenida-datos', { user })
   })
+  
   sessionRouter.get('/logout', (req, res) => {
     req.session.destroy(error => {
         res.render('login')

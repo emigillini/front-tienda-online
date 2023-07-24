@@ -61,7 +61,16 @@ export class UserManagerBD{
     return result;
     }
 
-
+    async updatecart(cart,newcart){
+        let result;
+        try {
+            result = await userModel.updateOne({cart:cart},{$set:{cart: newcart}})
+            result.save()
+        } catch (error) {
+            console.log(error)
+        }
+        return result;
+        }
     
 }
 

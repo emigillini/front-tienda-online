@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { CartManagerBD } from "../CartManagerBD.js";
 
 const usersCollection = "users";
 
@@ -8,6 +9,14 @@ const userSchema = new mongoose.Schema({
     email: { type: String, unique: true},
     password: String,
     age: Number,
+    cart: {
+        cartlast: new CartManagerBD(),
+        type: Number,
+        ref: "carts",
+        refPath: "id",
+        default: null
+        
+    },
     role: { type: String, default: "usuario" }
 });
 
