@@ -23,5 +23,13 @@ export const authMiddleware = (req, res, next) => {
       res.render('login', { status: 'failed'})
   }
 }
+
+export const authrole = (req, res, next) => {
+  if(req.session.user.role=="usuario"){
+      next()
+  }else{
+      res.render('login', { status: 'failed'})
+  }
+}
  
 export const upload =multer({storage:storage})

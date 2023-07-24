@@ -1,5 +1,5 @@
   import { Router } from "express";
-  import { authMiddleware } from "../midleware/midleware.js";
+  import { authMiddleware, authrole} from "../midleware/midleware.js";
   import { UserManagerBD } from "../UserManagerBD.js";
   import { createHash } from "../../utils.js";
 
@@ -36,12 +36,17 @@ import passport from "passport";
     
     req.session.user = {
       email: req.user.email,
-
+      role:req.user.role
     };
     
     res.render('bienvenida-datos', { user: req.session.user });
   });
 
+  sessionRouter.get("/admin", authMiddleware, authrole, (req, res) => {
+    
+      res.send("Welcome to the admin page!");
+  });
+  
   sessionRouter.get('/login-error', (req, res) => {
     res.render('login-error', {})
   })
@@ -51,6 +56,8 @@ import passport from "passport";
     res.render('bienvenida-datos', { user })
   })
   
+ 
+
   sessionRouter.get('/logout', (req, res) => {
     req.session.destroy(error => {
         res.render('login')
