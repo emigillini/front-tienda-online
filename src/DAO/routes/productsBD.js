@@ -7,20 +7,28 @@ const ProductManager1 = new ProductManagerBD();
 
 const prodBDRouter = Router();
 
+const idValidator = /^[0-9]+$/;
+
+prodBDRouter.param("id", (req, res, next, value) => {
+  if (!idValidator.test(value)) {
+    return res.status(400).send("El id debe ser un número entero positivo.");
+  }
+  req.params.id = parseInt(value, 10);
+  next();
+});
 prodBDRouter.use(msg);
 
-prodBDRouter.get("/:id", logRequest, async (req, res) => {
-  try {
-    const product = await ProductManager1.getProductById(req.params.id);
-    if (!product) {
-      return res.send({ id: id, message: `id ${id} no encontrado ` });
-    }
-    res.send({ status: "succes", payload: product});
-  } catch (error) {
-    console.error(error);
-    res.status(404).send("Error id no encontrado");
+prodBDRouter.get("/:id", async (req, res) => {
+  
+  const product = await ProductManager1.getProductById(req.params.id);
+
+  if (!product) {
+    return res.send({ id: id, message: `id ${id} no encontrado ` });
   }
+
+  return res.send({ status: "succes", payload: product});
 });
+
 
 
 prodBDRouter.get("/", logRequest, async (req, res) => {
@@ -139,7 +147,9 @@ prodBDRouter.post("/", logRequest, async (req, res) => {
 });
 
 prodBDRouter.put("/:id", logRequest, async (req, res) => {
+  
   try {
+ 
     const { title, description, code, price, stock, category, thumbnails } =
       req.body;
     const { id } = req.params;
@@ -168,6 +178,7 @@ prodBDRouter.put("/:id", logRequest, async (req, res) => {
 
 prodBDRouter.delete("/:id", logRequest, async (req, res) => {
   try {
+  
     const prodId = req.params.id;
     const prod = await ProductManager1.getProductById(prodId);
     if (!prod) {

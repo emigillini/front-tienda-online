@@ -7,6 +7,33 @@ const CartManager1 = new CartManagerBD();
 
 const cartBDRouter = Router();
 
+const idValidator = /^[0-9]+$/;
+
+
+cartBDRouter.param("cid", (req, res, next, value) => {
+  if (!idValidator.test(value)) {
+    return res.status(400).send("El cid debe ser un número entero positivo.");
+  }
+  req.params.cid = parseInt(value, 10);
+  next();
+});
+
+cartBDRouter.param("pid", (req, res, next, value) => {
+  if (!idValidator.test(value)) {
+    return res.status(400).send("El pid debe ser un número entero positivo.");
+  }
+  req.params.pid = parseInt(value, 10);
+  next();
+});
+
+cartBDRouter.param("id", (req, res, next, value) => {
+  if (!idValidator.test(value)) {
+    return res.status(400).send("El id debe ser un número entero positivo.");
+  }
+  req.params.id = parseInt(value, 10);
+  next();
+});
+
 cartBDRouter.use(msg);
 
 cartBDRouter.get("/", logRequest, async (req, res) => {
@@ -55,7 +82,9 @@ cartBDRouter.get("/:id", logRequest, async (req, res) => {
 });
 
 cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) => {
+
   const { cid, pid } = req.params;
+  
   try {
     const cart = await CartManager1.getCartById(parseInt(cid));
     if (!cart) {
@@ -82,7 +111,9 @@ cartBDRouter.delete("/:cid/product/:pid", logRequest, async (req, res) => {
 });
 
 cartBDRouter.delete("/deletecart/:cid", logRequest, async (req, res) => {
+
   const { cid } = req.params;
+ 
   try {
     const cart = await CartManager1.getCartById(parseInt(cid));
     if (!cart) {
@@ -101,7 +132,9 @@ cartBDRouter.delete("/deletecart/:cid", logRequest, async (req, res) => {
 });
 
 cartBDRouter.delete("/:cid", logRequest, async (req, res) => {
+
   const { cid } = req.params;
+  
   try {
     const cart = await CartManager1.getCartById(parseInt(cid));
     if (!cart) {
@@ -132,6 +165,7 @@ cartBDRouter.post("/", logRequest, async (req, res) => {
 });
 
 cartBDRouter.put("/:cid/product/:pid", logRequest, async (req, res) => {
+  
   const { cid, pid } = req.params;
   const quantity = 1;
   const cartManager = new CartManagerBD();
@@ -159,9 +193,8 @@ cartBDRouter.put("/:cid/product/:pid", logRequest, async (req, res) => {
 });
 
 
-
-
 cartBDRouter.put("/:cid/products/:pid", logRequest, async (req, res) => {
+ 
   const { cid, pid } = req.params;
   const { quantity } = req.body;
 
