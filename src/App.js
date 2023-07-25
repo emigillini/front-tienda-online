@@ -4,21 +4,21 @@ import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
 import prodRouter from "./DAO/routes/products.js";
 import cartRouter from "./DAO/routes/cart.js";
-import viewRouter from "./DAO/routes/views.router.js";
-import prodBDRouter from "./DAO/routes/productsBD.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
 import mongoose from "mongoose";
-import cartBDRouter from "./DAO/routes/cartsBD.js";
 import cookieRouter from "./DAO/routes/cookies.js";
 import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
-import sessionRouter from "./DAO/routes/sessions.js";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import { initializePassport } from "./config.js/passport-config.js";
 import { jwtRouter } from "./DAO/routes/jwt.js";
+import ProdBDRouter from "./DAO/routes/productsBD.js";
+import CartBDRouter from "./DAO/routes/cartsBD.js";
+import SessionRouter from "./DAO/routes/sessions.js";
+import ViewRouter from "./DAO/routes/views.router.js"
 
 const app = express();  
 app.engine("handlebars", handlebars.engine());
@@ -41,14 +41,18 @@ app.use(session({
   resave:true,
   saveUninitialized:true
 }))
-app.use("/session", sessionRouter);
+const sessionRouter = new SessionRouter()
+app.use("/session", sessionRouter.getRouter());
 app.use("/products", prodRouter);
-app.use("/productsBD", prodBDRouter);
-app.use("/cartBD", cartBDRouter);
+const prodBDRouter = new ProdBDRouter()
+app.use("/productsBD", prodBDRouter.getRouter());
+const cartBDRouter = new CartBDRouter()
+app.use("/cartBD", cartBDRouter.getRouter());
 app.use("/cart", cartRouter);
 app.use("/cookies", cookieRouter);
 app.use("/jwt", jwtRouter);
-app.use("/", viewRouter);
+const viewRouter = new ViewRouter()
+app.use("/", viewRouter.getRouter());
 initializePassport();
 app.use(passport.initialize());
 app.use(passport.session())

@@ -42,3 +42,10 @@ return res.status(403).send({ error: 'Not valido'})
       next()
   
 }
+
+export const generateCustomResponses = (req, res, next) => {
+  res.sendSuccess = payload => res.send({ status: "success", payload})
+  res.sendServerError = error => res.status(500).send({status: 'error', error})
+  res.sendUserError = error => res.status(400).send({status: 'error', error})
+  next()
+}

@@ -1,10 +1,13 @@
 import { Router } from "express";
+import { generateCustomResponses } from "../../utils.js";
+
 
 export default class CustomRouter{
     constructor(){
         this.router = Router()
         this.init()
     }
+
     
     applyCallbacks(callbacks){
         return callbacks.map(callback => async(...params) => {
@@ -17,21 +20,26 @@ export default class CustomRouter{
         })
     }
 
+
     getRouter(){
         return this.router;
-    }
+    }   
     init(){}
 
+    param(paramName, callback) {
+        this.router.param(paramName, callback);
+    }
+
     get(path,...callbacks){
-        this.router.get(path,this.applyCallbacks(callbacks))
+        this.router.get(path,generateCustomResponses, this.applyCallbacks(callbacks))
     }
     post(path,...callbacks){
-        this.router.post(path, this.applyCallbacks(callbacks))
+        this.router.post(path,generateCustomResponses, this.applyCallbacks(callbacks))
     }
     put(path,...callbacks){
-        this.router.put(path, this.applyCallbacks(callbacks))
+        this.router.put(path,generateCustomResponses, this.applyCallbacks(callbacks))
     }
     delete(path,...callbacks){
-        this.router.delete(path,handlePolicies, generateCustomResponses,this.applyCallbacks(callbacks))
+        this.router.delete(path,generateCustomResponses,this.applyCallbacks(callbacks))
     }
 }
