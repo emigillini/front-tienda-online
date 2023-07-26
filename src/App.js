@@ -13,14 +13,19 @@ import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import passport from "passport";
-import { initializePassport } from "./config.js/passport-config.js";
+import { initializePassport } from "./config/passport-config.js";
 import { jwtRouter } from "./DAO/routes/jwt.js";
 import ProdBDRouter from "./DAO/routes/productsBD.js";
 import CartBDRouter from "./DAO/routes/cartsBD.js";
 import SessionRouter from "./DAO/routes/sessions.js";
 import ViewRouter from "./DAO/routes/views.router.js"
+import config from "./config/config.js";
 
+const mongodbURl = config.mongoURL
+const PORT = config.port
+const secret = config.secret
 const app = express();  
+
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
@@ -29,15 +34,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("secreto"))
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
-
-
 app.use(session({
   store: MongoStore.create({
-    mongoUrl: "mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce",
+    mongoUrl: mongodbURl,
     mongoOptions:{ useUnifiedTopology:true},
     ttl:3600
   }),
-  secret:"secreto",
+  secret:secret,
   resave:true,
   saveUninitialized:true
 }))
@@ -57,7 +60,9 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session())
 
-const httpServer = app.listen(8080, () => console.log("conectado"));
+
+
+const httpServer = app.listen(PORT, () => console.log("conectado"));
 
 const mang = new ProductManager();
 
@@ -104,7 +109,7 @@ socketServer.on("connect", (socket) => {
 const connectToDatabase = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://emigillini:Emiliano29782978@emigillini.agjop4k.mongodb.net/ecommerce"
+      mongodbURl
     );
 
     console.log("Conectado a la base de datos");

@@ -4,7 +4,9 @@
   import { UserManagerBD } from "../DAO/UserManagerBD.js";
   import GithubStrategy from 'passport-github2';
   import jwt from "passport-jwt";
+  import config from "./config.js";
 
+  const secret= config.githubAPIKey
   const userman1 = new UserManagerBD();
 
   const LocalStrategy = local.Strategy;
@@ -80,7 +82,7 @@
 
     passport.use('github', new GithubStrategy({
       clientID: "Iv1.6feaa2bc46883067" ,
-      clientSecret:"ed9cf008bd382819dc251189d080c9e0444d63d9" ,
+      clientSecret:secret,
       callbackURL: "http://localhost:8080/session/githubcallback",
       scope: ['user:email']
     },async (accesToken, refreshToken, profile, done) => {
