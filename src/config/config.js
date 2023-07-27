@@ -7,6 +7,7 @@ const program = new Command();
 
 program 
     .option('--mode <mode>', 'Modo de trabajo', 'developmentMongo')
+    
 program.parse()
 
 console.log("options" , program.opts())

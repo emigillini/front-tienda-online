@@ -70,6 +70,10 @@ const mang = new ProductManager();
 
 let messageChat = [];
 
+process.on('uncaughtException', (err) => {
+  console.log('Se ha producido una excepción no capturada:');
+  console.log(err);
+});
 
 
 export const socketServer = new Server(httpServer);
@@ -105,6 +109,7 @@ socketServer.on("connect", (socket) => {
     }
   });
 });
+
 
 const connectToDatabase = async () => {
   try {
