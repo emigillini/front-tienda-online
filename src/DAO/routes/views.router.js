@@ -4,7 +4,6 @@ import { authMiddleware, upload } from "../midleware/midleware.js";
 import { ProductManagerBD } from "../ProductManagerBD.js";
 
 
-
 const x = new ProductManagerBD();
 const prod = await x.getProducts();
 

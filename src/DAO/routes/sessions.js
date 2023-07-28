@@ -1,9 +1,9 @@
   import CustomRouter from "./router.js";
   import { authMiddleware, authrole} from "../midleware/midleware.js";
   import { UserManagerBD } from "../UserManagerBD.js";
-  import { createHash } from "../../utils.js";
-  import passport from "passport";
 
+  import passport from "passport";
+import { createHash } from "../../utils.js";
   
   const userManager1= new UserManagerBD()
 

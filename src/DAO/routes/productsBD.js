@@ -1,8 +1,7 @@
 import CustomRouter from "./router.js";
-import { ProductManagerBD } from "../ProductManagerBD.js";
 import { logRequest, msg } from "../midleware/midleware.js";
 import { productsModel } from "../models/products_model.js";
-
+import { ProductManagerBD } from "../ProductManagerBD.js";
 const ProductManager1 = new ProductManagerBD();
 
 const idValidator = /^[0-9]+$/;
