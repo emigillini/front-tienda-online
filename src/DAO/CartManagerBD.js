@@ -17,7 +17,7 @@ export class CartManagerBD {
 
   async getCarts() {
     try {
-      let carts = await this.model.find()
+      let carts = await this.model.find();
       return carts;
     } catch (error) {
       console.error(error);
@@ -28,7 +28,7 @@ export class CartManagerBD {
       const carts = await this.model.find().sort({ id: -1 }).limit(1);
       if (carts.length > 0) {
         const lastCart = carts[0];
-        return lastCart
+        return lastCart;
       } else {
         console.log("No se encontraron carritos.");
         return null;
@@ -51,7 +51,6 @@ export class CartManagerBD {
       console.error(error);
     }
   }
-
 
   async addCart() {
     let cartId = await this.getNextId();
@@ -81,16 +80,30 @@ export class CartManagerBD {
   async deleteCartProduct(cartId, productId) {
     try {
       const cart = await this.getCartById(cartId);
-      const updateCart = await this.model.findOneAndUpdate(
-        { _id: cart._id, "products.id": productId },
-        { $pull: { products: { id: productId } } },
-        { new: true }
+      const productIndex = cart.products.findIndex(
+        (product) => product.id === productId
       );
-
-      if (updateCart) {
-        console.log(
-          `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
+      if (productIndex !== -1) {
+        if (cart.products[productIndex].quantity > 1) {
+          cart.products[productIndex].quantity -= 1;
+        } else {
+          cart.products.splice(productIndex, 1);
+        }
+        const updateCart = await this.model.findOneAndUpdate(
+          { _id: cart._id },
+          { products: cart.products },
+          { new: true }
         );
+
+        if (updateCart) {
+          console.log(
+            `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
+          );
+        } else {
+          console.log(
+            `Producto con id=${productId} no encontrado en el carrito ${cartId}`
+          );
+        }
       } else {
         console.log(
           `Producto con id=${productId} no encontrado en el carrito ${cartId}`
@@ -100,6 +113,7 @@ export class CartManagerBD {
       console.error(error);
     }
   }
+
   async deleteAllCartProduct(cartId) {
     try {
       const cart = await this.getCartById(cartId);
@@ -131,7 +145,9 @@ export class CartManagerBD {
       );
 
       if (productToAdd) {
-        console.log(`Producto ${productId} actualizado en el carrito ${cartId}.`);
+        console.log(
+          `Producto ${productId} actualizado en el carrito ${cartId}.`
+        );
         return cart;
       } else {
         const newProduct = { id: productId, quantity };
@@ -141,7 +157,7 @@ export class CartManagerBD {
       console.log(
         `Producto ${productId} agregado al carrito ${cartId} con éxito.`
       );
-      return cart
+      return cart;
     } catch (error) {
       console.error(error);
     }
@@ -178,4 +194,3 @@ export class CartManagerBD {
     }
   }
 }
-

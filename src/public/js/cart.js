@@ -1,7 +1,7 @@
 
 const createCard = async () => {
     try {
-      const response = await fetch("/cartBD", {
+      const response = await fetch("/cartBD/addCart", {
         method: "POST"
       });
   

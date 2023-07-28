@@ -86,9 +86,5 @@ import { createHash } from "../../utils.js";
         req.session.user = req.user;
         res.redirect('/index');
     });
-    
-    
-    
-
     }}
 
