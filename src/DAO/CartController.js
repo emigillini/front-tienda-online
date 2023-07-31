@@ -4,9 +4,7 @@ import { ProductService } from "./ProductService.js";
 
 const cartService = new CartService();
 const CartManager1 = new CartManagerBD();
-const prodservice = new ProductService(
-
-)
+const prodservice = new ProductService();
 export default class CartController {
   async getCarts(req, res) {
     try {
