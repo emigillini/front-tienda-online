@@ -1,11 +1,12 @@
 import { CartService } from "./CartService.js";
 import { CartManagerBD } from "./CartManagerBD.js";
-import { ProductManagerBD } from "./ProductManagerBD.js";
+import { ProductService } from "./ProductService.js";
 
 const cartService = new CartService();
 const CartManager1 = new CartManagerBD();
-const productManager = new ProductManagerBD();
+const prodservice = new ProductService(
 
+)
 export default class CartController {
   async getCarts(req, res) {
     try {
@@ -108,7 +109,7 @@ export default class CartController {
     const { cid, pid } = req.params;
     const quantity = 1;
     try {
-      const product = await productManager.getProductById(pid);
+      const product = await prodservice.getProdById(pid);
       if (!product) {
         console.error(`Error: Producto con ID ${pid} no encontrado.`);
         return res.sendUserError(` Producto con ID ${pid} no encontrado.`);
