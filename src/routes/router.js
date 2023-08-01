@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { generateCustomResponses } from "../../utils.js";
+import { generateCustomResponses } from "../utils.js";
 
 
 export default class CustomRouter{

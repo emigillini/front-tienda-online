@@ -1,11 +1,7 @@
 import CustomRouter from "./router.js";
-import {
-  authMiddleware,
-  authrole,
-  logRequest,
-} from "../midleware/midleware.js";
+import { authrole, authMiddleware, logRequest } from "../DAO/midleware/midleware.js";
 import passport from "passport";
-import { UserController } from "../../controllers/UserController.js";
+import { UserController } from "../controllers/UserController.js";
 
 const userController1 = new UserController();
 

@@ -1,6 +1,6 @@
 import CustomRouter from "./router.js";
-import { authMiddleware, upload } from "../midleware/midleware.js";
-import { viewsController } from "../../controllers/viewsController.js";
+import { authMiddleware, upload } from "../DAO/midleware/midleware.js";
+import { viewsController } from "../controllers/viewsController.js";
 
 const viewsController1 = new viewsController()
 

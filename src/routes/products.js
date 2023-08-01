@@ -1,11 +1,11 @@
 import CustomRouter from "./router.js";
-import { logRequest } from "../midleware/midleware.js";
-import { ProductController } from "../../controllers/ProductController.js";
-import { validateParam } from "../../utils.js";
+import { validateParam } from "../utils.js";
+import { logRequest } from "../DAO/midleware/midleware.js";
+import { ProductControllerFS } from "../controllers/ProductControllerFS.js";
 
-const productController1 = new ProductController();
+const productController1 = new ProductControllerFS()
 
-export default class ProdBDRouter extends CustomRouter {
+export default class ProdRouter extends CustomRouter {
   init() {
     this.param("id", (req, res, next, value) =>
       validateParam("id", req, res, next)
@@ -15,5 +15,4 @@ export default class ProdBDRouter extends CustomRouter {
     this.post("/", logRequest, productController1.addProduct);
     this.put("/:id", logRequest, productController1.updateProduct);
     this.delete("/:id", logRequest, productController1.deleteProd);
-  }
-}
+  }}

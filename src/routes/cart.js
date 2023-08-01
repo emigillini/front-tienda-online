@@ -1,7 +1,8 @@
 import CustomRouter from "./router.js";
-import { logRequest} from "../midleware/midleware.js";
-import CartControllerFS from "../../controllers/CartcontrollerFS.js";
-import { validateParam } from "../../utils.js";
+import { logRequest } from "../DAO/midleware/midleware.js";
+import CartControllerFS from "../controllers/CartcontrollerFS.js";
+import { validateParam } from "../utils.js";
+
 
 const cartController1 = new CartControllerFS();
 

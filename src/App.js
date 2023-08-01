@@ -2,23 +2,23 @@ import express from "express";
 import session from "express-session";
 import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
-import ProdRouter from "./DAO/routes/products.js";
-import CartRouter from "./DAO/routes/cart.js";
+import ProdRouter from "./routes/products.js";
+import CartRouter from "./routes/cart.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
 import mongoose from "mongoose";
-import CookieRouter from "./DAO/routes/cookies.js";
+import CookieRouter from "./routes/cookies.js";
 import { MessageManagerBD } from "./DAO/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import { initializePassport } from "./config/passport-config.js";
-import JwtRouter from "./DAO/routes/jwt.js";
-import ProdBDRouter from "./DAO/routes/productsBD.js";
-import CartBDRouter from "./DAO/routes/cartsBD.js";
-import SessionRouter from "./DAO/routes/sessions.js";
-import ViewRouter from "./DAO/routes/views.router.js"
+import JwtRouter from "./routes/jwt.js";
+import ProdBDRouter from "./routes/productsBD.js";
+import CartBDRouter from "./routes/cartsBD.js";
+import SessionRouter from "./routes/sessions.js";
+import ViewRouter from "./routes/views.router.js"
 import config from "./config/config.js";
 const mongodbURl = config.mongoURL
 const PORT = config.port
