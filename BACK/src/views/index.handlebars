@@ -1,0 +1,50 @@
+<div>
+  <h1>Bienvenido, {{ user.email }}, {{ user.role }}</h1>
+  <h1>Formulario de productos</h1>
+</div>
+<button class="btn btn-warning" onclick="location.href = '/session/logout'">Cerrar sesión</button>
+
+
+
+<button id="createCardBtn">Crear carrito</button>
+<div class="prods">
+  {{#each payload.products}}
+    <div class="card">
+      <h3>{{this.title}}</h3>
+      <img src="{{this.thumbnail}}" alt="{{this.title}}" />
+      <p>Description: {{this.description}}</p>
+      <p>ID: {{this._id}}</p>
+      <p>Precio: $ {{this.price}}</p>
+      <p>Stock: {{this.stock}}</p>
+      <p>Categoria: {{this.category}}</p>
+
+       <button class="agregarCart"  productId="{{this.id}}">Agregar al carrito</button>
+    </div>
+  {{/each}}
+</div>
+
+<ul class="pagination">
+  {{#if payload.hasPrevPage}}
+    <li>
+      <a href="{{payload.prevLink}}">Anterior</a>
+    </li>
+  {{/if}}
+
+  {{#if payload.hasNextPage}}
+    <li>
+      <a href="{{payload.nextLink}}">Siguiente</a>
+    </li>
+  {{/if}}
+</ul>
+
+
+
+<form action="/src/public/uploads/" enctype="multipart/form-data" method="POST">
+  <label for="nombre">{{testUser.name}}:</label>
+  <input type="file" name="Archivo" id="nombre" />
+  <input type="submit" value="subir archivo" />
+</form>
+
+<script src="js/index.js"></script>
+<script src="js/cart.js"></script>
+
