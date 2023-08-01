@@ -1,4 +1,4 @@
-import { UserService } from "./UserService.js";
+import { UserService } from "../services/UserService.js";
 import passport from "passport";
 import { createHash } from "../utils.js";
 

@@ -1,6 +1,6 @@
 import CustomRouter from "./router.js";
 import passport from "passport";
-import { JwtController } from "../JwtController.js";
+import { JwtController } from "../../controllers/JwtController.js";
 
 const jwtController1 = new JwtController();
 

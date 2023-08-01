@@ -1,6 +1,6 @@
 
-import { ViewService } from "./viewsService.js";
-import { ProductService } from "./ProductService.js";
+import { ViewService } from "../services/viewsService.js";
+import { ProductService } from "../services/ProductService.js";
 
 const x = new ProductService()
 const prod =  x.getProducts

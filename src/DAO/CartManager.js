@@ -87,4 +87,53 @@ export class CartManager {
       console.error(error);
     }
   }
+  async deleteCart(cartId) {
+    try {
+      const carts = await this.getCarts();
+      const updatedCarts = carts.filter((cart) => cart.id !== cartId);
+      await fs.promises.writeFile(path, JSON.stringify(updatedCarts));
+      console.log(`Carrito ${cartId} eliminado con éxito.`);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  async deleteCartProduct(cartId, productId) {
+    try {
+      const carts = await this.getCarts();
+      const cartIndex = carts.findIndex((c) => c.id === cartId);
+      if (cartIndex === -1) {
+        console.error(`Error: Carrito con ID ${cartId} no encontrado.`);
+        return;
+      }
+      const cart = carts[cartIndex];
+      const updatedProducts = cart.products.filter(
+        (product) => product.id !== productId
+      );
+      cart.products = updatedProducts;
+      await fs.promises.writeFile(path, JSON.stringify(carts));
+      console.log(
+        `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async deleteAllCartProduct(cartId) {
+    try {
+      const carts = await this.getCarts();
+      const cartIndex = carts.findIndex((c) => c.id === cartId);
+      if (cartIndex === -1) {
+        console.error(`Error: Carrito con ID ${cartId} no encontrado.`);
+        return;
+      }
+      const cart = carts[cartIndex];
+      cart.products = [];
+      await fs.promises.writeFile(path, JSON.stringify(carts));
+      console.log(`Productos del carrito ${cartId} eliminados con éxito.`);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 }

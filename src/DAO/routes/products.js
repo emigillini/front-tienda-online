@@ -1,7 +1,7 @@
 import CustomRouter from "./router.js";
 import { validateParam } from "../../utils.js";
 import { logRequest, msg } from "../midleware/midleware.js";
-import { ProductControllerFS } from "../ProductControllerFS.js";
+import { ProductControllerFS } from "../../controllers/ProductControllerFS.js";
 
 const productController1 = new ProductControllerFS()
 

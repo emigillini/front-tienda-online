@@ -1,4 +1,4 @@
-import { productsModel } from "./models/products_model.js";
+import { productsModel } from "../DAO/models/products_model.js";
 
 export class ViewService{
     async  getProducts (limit, page, category, price, stock, sort){

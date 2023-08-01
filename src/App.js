@@ -3,7 +3,7 @@ import session from "express-session";
 import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
 import ProdRouter from "./DAO/routes/products.js";
-import cartRouter from "./DAO/routes/cart.js";
+import CartRouter from "./DAO/routes/cart.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
@@ -51,7 +51,8 @@ const prodBDRouter = new ProdBDRouter()
 app.use("/productsBD", prodBDRouter.getRouter());
 const cartBDRouter = new CartBDRouter()
 app.use("/cartBD", cartBDRouter.getRouter());
-app.use("/cart", cartRouter);
+const cartRouter = new CartRouter()
+app.use("/cart", cartRouter.getRouter());
 const cookieRouter = new CookieRouter()
 app.use("/cookies", cookieRouter.getRouter());
 const jwtRouter = new JwtRouter()

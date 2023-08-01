@@ -1,6 +1,6 @@
 import CustomRouter from "./router.js";
 import { logRequest } from "../midleware/midleware.js";
-import { ProductController } from "../ProductController.js";
+import { ProductController } from "../../controllers/ProductController.js";
 import { validateParam } from "../../utils.js";
 
 const productController1 = new ProductController();

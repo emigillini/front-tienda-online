@@ -1,11 +1,11 @@
-import { CartService } from "./CartService.js";
-import { CartManagerBD } from "./CartManagerBD.js";
-import { ProductService } from "./ProductService.js";
+import { CartServiceFS } from "../services/CartServiceFS.js";
+import { CartManager} from "../DAO/CartManager.js";
+import { ProductServiceFS } from "../services/ProductServiceFS.js";
 
-const cartService = new CartService();
-const CartManager1 = new CartManagerBD();
-const prodservice = new ProductService();
-export default class CartController {
+const cartService = new CartServiceFS();
+const CartManager1 = new CartManager();
+const prodservice = new ProductServiceFS();
+export default class CartControllerFS {
   async getCarts(req, res) {
     try {
       const carts = await cartService.getCarts(req.query.limit);

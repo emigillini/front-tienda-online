@@ -1,5 +1,5 @@
 import { generateToken } from "../utils.js";
-import { UserManagerBD } from "./UserManagerBD.js";
+import { UserManagerBD } from "../DAO/UserManagerBD.js";
 import { createHash } from "../utils.js";
 
 const userman1 = new UserManagerBD();

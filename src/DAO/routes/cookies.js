@@ -1,5 +1,5 @@
 import CustomRouter from "./router.js";
-import { Cookiecontroller } from "../CookieController.js";
+import { Cookiecontroller } from "../../controllers/CookieController.js";
 
 
 const CookieController1 = new Cookiecontroller()

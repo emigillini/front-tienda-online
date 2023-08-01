@@ -5,7 +5,7 @@ import {
   logRequest,
 } from "../midleware/midleware.js";
 import passport from "passport";
-import { UserController } from "../UserController.js";
+import { UserController } from "../../controllers/UserController.js";
 
 const userController1 = new UserController();
 

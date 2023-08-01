@@ -1,8 +1,8 @@
-import { ProductService } from "./ProductService.js";
+import { ProductServiceFS } from "../services/ProductServiceFS.js";
 
-const prodman1 = new ProductService();
+const prodman1 = new ProductServiceFS();
 
-export class ProductController {
+export class ProductControllerFS {
   async getProdByid(req, res) {
     try {
       const product = await prodman1.getProdById(req.params.id);
@@ -20,15 +20,8 @@ export class ProductController {
   }
   async getProducts(req, res) {
     try {
-      const { limit = 10, page = 1, sort, category, stock } = req.query;
-      const response = await prodman1.getProducts(
-        limit,
-        page,
-        sort,
-        category,
-        stock
-      );
-      return res.sendSuccess(response);
+        const product= await prodman1.getProducts(req.query.limit);
+      return res.sendSuccess(product);
     } catch (error) {
       res.sendServerError("Error interno del servidor");
     }
@@ -70,7 +63,7 @@ export class ProductController {
   }
   async updateProduct(req, res) {
     try {
-      const { title, description, code, price, stock, category, thumbnails } =
+      const { title, description, code, price, stock, category, thumbnail } =
         req.body;
       const { id } = req.params;
       const prod = await prodman1.getProdById(id);
@@ -87,7 +80,7 @@ export class ProductController {
         price,
         stock,
         category,
-        thumbnails
+        thumbnail
       );
       res.sendSuccess({
         status: "Producto actualizado exitosamente.",
