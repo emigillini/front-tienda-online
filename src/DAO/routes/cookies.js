@@ -1,32 +1,21 @@
-import { Router } from "express";
-import cookieParser from "cookie-parser";
-
-const cookieRouter= Router()
-cookieRouter.use(cookieParser());
+import CustomRouter from "./router.js";
+import { Cookiecontroller } from "../CookieController.js";
 
 
-cookieRouter.get("/setCookies", (req, res) => {
-    res.cookie("nombres", "Emiliano").send("Cookiessss");
-  });
+const CookieController1 = new Cookiecontroller()
+
+export default class CookieRouter extends CustomRouter {
+  init() {
+    this.get("/setCookies", CookieController1.setCookies);
+    
+    this.get("/setSignedCookies", CookieController1.setSignedCookies);
   
-  cookieRouter.get("/setSignedCookies", (req, res) => {
-    res.cookie("secreto", "lo que guarda",{signed:true}).send("secreta");
-  });
+    this.get("/getSignedCookies", CookieController1.getSignedCookies);
+  
+    this.get("/getCookies", CookieController1.getCookies);
+  
+    this.get("/deleteCookies/:name", CookieController1.deleteCookies
+    );
+  
 
-  cookieRouter.get("/getSignedCookies", (req, res) => {
-    res.send(req.signedCookies);
-    console.log(req.signedCookies)
-  });
-
-
-  cookieRouter.get("/getCookies", (req, res) => {
-    res.send(req.cookies);
-    console.log(req.cookies)
-  });
-
-  cookieRouter.get("/deleteCookies/:name", (req, res) => {
-    const { name } = req.params;
-    res.clearCookie(name).send("Cookie borrada");
-  });
-
-  export default cookieRouter
+  }}

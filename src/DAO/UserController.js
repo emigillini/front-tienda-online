@@ -38,7 +38,7 @@ export class UserController {
       res.sendServerError("Error interno del servidor");
     }
   }
-
+  
   async admin(req, res) {
     res.sendSuccess("Welcome to the admin page!");
   }

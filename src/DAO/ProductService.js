@@ -73,7 +73,7 @@ export class ProductService {
         nextLink: nextLink,
         payload: transformedDocs,
       };
-      console.log(response);
+      
       return response;
     } catch (error) {
       console.error(error);
