@@ -1,4 +1,4 @@
-import { UserManagerBD } from "../DAO/UserManagerBD.js";
+import { UserManagerBD } from "../DAO/managers/UserManagerBD.js";
 
 const userManager1 = new UserManagerBD();
 

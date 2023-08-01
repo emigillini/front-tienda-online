@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { CartManagerBD } from "../CartManagerBD.js";
+import { CartManagerBD } from "../managers/CartManagerBD.js";
 
 const usersCollection = "users";
 

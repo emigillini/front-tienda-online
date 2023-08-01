@@ -1,5 +1,5 @@
 import { CartService } from "../services/CartService.js";
-import { CartManagerBD } from "../DAO/CartManagerBD.js";
+import { CartManagerBD } from "../DAO/managers/CartManagerBD.js";
 import { ProductService } from "../services/ProductService.js";
 
 const cartService = new CartService();

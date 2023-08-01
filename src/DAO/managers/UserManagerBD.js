@@ -1,4 +1,4 @@
-import { userModel } from "./models/user_model.js";
+import { userModel } from "../models/user_model.js";
 
 export class UserManagerBD {
   constructor() {

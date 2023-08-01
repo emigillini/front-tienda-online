@@ -1,5 +1,5 @@
 import fs from "fs";
-import { createEmptyArray } from "../utils.js";
+import { createEmptyArray } from "../../utils.js";
 const path = "carts.json";
 const utf = "utf-8";
 

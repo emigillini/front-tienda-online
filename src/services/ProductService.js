@@ -1,4 +1,4 @@
-import { ProductManagerBD } from "../DAO/ProductManagerBD.js";
+import { ProductManagerBD } from "../DAO/managers/ProductManagerBD.js";
 import { productsModel } from "../DAO/models/products_model.js";
 
 const prodman1 = new ProductManagerBD();

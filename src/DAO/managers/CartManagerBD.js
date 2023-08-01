@@ -1,4 +1,4 @@
-import { cartsModel } from "./models/carts_model.js";
+import { cartsModel } from "../models/carts_model.js";
 
 export class CartManagerBD {
   constructor() {

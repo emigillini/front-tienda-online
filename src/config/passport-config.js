@@ -1,7 +1,7 @@
   import passport from "passport";
   import local from "passport-local";
   import { createHash, isValidPassword } from "../utils.js";
-  import { UserManagerBD } from "../DAO/UserManagerBD.js";
+  import { UserManagerBD } from "../DAO/managers/UserManagerBD.js";
   import GithubStrategy from 'passport-github2';
   import jwt from "passport-jwt";
   import config from "./config.js";

@@ -1,32 +1,24 @@
-import fs from "fs";
-import { createEmptyArray } from "../utils.js";
-const path = "productos.json";
-const utf = "utf-8";
+import { productsModel } from "../models/products_model.js";
 
-createEmptyArray(path, utf);
-
-export class ProductManager {
-  static id = 0;
-
+export class ProductManagerBD {
   constructor() {
-    this.products = [];
-    this.path = path;
+    this.model = productsModel;
   }
 
   async getNextId() {
     try {
-      const products = await this.getProducts();
+      const products = await this.model.find();
       const lastProduct = products[products.length - 1];
       return lastProduct ? lastProduct.id + 1 : 1;
     } catch (error) {
       console.error(error);
     }
   }
+  
   async getProducts() {
     try {
-      let mostarProd = await fs.promises.readFile(path, utf);
-      let productos = JSON.parse(mostarProd);
-      return productos;
+      let products = await productsModel.find();
+      return products;
     } catch (error) {
       console.error(error);
     }
@@ -34,8 +26,7 @@ export class ProductManager {
 
   async getProductById(id) {
     try {
-      const products = await this.getProducts();
-      const product = products.find((p) => p.id === parseInt(id));
+      const product = await this.model.findOne({ id: id });
       if (product) {
         console.log("Este es su producto:", product);
         return product;
@@ -59,13 +50,7 @@ export class ProductManager {
   ) {
     const prodId = await this.getNextId();
     try {
-      const products = await this.getProducts();
-      const productExists = products.some((p) => p.code === code);
-      if (productExists) {
-        console.error(`Error: El código ${code} ya existe.`);
-        return;
-      }
-      const product = {
+      const product = await productsModel.create({
         id: prodId,
         title,
         description,
@@ -75,10 +60,9 @@ export class ProductManager {
         stock,
         category,
         thumbnail,
-      };
-      products.push(product);
-      await fs.promises.writeFile(path, JSON.stringify(products));
-      console.log(`Se agregó el producto "${title}" al archivo ${path}.`);
+      });
+      console.log(`Se agregó el producto "${title}" a la base de datos`);
+      return product;
     } catch (error) {
       console.error(error);
     }
@@ -86,10 +70,8 @@ export class ProductManager {
 
   async deleteProd(id) {
     try {
-      const product = await this.getProducts();
-      let indexOf = product.findIndex((p) => p.id === id);
-      product.splice(indexOf, 1);
-      await fs.promises.writeFile(path, JSON.stringify(product));
+      await this.model.findOneAndDelete({ id: id });
+
       return console.log(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
       console.error(error);
@@ -103,28 +85,24 @@ export class ProductManager {
     price,
     stock,
     category,
-    thumbnails
+    thumbnail
   ) {
     try {
-      const products = await this.getProducts();
-      const productIndex = products.findIndex((p) => p.id === parseInt(id));
-      if (productIndex === -1) {
+      const productToUpdate = await this.model.findOne({ id: id });
+      if (!productToUpdate) {
         console.error(`Error: No se encontró el producto con id ${id}.`);
         return;
       }
-      const productToUpdate = products[productIndex];
       const updatedProduct = {
-        id: parseInt(id),
         title: title || productToUpdate.title,
         description: description || productToUpdate.description,
         code: code || productToUpdate.code,
         price: price || productToUpdate.price,
         stock: stock || productToUpdate.stock,
         category: category || productToUpdate.category,
-        thumbnails: thumbnails || productToUpdate.thumbnails,
+        thumbnail: thumbnail || productToUpdate.thumbnail,
       };
-      products[productIndex] = updatedProduct;
-      await fs.promises.writeFile(path, JSON.stringify(products));
+      await this.model.updateOne({ id: id }, updatedProduct);
       console.log(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
       console.error(error);

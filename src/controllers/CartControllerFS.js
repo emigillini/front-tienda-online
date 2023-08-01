@@ -1,5 +1,5 @@
 import { CartServiceFS } from "../services/CartServiceFS.js";
-import { CartManager} from "../DAO/CartManager.js";
+import { CartManager} from "../DAO/managers/CartManager.js";
 import { ProductServiceFS } from "../services/ProductServiceFS.js";
 
 const cartService = new CartServiceFS();
