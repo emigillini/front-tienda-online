@@ -22,16 +22,21 @@ export class ProductManager {
       console.error(error);
     }
   }
-  async getProducts() {
+  async getProducts(limit) {
     try {
       let mostarProd = await fs.promises.readFile(path, utf);
-      let productos = JSON.parse(mostarProd);
-      return productos;
+      let products = JSON.parse(mostarProd);
+      if (limit) {
+        const firstProducts = products.slice(0, limit);
+        return firstProducts}
+    else {return products}
+     
     } catch (error) {
       console.error(error);
     }
   }
-
+ 
+  
   async getProductById(id) {
     try {
       const products = await this.getProducts();

@@ -12,13 +12,10 @@ export class ProductServiceFS {
       throw new Error("Error al obtener el producto por ID");
     }
   } 
-  async getProducts(limit) {
+  async getProducts(limit, page, sort, category, stock) {
     try {
-        const products = await prodman1.getProducts();
-        if (limit) {
-            const firstProducts = products.slice(0, limit);
-            return firstProducts}
-        else {return products}
+      const response = await prodman1.getProducts(limit, page,sort, category,stock)
+      return response
     } catch (error) {
       console.error(error);
       throw new Error("Error ");

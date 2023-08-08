@@ -20,8 +20,15 @@ export class ProductControllerFS {
   }
   async getProducts(req, res) {
     try {
-        const product= await prodman1.getProducts(req.query.limit);
-      return res.sendSuccess(product);
+      const { limit = 10, page = 1, sort, category, stock } = req.query;
+      const response = await prodman1.getProducts(
+        limit,
+        page,
+        sort,
+        category,
+        stock
+      );
+      return res.sendSuccess(response);
     } catch (error) {
       res.sendServerError("Error interno del servidor");
     }
