@@ -7,7 +7,6 @@ import CartRouter from "./routes/cart.js";
 import { Server } from "socket.io";
 import { ProductManager } from "./DAO/managers/ProductManager.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
-import mongoose from "mongoose";
 import CookieRouter from "./routes/cookies.js";
 import { MessageManagerBD } from "./DAO/managers/MessageManagerBD.js";
 import cookieParser from "cookie-parser";
@@ -20,11 +19,13 @@ import CartBDRouter from "./routes/cartsBD.js";
 import SessionRouter from "./routes/sessions.js";
 import ViewRouter from "./routes/views.router.js"
 import config from "./config/config.js";
+import MongoSingleton from "./utils.js";
+import cors from "cors"
 const mongodbURl = config.mongoURL
 const PORT = config.port
 const secret = config.secret
 const app = express();  
-
+app.use(cors())
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
@@ -116,9 +117,7 @@ socketServer.on("connect", (socket) => {
 
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect(
-      mongodbURl
-    );
+    await MongoSingleton.getInstance()
 
     console.log("Conectado a la base de datos");
   } catch (error) {
@@ -128,6 +127,8 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+
 
 /*Owned by: @emigillini
 

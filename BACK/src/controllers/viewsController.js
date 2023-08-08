@@ -69,6 +69,9 @@ export class viewsController{
       async chat (req, res){
         res.render("chat", { prod, style: "chat.css" });
       }
+      async error (req, res){
+        res.render("error", { });
+      }
       async uploadFile(req, res) {
         try {
           const file = await viewsService1.uploadFile (req.file);

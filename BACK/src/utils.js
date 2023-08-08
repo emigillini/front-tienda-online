@@ -2,10 +2,33 @@ import fs from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import bcrypt from "bcrypt";
+import config from "./config/config.js";
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose"
+
 
 const idValidator = /^[0-9]+$/;
 const __filename = fileURLToPath(import.meta.url);
+
+
+
+export default class MongoSingleton{
+  static #instance
+  constructor(){
+    mongoose.connect(config.mongoURL,{})
+  }
+  static getInstance(){
+    if (this.#instance){
+      console.log("already connected")
+      return this.#instance
+    }
+  this.#instance = new MongoSingleton()
+  console.log("connected")
+  return this.#instance
+  }
+}
+
+
 export const __dirname = dirname(__filename);
 
 export const createEmptyArray = (path, utf) => {

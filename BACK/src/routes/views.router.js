@@ -11,6 +11,8 @@ export default class ViewRouter extends CustomRouter{
     this.get("/index", authMiddleware, viewsController1.getProducts)
     this.get("/realtimeproducts",authMiddleware, viewsController1.realTimeProducts)
     this.get("/chat", viewsController1.chat)
+    this.get("/error", viewsController1.error)
+
     this.post("/src/public/uploads", upload.single("Archivo"),viewsController1.uploadFile)
     
     

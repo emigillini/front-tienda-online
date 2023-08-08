@@ -33,6 +33,7 @@ export class ProductController {
       res.sendServerError("Error interno del servidor");
     }
   }
+
   async addProduct(req, res) {
     try {
       let { title, description, code, price, stock, category, thumbnail } =
@@ -70,7 +71,7 @@ export class ProductController {
   }
   async updateProduct(req, res) {
     try {
-      const { title, description, code, price, stock, category, thumbnails } =
+      const { title, description, code, price, stock, category, thumbnail } =
         req.body;
       const { id } = req.params;
       const prod = await prodman1.getProdById(id);
@@ -87,7 +88,7 @@ export class ProductController {
         price,
         stock,
         category,
-        thumbnails
+        thumbnail
       );
       res.sendSuccess({
         status: "Producto actualizado exitosamente.",
