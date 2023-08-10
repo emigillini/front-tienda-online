@@ -1,9 +1,9 @@
 import { CartService } from "../services/CartService.js";
-import { CartManagerBD } from "../DAO/managers/CartManagerBD.js";
+import { CartManagerPromise } from "../DAO/factory.js";
 import { ProductService } from "../services/ProductService.js";
 
 const cartService = new CartService();
-const CartManager1 = new CartManagerBD();
+const CartManager1 = await CartManagerPromise
 const prodservice = new ProductService();
 
 export default class CartController {

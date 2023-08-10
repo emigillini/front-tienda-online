@@ -1,7 +1,7 @@
 
 const peticion = () => {
 
-    fetch('http://localhost:8080/productsBD/')
+    fetch('http://localhost:8080/products/')
       .then(result => result.json())
       .then(data => {
      
@@ -12,7 +12,7 @@ const peticion = () => {
               <h3>${product.title}</h3>
               <img src="${product.thumbnail[0]}" alt="${product.title}" style="width: 200px; height: 150px;" />
               <p>Description: ${product.description}</p>
-              <p>ID: ${product._id}</p>
+              <p>ID: ${product.id}</p>
               <p>Precio: $ ${product.price}</p>
               <p>Stock: ${product.stock}</p>
               <p>Categoria: ${product.category}</p>

@@ -5,7 +5,7 @@ const utf = "utf-8";
 
 createEmptyArray(path, utf);
 
-export class CartManager {
+export  class CartManagerFS {
   static id = 0;
 
   constructor() {

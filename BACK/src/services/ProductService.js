@@ -1,7 +1,8 @@
-import { ProductManagerBD } from "../DAO/managers/ProductManagerBD.js";
-import { productsModel } from "../DAO/models/products_model.js";
 
-const prodman1 = new ProductManagerBD();
+import { ProductManagerPromise } from "../DAO/factory.js";
+
+
+const prodman1 = await  ProductManagerPromise
 
 export class ProductService {
   async getProdById(id) {

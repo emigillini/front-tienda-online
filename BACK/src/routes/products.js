@@ -1,9 +1,9 @@
 import CustomRouter from "./router.js";
 import { validateParam } from "../utils.js";
 import { logRequest } from "../DAO/midleware/midleware.js";
-import { ProductControllerFS } from "../controllers/ProductControllerFS.js";
+import { ProductController } from "../controllers/ProductController.js";
 
-const productController1 = new ProductControllerFS()
+const productController1 = new ProductController()
 
 export default class ProdRouter extends CustomRouter {
   init() {

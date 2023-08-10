@@ -5,7 +5,7 @@ const utf = "utf-8";
 
 createEmptyArray(path, utf);
 
-export class ProductManager {
+export class ProductManagerFS {
   static id = 0;
 
   constructor() {
@@ -29,7 +29,8 @@ export class ProductManager {
       if (limit) {
         const firstProducts = products.slice(0, limit);
         return firstProducts}
-    else {return products}
+    else {
+      return products}
      
     } catch (error) {
       console.error(error);

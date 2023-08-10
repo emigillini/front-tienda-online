@@ -1,7 +1,7 @@
 
 const createCard = async () => {
     try {
-      const response = await fetch("/cartBD/addCart", {
+      const response = await fetch("/cart/addCart", {
         method: "POST"
       });
   
@@ -19,7 +19,7 @@ const createCard = async () => {
 
   const addProd = async (cartId, productId) => {
     try {
-      const response = await fetch(`/cartBD/${cartId}/product/${productId}`, {
+      const response = await fetch(`/cart/${cartId}/product/${productId}`, {
         method: "PUT"
       });
   
@@ -43,7 +43,7 @@ boton.addEventListener("click",()=>{
 document.querySelectorAll(".agregarCart").forEach((btn) => {
   btn.addEventListener("click", async (event) => {
     try {
-      const response = await fetch(`/cartBD/lastCart`, {
+      const response = await fetch(`/cart/lastCart`, {
         method: "GET"
       });
 

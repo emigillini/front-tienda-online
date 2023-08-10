@@ -1,6 +1,6 @@
-import { CartManagerBD } from "../DAO/managers/CartManagerBD.js";
+import {  CartManagerPromise } from "../DAO/factory.js";
 
-const CartManager1 = new CartManagerBD();
+const CartManager1 =  await CartManagerPromise
 
 export class CartService {
   async getCarts(limit) {

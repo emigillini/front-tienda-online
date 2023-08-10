@@ -5,7 +5,7 @@ import { __dirname } from "./utils.js";
 import ProdRouter from "./routes/products.js";
 import CartRouter from "./routes/cart.js";
 import { Server } from "socket.io";
-import { ProductManager } from "./DAO/managers/ProductManager.js";
+import { ProductManagerFS } from "./DAO/managers/ProductManagerFS.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
 import CookieRouter from "./routes/cookies.js";
 import { MessageManagerBD } from "./DAO/managers/MessageManagerBD.js";
@@ -14,8 +14,6 @@ import MongoStore from "connect-mongo";
 import passport from "passport";
 import { initializePassport } from "./config/passport-config.js";
 import JwtRouter from "./routes/jwt.js";
-import ProdBDRouter from "./routes/productsBD.js";
-import CartBDRouter from "./routes/cartsBD.js";
 import SessionRouter from "./routes/sessions.js";
 import ViewRouter from "./routes/views.router.js"
 import config from "./config/config.js";
@@ -48,10 +46,6 @@ const sessionRouter = new SessionRouter()
 app.use("/session", sessionRouter.getRouter());
 const prodRouter = new ProdRouter()
 app.use("/products", prodRouter.getRouter());
-const prodBDRouter = new ProdBDRouter()
-app.use("/productsBD", prodBDRouter.getRouter());
-const cartBDRouter = new CartBDRouter()
-app.use("/cartBD", cartBDRouter.getRouter());
 const cartRouter = new CartRouter()
 app.use("/cart", cartRouter.getRouter());
 const cookieRouter = new CookieRouter()
@@ -68,7 +62,7 @@ app.use(passport.session())
 
 const httpServer = app.listen(PORT, () => console.log("conectado"));
 
-const mang = new ProductManager();
+const mang = new ProductManagerFS();
 
 
 
