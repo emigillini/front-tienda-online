@@ -16,22 +16,55 @@ export class ProductManagerFS {
   async getNextId() {
     try {
       const products = await this.getProducts();
-      const lastProduct = products[products.length - 1];
+      const lastProduct = products.payload[products.payload.length - 1];
       return lastProduct ? lastProduct.id + 1 : 1;
     } catch (error) {
       console.error(error);
     }
   }
-  async getProducts(limit) {
+  async getProducts(limit, page, sort, category, stock) {
     try {
       let mostarProd = await fs.promises.readFile(path, utf);
       let products = JSON.parse(mostarProd);
-      if (limit) {
-        const firstProducts = products.slice(0, limit);
-        return firstProducts}
-    else {
-      return products}
-     
+      let queryOptions = {};
+      if (category) {
+        queryOptions.category = category;
+      }
+      if (stock) {
+        queryOptions.stock = stock;
+      }
+      let sortOptions = {};
+      if (sort === "asc") {
+        sortOptions.price = 1;
+      } else if (sort === "desc") {
+        sortOptions.price = -1;
+      }
+      const options = {
+        page: page,
+        limit: limit,
+        sort: sortOptions,
+        lean: false,
+      };
+      const transformedDocs = products.payload.map((doc) => ({
+        _id: doc._id,
+        id: doc.id,
+        title: doc.title,
+        description: doc.description,
+        code: doc.code,
+        price: doc.price,
+        status: doc.status,
+        stock: doc.stock,
+        category: doc.category,
+        thumbnail: doc.thumbnail,
+      }));
+      const response = {
+        status: "success",
+        limit: limit,
+        page: page,
+        payload: transformedDocs,
+      };
+      
+      return response;
     } catch (error) {
       console.error(error);
     }
@@ -41,7 +74,7 @@ export class ProductManagerFS {
   async getProductById(id) {
     try {
       const products = await this.getProducts();
-      const product = products.find((p) => p.id === parseInt(id));
+      const product = products.payload.find((p) => p.id === parseInt(id));
       if (product) {
         console.log("Este es su producto:", product);
         return product;
@@ -66,7 +99,7 @@ export class ProductManagerFS {
     const prodId = await this.getNextId();
     try {
       const products = await this.getProducts();
-      const productExists = products.some((p) => p.code === code);
+      const productExists = products.payload.some((p) => p.code === code);
       if (productExists) {
         console.error(`Error: El código ${code} ya existe.`);
         return;
@@ -82,7 +115,7 @@ export class ProductManagerFS {
         category,
         thumbnail,
       };
-      products.push(product);
+      products. payload.push(product);
       await fs.promises.writeFile(path, JSON.stringify(products));
       console.log(`Se agregó el producto "${title}" al archivo ${path}.`);
     } catch (error) {
@@ -93,8 +126,8 @@ export class ProductManagerFS {
   async deleteProd(id) {
     try {
       const product = await this.getProducts();
-      let indexOf = product.findIndex((p) => p.id === id);
-      product.splice(indexOf, 1);
+      let indexOf = product.payload.findIndex((p) => p.id === id);
+      product.payload.splice(indexOf, 1);
       await fs.promises.writeFile(path, JSON.stringify(product));
       return console.log(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
@@ -113,12 +146,12 @@ export class ProductManagerFS {
   ) {
     try {
       const products = await this.getProducts();
-      const productIndex = products.findIndex((p) => p.id === parseInt(id));
+      const productIndex = products.payload.findIndex((p) => p.id === parseInt(id));
       if (productIndex === -1) {
         console.error(`Error: No se encontró el producto con id ${id}.`);
         return;
       }
-      const productToUpdate = products[productIndex];
+      const productToUpdate = products.payload[productIndex];
       const updatedProduct = {
         id: parseInt(id),
         title: title || productToUpdate.title,
@@ -129,7 +162,7 @@ export class ProductManagerFS {
         category: category || productToUpdate.category,
         thumbnails: thumbnails || productToUpdate.thumbnails,
       };
-      products[productIndex] = updatedProduct;
+      products.payload[productIndex] = updatedProduct;
       await fs.promises.writeFile(path, JSON.stringify(products));
       console.log(`Se actualizó el producto con id ${id}.`);
     } catch (error) {

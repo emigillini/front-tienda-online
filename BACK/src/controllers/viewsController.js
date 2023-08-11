@@ -3,7 +3,7 @@ import { ViewService } from "../services/viewsService.js";
 import { ProductService } from "../services/ProductService.js";
 
 const x = new ProductService()
-const prod =  x.getProducts
+const prod =  x.getProducts()
 
 
 const viewsService1 = new ViewService()
@@ -62,10 +62,7 @@ export class viewsController{
           res.sendServerError("Internal Server Error");
         }
       }
-      async realTimeProducts (req, res){
-        res.render("realtimeproducts", { prod, style: "index.css" })
-        
-      }
+ 
       async chat (req, res){
         res.render("chat", { prod, style: "chat.css" });
       }
