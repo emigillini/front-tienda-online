@@ -117,4 +117,20 @@ button:hover {
   background-color: gray;
   color: white;
 }
-
+.floating-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 10%;
+  right: 20px; 
+  transform: translateY(-50%); 
+}
+.floating-box:hover {
+  transform: translateY(-5px);
+}

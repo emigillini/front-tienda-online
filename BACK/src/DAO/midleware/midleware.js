@@ -24,12 +24,22 @@ export const authMiddleware = (req, res, next) => {
   }
 }
 
-export const authrole = (req, res, next) => {
-  if(req.session.user.role=="usuario"){
-      next()
-  }else{
-      res.render('login', { status: 'failed'})
+
+export const adminRole = (req, res, next) => {
+  if (req.session.user && req.session.user.role === "admin") {
+    next();
+  } else {
+    res.status(403).json({ message: "Acceso denegado" });
   }
-}
- 
+};
+
+
+export const userRole = (req, res, next) => {
+  if (req.session.user && req.session.user.role === "usuario") {
+    next();
+  } else {
+    res.status(403).json({ message: "Acceso denegado" });
+  }
+};
+
 export const upload =multer({storage:storage})

@@ -1,5 +1,6 @@
 
 import { ProductManagerPromise } from "../DAO/factory.js";
+import { productDTO } from "../DAO/DTOS/productDto.js";
 
 
 const prodman1 = await  ProductManagerPromise
@@ -34,15 +35,25 @@ export class ProductService {
     thumbnail
   ) {
     try {
-      const product = await prodman1.addProduct(
+      const productDTOs = new productDTO({
+        id: undefined,
         title,
         description,
         code,
         price,
-        true,
         stock,
         category,
-        thumbnail
+        thumbnail });
+
+      const product = await prodman1.addProduct(
+        productDTOs.title,
+        productDTOs.description,
+        productDTOs.code,
+        productDTOs.price,
+        true,
+        productDTOs.stock,
+        productDTOs.category,
+        productDTOs.thumbnail
       );
       return product;
     } catch (error) {
@@ -86,4 +97,5 @@ export class ProductService {
       throw new Error("Error al eliminar productos ");
     }
   }
+  
 }

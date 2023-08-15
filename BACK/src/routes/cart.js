@@ -1,5 +1,5 @@
 import CustomRouter from "./router.js";
-import { logRequest } from "../DAO/midleware/midleware.js";
+import { logRequest,userRole } from "../DAO/midleware/midleware.js";
 import CartController from "../controllers/CartController.js";
 import { validateParam } from "../utils.js";
 
@@ -15,10 +15,11 @@ export default class CartRouter extends CustomRouter{
     this.get("/",logRequest, cartController1.getCarts);
     this.get('/lastCart', logRequest,cartController1.lastCart)
     this.get("/:id",logRequest, cartController1.getCartById)
-    this.delete("/:cid/product/:pid", logRequest,  cartController1.deleteCartProduct)
-    this.delete("/deletecart/:cid", logRequest, cartController1.deleteCart)
-    this.delete("/deleteallproducts/:cid", logRequest, cartController1.deleteAllCartProduct)
-    this.post("/addCart", logRequest, cartController1.addCart)
+    this.delete("/:cid/product/:pid",userRole, logRequest,  cartController1.deleteCartProduct)
+    this.delete("/deletecart/:cid", userRole,logRequest, cartController1.deleteCart)
+    this.delete("/deleteallproducts/:cid",userRole, logRequest, cartController1.deleteAllCartProduct)
+    this.post("/addCart",userRole, logRequest, cartController1.addCart)
+    this.post('/:cid/purchase', logRequest, cartController1.purchaseCart)
     this.put("/addProductToCart/:cid/product/:pid", logRequest, cartController1.addProductToCart)
   }}
 

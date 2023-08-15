@@ -1,5 +1,5 @@
 import CustomRouter from "./router.js";
-import { authrole, authMiddleware, logRequest } from "../DAO/midleware/midleware.js";
+import { adminRole, authMiddleware, logRequest } from "../DAO/midleware/midleware.js";
 import passport from "passport";
 import { UserController } from "../controllers/UserController.js";
 
@@ -30,7 +30,7 @@ export default class SessionRouter extends CustomRouter {
       userController1.postLogin
     );
 
-    this.get("/admin", authMiddleware, authrole, userController1.admin);
+    this.get("/admin", authMiddleware, adminRole, userController1.admin);
 
     this.get("/login-error", userController1.loginError);
 
