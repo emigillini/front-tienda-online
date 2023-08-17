@@ -12,6 +12,7 @@ const cartsSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  email: { type: String },
 });
 
 export const cartsModel = mongoose.model(cartsCollection, cartsSchema);

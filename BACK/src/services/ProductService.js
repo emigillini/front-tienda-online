@@ -1,9 +1,8 @@
-
 import { ProductManagerPromise } from "../DAO/factory.js";
 import { productDTO } from "../DAO/DTOS/productDto.js";
+import { productsModel } from "../DAO/models/products_model.js";
 
-
-const prodman1 = await  ProductManagerPromise
+const prodman1 = await ProductManagerPromise;
 
 export class ProductService {
   async getProdById(id) {
@@ -17,14 +16,20 @@ export class ProductService {
   }
   async getProducts(limit, page, sort, category, stock) {
     try {
-      const response = await prodman1.getProducts(limit, page,sort, category,stock)
-      return response
+      const response = await prodman1.getProducts(
+        limit,
+        page,
+        sort,
+        category,
+        stock
+      );
+      return response;
     } catch (error) {
       console.error(error);
       throw new Error("Error ");
     }
   }
-  
+
   async addProduct(
     title,
     description,
@@ -43,7 +48,8 @@ export class ProductService {
         price,
         stock,
         category,
-        thumbnail });
+        thumbnail,
+      });
 
       const product = await prodman1.addProduct(
         productDTOs.title,
@@ -97,5 +103,18 @@ export class ProductService {
       throw new Error("Error al eliminar productos ");
     }
   }
-  
+
+  async updateProductStock(productId, newStock) {
+    try {
+      const product = await productsModel.findOneAndUpdate(
+        { id: productId },
+        { stock: newStock },
+        { new: true }
+      );
+      return product;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error al actualizar stock del producto");
+    }
+  }
 }

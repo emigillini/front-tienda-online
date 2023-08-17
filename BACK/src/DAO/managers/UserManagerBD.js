@@ -8,12 +8,12 @@ export class UserManagerBD {
   async getAll() {
     let result;
     try {
-      result = await userModel.find();
+      result = await this.model.find();
+
+      return result;
     } catch (error) {
       console.log(error);
     }
-
-    return result;
   }
 
   async getByEmail(email) {

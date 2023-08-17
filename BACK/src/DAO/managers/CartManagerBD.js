@@ -52,12 +52,13 @@ export class CartManagerBD {
     }
   }
 
-  async addCart() {
+  async addCart(useremail) {
     let cartId = await this.getNextId();
     try {
       const cart = await cartsModel.create({
         id: cartId,
         products: [],
+        email: useremail,
       });
 
       console.log(`Se agregó el carrito${cart}" `);

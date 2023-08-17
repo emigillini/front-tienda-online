@@ -4,6 +4,8 @@ import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
 import ProdRouter from "./routes/products.js";
 import CartRouter from "./routes/cart.js";
+import TicketRouter from "./routes/ticket.js";
+import UserRouter from "./routes/user.js";
 import { Server } from "socket.io";
 import { ProductManagerFS } from "./DAO/managers/ProductManagerFS.js";
 import { logRequest } from "./DAO/midleware/midleware.js";
@@ -15,64 +17,65 @@ import passport from "passport";
 import { initializePassport } from "./config/passport-config.js";
 import JwtRouter from "./routes/jwt.js";
 import SessionRouter from "./routes/sessions.js";
-import ViewRouter from "./routes/views.router.js"
+import ViewRouter from "./routes/views.router.js";
 import config from "./config/config.js";
 import MongoSingleton from "./utils.js";
-import cors from "cors"
-const mongodbURl = config.mongoURL
-const PORT = config.port
-const secret = config.secret
-const app = express();  
-app.use(cors())
+import cors from "cors";
+const mongodbURl = config.mongoURL;
+const PORT = config.port;
+const secret = config.secret;
+const app = express();
+app.use(cors());
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser("secreto"))
+app.use(cookieParser("secreto"));
 app.use(express.static(__dirname + "/public"));
 app.use(logRequest);
-app.use(session({
-  store: MongoStore.create({
-    mongoUrl: mongodbURl,
-    mongoOptions:{ useUnifiedTopology:true},
-    ttl:3600
-  }),
-  secret:secret,
-  resave:true,
-  saveUninitialized:true
-}))
-const sessionRouter = new SessionRouter()
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl: mongodbURl,
+      mongoOptions: { useUnifiedTopology: true },
+      ttl: 3600,
+    }),
+    secret: secret,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+const sessionRouter = new SessionRouter();
 app.use("/session", sessionRouter.getRouter());
-const prodRouter = new ProdRouter()
+const userRouter = new UserRouter();
+app.use("/user", userRouter.getRouter());
+const prodRouter = new ProdRouter();
 app.use("/products", prodRouter.getRouter());
-const cartRouter = new CartRouter()
+const ticketRouter = new TicketRouter();
+app.use("/tickets", ticketRouter.getRouter());
+const cartRouter = new CartRouter();
 app.use("/cart", cartRouter.getRouter());
-const cookieRouter = new CookieRouter()
+const cookieRouter = new CookieRouter();
 app.use("/cookies", cookieRouter.getRouter());
-const jwtRouter = new JwtRouter()
+const jwtRouter = new JwtRouter();
 app.use("/jwt", jwtRouter.getRouter());
-const viewRouter = new ViewRouter()
+const viewRouter = new ViewRouter();
 app.use("/", viewRouter.getRouter());
 initializePassport();
 app.use(passport.initialize());
-app.use(passport.session())
-
-
+app.use(passport.session());
 
 const httpServer = app.listen(PORT, () => console.log("conectado"));
 
 const mang = new ProductManagerFS();
 
-
-
 let messageChat = [];
 
-process.on('uncaughtException', (err) => {
-  console.log('Se ha producido una excepción no capturada:');
+process.on("uncaughtException", (err) => {
+  console.log("Se ha producido una excepción no capturada:");
   console.log(err);
 });
-
 
 export const socketServer = new Server(httpServer);
 
@@ -108,10 +111,9 @@ socketServer.on("connect", (socket) => {
   });
 });
 
-
 const connectToDatabase = async () => {
   try {
-    await MongoSingleton.getInstance()
+    await MongoSingleton.getInstance();
 
     console.log("Conectado a la base de datos");
   } catch (error) {
@@ -119,10 +121,6 @@ const connectToDatabase = async () => {
     process.exit(1);
   }
 };
-
-connectToDatabase();
-
-
 
 /*Owned by: @emigillini
 

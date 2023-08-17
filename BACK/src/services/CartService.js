@@ -1,4 +1,5 @@
 import {  CartManagerPromise } from "../DAO/factory.js";
+import { cartsModel } from "../DAO/models/carts_model.js";
 
 const CartManager1 =  await CartManagerPromise
 
@@ -58,9 +59,9 @@ export class CartService {
       throw new Error("Error al borrar productos");
     }
   }
-  async addCart() {
+  async addCart(useremail) {
     try {
-      await CartManager1.addCart();
+      await CartManager1.addCart(useremail);
     } catch (error) {
       console.error(error);
       throw new Error("Error al agregar Cart");
@@ -72,6 +73,19 @@ export class CartService {
     } catch (error) {
       console.error(error);
       throw new Error("Error al agregar producto al Cart");
+    }
+  }
+  async updateCartProducts(cartId, productsNotProcessed) {
+    try {
+      const cart = await cartsModel.findOneAndUpdate(
+        { id: cartId },
+        { products: productsNotProcessed },
+        { new: true }
+      );
+      return cart;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error al actualizar productos del carrito");
     }
   }
 }

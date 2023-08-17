@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const ticketCollection = "Ticket";
 
@@ -6,8 +6,7 @@ const ticketSchema = new mongoose.Schema({
   code: {
     type: String,
     unique: true,
-    default: function() {
-     
+    default: function () {
       const timestamp = Date.now().toString(36);
       return `TICKET-${timestamp}`;
     },
@@ -18,14 +17,24 @@ const ticketSchema = new mongoose.Schema({
   },
   amount: {
     type: Number,
-    required: true,
+  },
+  cart: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "carts",
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
   },
   purchaser: {
     type: String,
-    required: true,
+  },
+  productsNotProcessed: {
+    type: Array,
+  },
+  productsProcessed: {
+    type: Array,
   },
 });
 
-const Ticket = mongoose.model(ticketCollection, ticketSchema);
-
-export default Ticket;
+export const ticketModel = mongoose.model(ticketCollection, ticketSchema);

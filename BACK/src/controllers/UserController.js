@@ -1,5 +1,6 @@
-import { UserService } from "../services/UserService.js";
 import passport from "passport";
+import { UserService } from "../services/UserService.js";
+
 import { createHash } from "../utils.js";
 
 const userServ1 = new UserService();
@@ -38,7 +39,7 @@ export class UserController {
       res.sendServerError("Error interno del servidor");
     }
   }
-  
+
   async admin(req, res) {
     res.sendSuccess("Welcome to the admin page!");
   }
@@ -90,5 +91,22 @@ export class UserController {
         res.redirect("/index");
       }
     );
+  }
+
+  async getAll(req, res) {
+    try {
+      let users = await userServ1.getAllUsers();
+      return res.sendSuccess(users);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async getUserById(req, res) {
+    try {
+      let user = await userServ1.getUserById(req.params.id);
+      return res.sendSuccess(user);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

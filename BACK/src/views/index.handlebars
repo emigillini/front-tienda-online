@@ -1,11 +1,13 @@
 <div>
-  <h1>Bienvenido, {{ user.email }}, {{ user.role }}</h1>
+  <h1>Bienvenido, {{user.email}}, {{user.role}}</h1>
   <h1>Formulario de productos</h1>
 </div>
 <a href="/chat" class="floating-box">Ir al chat</a>
-<button class="btn btn-warning" onclick="location.href = '/session/logout'">Cerrar sesión</button>
-
-
+<button
+  class="btn btn-warning"
+  onclick="location.href = '/session/logout'"
+>Cerrar sesión</button>
+<button id="finalizarCompraBtn">Finalizar compra</button>
 
 <button id="createCardBtn">Crear carrito</button>
 <div class="prods">
@@ -19,7 +21,12 @@
       <p>Stock: {{this.stock}}</p>
       <p>Categoria: {{this.category}}</p>
 
-       <button class="agregarCart"  productId="{{this.id}}">Agregar al carrito</button>
+      <button
+        class="agregarCart"
+        id="agregarCart"
+        productId="{{this.id}}"
+      >Agregar al carrito</button>
+
     </div>
   {{/each}}
 </div>
@@ -38,8 +45,6 @@
   {{/if}}
 </ul>
 
-
-
 <form action="/src/public/uploads/" enctype="multipart/form-data" method="POST">
   <label for="nombre">{{testUser.name}}:</label>
   <input type="file" name="Archivo" id="nombre" />
@@ -48,4 +53,3 @@
 
 <script src="js/index.js"></script>
 <script src="js/cart.js"></script>
-
