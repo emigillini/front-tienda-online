@@ -129,65 +129,65 @@ export default class CartController {
       res.sendServerError("Error al agregar el producto al carrito.");
     }
   }
-  async purchaseCart(req, res) {
-    const cartId = req.params.cid;
+    async purchaseCart(req, res) {
+      const cartId = req.params.cid;
 
-    try {
-      const cart = await cartService.getCartById(cartId);
+      try {
+        const cart = await cartService.getCartById(cartId);
 
-      if (!cart) {
-        return res.status(404).json({ message: "Carrito no encontrado" });
-      }
-
-      const productsProcessed = [];
-      const productsNotProcessed = [];
-      let totalAmount = 0;
-
-      for (const cartProduct of cart.products) {
-        const productId = cartProduct.id;
-        const quantity = cartProduct.quantity;
-
-        const product = await prodservice.getProdById(productId);
-
-        if (!product || product.stock < quantity) {
-          productsNotProcessed.push({
-            id: productId,
-            productData: product,
-            requestedQuantity: quantity,
-          });
-        } else {
-          const updatedProduct = await prodservice.updateProductStock(
-            productId,
-            product.stock - quantity
-          );
-          productsProcessed.push({
-            updatedProduct,
-            purchasedQuantity: quantity,
-          });
-
-          totalAmount += updatedProduct.price * quantity;
+        if (!cart) {
+          return res.status(404).json({ message: "Carrito no encontrado" });
         }
+
+        const productsProcessed = [];
+        const productsNotProcessed = [];
+        let totalAmount = 0;
+
+        for (const cartProduct of cart.products) {
+          const productId = cartProduct.id;
+          const quantity = cartProduct.quantity;
+
+          const product = await prodservice.getProdById(productId);
+
+          if (!product || product.stock < quantity) {
+            productsNotProcessed.push({
+              id: productId,
+              productData: product,
+              requestedQuantity: quantity,
+            });
+          } else {
+            const updatedProduct = await prodservice.updateProductStock(
+              productId,
+              product.stock - quantity
+            );
+            productsProcessed.push({
+              updatedProduct,
+              purchasedQuantity: quantity,
+            });
+
+            totalAmount += updatedProduct.price * quantity;
+          }
+        }
+
+        const ticket = {
+          productsProcessed,
+          productsNotProcessed,
+          amount: totalAmount,
+          cart: cart._id,
+          purchaser: cart.email,
+        };
+        await tickserv.createTicket(ticket);
+
+        await cartService.updateCartProducts(cartId, productsNotProcessed);
+
+        return res.json({
+          message: "Compra finalizada exitosamente",
+          ticket,
+          amount: totalAmount,
+        });
+      } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Error al finalizar la compra" });
       }
-
-      const ticket = {
-        productsProcessed,
-        productsNotProcessed,
-        amount: totalAmount,
-        cart: cart._id,
-        purchaser: cart.email,
-      };
-      await tickserv.createTicket(ticket);
-
-      await cartService.updateCartProducts(cartId, productsNotProcessed);
-
-      return res.json({
-        message: "Compra finalizada exitosamente",
-        ticket,
-        amount: totalAmount,
-      });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: "Error al finalizar la compra" });
     }
   }
-}

@@ -21,9 +21,17 @@ import ViewRouter from "./routes/views.router.js";
 import config from "./config/config.js";
 import MongoSingleton from "./utils.js";
 import cors from "cors";
+import MailRouter from "./routes/mail.js";
+import nodemailer from "nodemailer"
+import twilio from "twilio";
+import SmsRouter from "./routes/sms.js";
 const mongodbURl = config.mongoURL;
+const mailcontra = config.gmailcontra;
 const PORT = config.port;
 const secret = config.secret;
+const acountsid= config.sidtwillio;
+const token= config.tokentwillio;
+const num= config.numtwillio
 const app = express();
 app.use(cors());
 app.engine("handlebars", handlebars.engine());
@@ -48,6 +56,10 @@ app.use(
 );
 const sessionRouter = new SessionRouter();
 app.use("/session", sessionRouter.getRouter());
+const smsRouter = new SmsRouter();
+app.use("/sms", smsRouter.getRouter())
+const mailRouter = new MailRouter()
+app.use("/mail" ,mailRouter.getRouter()) 
 const userRouter = new UserRouter();
 app.use("/user", userRouter.getRouter());
 const prodRouter = new ProdRouter();
@@ -110,6 +122,19 @@ socketServer.on("connect", (socket) => {
     }
   });
 });
+
+ export const transport = nodemailer.createTransport({
+  service:"gmail",
+  port:587,
+  auth:{
+    user:"emigillini@gmail.com",
+    pass:mailcontra
+  }
+})
+
+export const clients = twilio(acountsid,token,num)
+
+
 
 const connectToDatabase = async () => {
   try {

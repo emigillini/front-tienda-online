@@ -29,3 +29,38 @@ const peticion = () => {
       });
   };
   
+  
+const peticion2 = () => {
+
+  fetch('http://localhost:8080/tickets/')
+    .then(result => result.json())
+    .then(data => {
+   
+      let htmlContent = '';
+      data.forEach(ticket => { 
+        htmlContent += `
+          <div class="card">
+            <h3>${ticket.code}</h3>
+           
+            <p>Total: ${ticket.amount}</p>
+            <p>comprador: $ ${ticket.purchaser}</p>
+          
+          
+        `;
+        console.log(ticket.productsProcessed)
+        ticket.productsProcessed.forEach(product => {
+          htmlContent += `
+            <li>ID: ${product.updatedProduct}, Cantidad: ${product.purchasedQuantity}</li>
+          `;
+        });
+        htmlContent += `</ul></div>`;
+        console.log(ticket.productsProcessed)
+      });
+
+      const mostrarElement = document.getElementById('mostrar');
+      mostrarElement.innerHTML = htmlContent;
+    })
+    .catch(error => {
+      console.error("Error en la petición:", error);
+    });
+};

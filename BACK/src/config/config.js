@@ -25,4 +25,8 @@ export default {
     githubAPIKey: process.env.GITHUB_SECRET,
     secret: process.env.SECRET,
     persistence: persistenceType === 'MEM' ? 'MEM' : 'mongo',
+    gmailcontra: process.env.MAILCONTRA,
+    sidtwillio:process.env.SIDTWILLIO,
+    tokentwillio:process.env.TOKENTWILLIO,
+    numtwillio:process.env.NUMTWILLIO
 }
