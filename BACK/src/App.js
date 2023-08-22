@@ -25,6 +25,8 @@ import MailRouter from "./routes/mail.js";
 import nodemailer from "nodemailer"
 import twilio from "twilio";
 import SmsRouter from "./routes/sms.js";
+import MockRouter from "./routes/mock.js";
+import compression from "express-compression"
 const mongodbURl = config.mongoURL;
 const mailcontra = config.gmailcontra;
 const PORT = config.port;
@@ -33,6 +35,9 @@ const acountsid= config.sidtwillio;
 const token= config.tokentwillio;
 const num= config.numtwillio
 const app = express();
+app.use(compression({
+  brotli:{enabled:true, zlib:{}}
+}))
 app.use(cors());
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
@@ -54,6 +59,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+const mockRouter = new MockRouter();
+app.use("/mockingproducts", mockRouter.getRouter())
 const sessionRouter = new SessionRouter();
 app.use("/session", sessionRouter.getRouter());
 const smsRouter = new SmsRouter();

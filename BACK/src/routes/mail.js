@@ -29,7 +29,7 @@ export default class MailRouter extends CustomRouter {
         })
         res.send(result)
       } catch (error) {
-        // Manejo del error
+       
         console.error(error);
         res.status(500).send("Error en el servidor");
       }
