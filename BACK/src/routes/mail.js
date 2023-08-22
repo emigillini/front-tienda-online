@@ -21,7 +21,7 @@ export default class MailRouter extends CustomRouter {
             attachments:[
                 {
                     filename :"imagen.jfif",
-                    path:"../BACK/src/public/imagen/imagen.jfif",
+                    path:__dirname+"../BACK/src/public/imagen/imagen.jfif",
                     cid:"imagen"
                 }
             ],
