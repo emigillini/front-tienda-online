@@ -12,7 +12,7 @@ export default class ProdRouter extends CustomRouter {
     );
     this.get("/:id", logRequest, productController1.getProdByid);
     this.get("/", logRequest, productController1.getProducts);
-    this.post("/", logRequest,adminRole, productController1.addProduct);
+    this.post("/", logRequest, productController1.addProduct);
     this.put("/:id", logRequest,adminRole, productController1.updateProduct);
     this.delete("/:id", logRequest,adminRole, productController1.deleteProd);
   }}

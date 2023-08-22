@@ -1,4 +1,7 @@
 import { ProductService } from "../services/ProductService.js";
+import CustomError from "../services/errors/CustomError.js";
+import { EErrors } from "../services/errors/Enums.js";
+import { generateProductErrorInfo } from "../services/errors/Info.js";
 
 const prodman1 = new ProductService();
 
@@ -47,9 +50,14 @@ export class ProductController {
         !stock ||
         !category ||
         !thumbnail
-      ) {
+      ) {CustomError.createError({
+        name: 'Error al agregar producto',
+        cause: generateProductErrorInfo({ title,description,code,price,stock,category,thumbnail}),
+        message: 'Error al intentar agregar producto',
+        code: EErrors.INVALID_TYPES    })
         res.sendUserError("Faltan campos requeridos para agregar el producto.");
       }
+     
       //socketServer.emit("productAdded", product);
       const product = await prodman1.addProduct(
         title,
