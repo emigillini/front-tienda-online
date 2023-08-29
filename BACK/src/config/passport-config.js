@@ -5,6 +5,7 @@
   import GithubStrategy from 'passport-github2';
   import jwt from "passport-jwt";
   import config from "./config.js";
+  import { logger } from "../logger.js";
 
   const secret= config.githubAPIKey
   const userman1 = new UserManagerBD();
@@ -31,15 +32,15 @@
             const user = req.body;
             let userFound = await userman1.getByEmail( username);
             if (userFound) {
-              console.log("Ya existe usuario");
+              logger.error("Ya existe usuario");
               return done(null, false);
             }
             user.password = createHash(password);
             let result = await userman1.createUser(user);
-            console.log(result);
+            logger.http(result);
             return done(null, result);
           } catch (error) {
-            console.error("Error: " + error);
+            logger.error("Error: " + error);
             return done(error);
           }
         }
@@ -52,7 +53,7 @@
         try {
           const user = await userman1.getByEmail(username);
           if (!user) {
-            console.log("No existe usuario");
+            logger.error("No existe usuario");
             return done(null, false);
           }
           if (!isValidPassword(user, password)) {
@@ -60,7 +61,7 @@
           }
           return done(null, user);
         } catch (error) {
-          console.error("Error: " + error);
+          logger.error("Error: " + error);
           return done(error);
         }
       })
@@ -74,7 +75,7 @@
           return done (null, jwt_payload)
           
         } catch (error) {
-          console.error("Error: " + error);
+          logger.error("Error: " + error);
           return done(error);
         }
       })
@@ -87,7 +88,7 @@
       scope: ['user:email']
     },async (accesToken, refreshToken, profile, done) => {
         try {
-          console.log(profile)
+          logger.http(profile)
           let userEmail = profile.emails[0].value;
           let user = await userman1.getByEmail(userEmail);
         

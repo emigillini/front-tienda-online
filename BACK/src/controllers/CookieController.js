@@ -1,4 +1,4 @@
-
+import { logger } from "../logger.js";
 
 
 export class Cookiecontroller{
@@ -6,7 +6,7 @@ export class Cookiecontroller{
         try {
             res.cookie("nombres", "Emiliano").send("Cookiessss");
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.sendServerError("Error interno del servidor");
         }
 
@@ -15,7 +15,7 @@ export class Cookiecontroller{
         try {
             res.cookie("secreto", "lo que guarda",{signed:true}).send("secreta");
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.sendServerError("Error interno del servidor");
         }
     }
@@ -23,7 +23,7 @@ export class Cookiecontroller{
         try {
             res.send(req.signedCookies);
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.sendServerError("Error interno del servidor");
         }
     }
@@ -31,7 +31,7 @@ export class Cookiecontroller{
         try {
             res.send(req.cookies);
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.sendServerError("Error interno del servidor");
         }
     }

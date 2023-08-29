@@ -2,6 +2,7 @@ import { CartService } from "../services/CartService.js";
 import { CartManagerPromise } from "../DAO/factory.js";
 import { ProductService } from "../services/ProductService.js";
 import { TicketService } from "../services/Ticketservice.js";
+import { logger } from "../logger.js";
 
 const cartService = new CartService();
 const CartManager1 = await CartManagerPromise;
@@ -15,7 +16,7 @@ export default class CartController {
 
       res.sendSuccess(carts);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -25,7 +26,7 @@ export default class CartController {
       const lastCartId = await cartService.lastCart();
       res.sendSuccess(lastCartId);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -41,7 +42,7 @@ export default class CartController {
       }
       res.sendSuccess(cart);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendUserError("Error id no encontrado");
     }
   }
@@ -66,7 +67,7 @@ export default class CartController {
       await cartService.deleteCardProduct(cid, pid);
       res.sendSuccess(`Producto ${pid} eliminado del carrito ${cid}.`);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error al eliminar el producto del carrito.");
     }
   }
@@ -80,7 +81,7 @@ export default class CartController {
       await cartService.deleteCart(cid);
       res.sendSuccess(`Carrito ${cid} eliminado correctamente.`);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error al eliminar el carrito.");
     }
   }
@@ -94,7 +95,7 @@ export default class CartController {
       await cartService.deleteAllCartProduct(cid);
       res.sendSuccess(`Se eliminaron todos los productos del carrito ${cid}.`);
     } catch (error) {
-      console.error(error);
+      clogger.error(error);
       res.sendServerError("Error al eliminar los productos del carrito.");
     }
   }
@@ -105,7 +106,7 @@ export default class CartController {
       await cartService.addCart(user.email);
       res.sendSuccess("carro agregado");
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -125,7 +126,7 @@ export default class CartController {
       await cartService.addProductToCart(cid, pid, parseInt(quantity));
       res.sendSuccess(`Producto ${pid} agregado al carrito ${cid}.`);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error al agregar el producto al carrito.");
     }
   }
@@ -186,7 +187,7 @@ export default class CartController {
           amount: totalAmount,
         });
       } catch (error) {
-        console.error(error);
+        logger.error(error);
         return res.status(500).json({ message: "Error al finalizar la compra" });
       }
     }

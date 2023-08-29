@@ -2,6 +2,8 @@ import { ProductService } from "../services/ProductService.js";
 import CustomError from "../services/errors/CustomError.js";
 import { EErrors } from "../services/errors/Enums.js";
 import { generateProductErrorInfo } from "../services/errors/Info.js";
+import { logger } from "../logger.js";
+
 
 const prodman1 = new ProductService();
 
@@ -10,19 +12,22 @@ export class ProductController {
     try {
       const product = await prodman1.getProdById(req.params.id);
       if (!product) {
+        logger.warning(`Producto no encontrado para el id: ${req.params.id}`); 
         return res.sendUserError({
           id: req.params.id,
           message: `id ${req.params.id} no encontrado `,
         });
       }
+      
       return res.sendSuccess(product);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendUserError("Error id no encontrado");
     }
   }
   async getProducts(req, res) {
     try {
+     
       const { limit = 10, page = 1, sort, category, stock } = req.query;
       const response = await prodman1.getProducts(
         limit,
@@ -31,7 +36,9 @@ export class ProductController {
         category,
         stock
       );
-      return res.sendSuccess(response);
+      logger.info(`Productos encontrados `); 
+      return res.sendSuccess(response)
+
     } catch (error) {
       res.sendServerError("Error interno del servidor");
     }
@@ -73,7 +80,7 @@ export class ProductController {
         payload: product,
       });
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -103,7 +110,7 @@ export class ProductController {
         payload: updatedProduct,
       });
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -123,7 +130,7 @@ export class ProductController {
       });
       //socketServer.emit("productDeleted", prodId);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }

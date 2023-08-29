@@ -1,6 +1,7 @@
 
 import { ViewService } from "../services/viewsService.js";
 import { ProductService } from "../services/ProductService.js";
+import { logger } from "../logger.js";
 
 const x = new ProductService()
 const prod =  x.getProducts()
@@ -58,7 +59,7 @@ export class viewsController{
             user: req.session.user,
           });
         } catch (error) {
-          console.error(error);
+          logger.error(error);
           res.sendServerError("Internal Server Error");
         }
       }
@@ -74,7 +75,7 @@ export class viewsController{
           const file = await viewsService1.uploadFile (req.file);
           res.sendSuccess(`Se ha recibido el adjunto: ${file.originalname}`);
         } catch (error) {
-          console.error(error);
+          logger.error(error);
           res.sendServerError("Error al subir el archivo");
         }
       }

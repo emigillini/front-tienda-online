@@ -1,6 +1,7 @@
 import { generateToken } from "../utils.js";
 import { UserManagerBD } from "../DAO/managers/UserManagerBD.js";
 import { createHash } from "../utils.js";
+import { logger } from "../logger.js";
 
 const userman1 = new UserManagerBD();
 
@@ -19,10 +20,10 @@ export class JwtController {
         return res.status(400).send({ status: 'error', error: 'User already exists' });
       }
       let result = await userman1.createUser(newUser);
-      console.log(result);
+      logger.http(result);
       res.send({ status: 'success', msg: 'User registered successfully' });
     } catch (error) {
-      console.log(error);
+      logger.error(error);
       res.send({ status: 'error', msg: error.message });
     }
   }

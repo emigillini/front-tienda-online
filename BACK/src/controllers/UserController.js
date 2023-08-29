@@ -2,6 +2,7 @@ import passport from "passport";
 import { UserService } from "../services/UserService.js";
 
 import { createHash } from "../utils.js";
+import { logger } from "../logger.js";
 
 const userServ1 = new UserService();
 
@@ -13,7 +14,7 @@ export class UserController {
     try {
       res.render("login", {});
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -35,7 +36,7 @@ export class UserController {
 
       res.render("bienvenida-datos", { user: req.session.user });
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -73,7 +74,7 @@ export class UserController {
       await userServ1.updatePassword(user.email, newPassword);
       res.render("login", {});
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendServerError("Error interno del servidor");
     }
   }
@@ -98,7 +99,7 @@ export class UserController {
       let users = await userServ1.getAllUsers();
       return res.sendSuccess(users);
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
   async getUserById(req, res) {
@@ -106,7 +107,7 @@ export class UserController {
       let user = await userServ1.getUserById(req.params.id);
       return res.sendSuccess(user);
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
 }

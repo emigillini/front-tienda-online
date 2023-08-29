@@ -1,4 +1,5 @@
 import { TicketService } from "../services/Ticketservice.js";
+import { logger } from "../logger.js";
 
 const ticketService = new TicketService();
 
@@ -8,7 +9,7 @@ export default class TicketController {
       const tickets = await ticketService.getTickets();
       return res.send(tickets);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendUserError("Error  no hay tickets encontrado");
     }
   }
@@ -23,7 +24,7 @@ export default class TicketController {
       }
       return res.send(tickets);
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       res.sendUserError("Error id no encontrado");
     }
   }

@@ -27,6 +27,8 @@ import twilio from "twilio";
 import SmsRouter from "./routes/sms.js";
 import MockRouter from "./routes/mock.js";
 import compression from "express-compression"
+import { addLogger } from "./logger.js";
+import { logger } from "./logger.js";
 const mongodbURl = config.mongoURL;
 const mailcontra = config.gmailcontra;
 const PORT = config.port;
@@ -35,6 +37,7 @@ const acountsid= config.sidtwillio;
 const token= config.tokentwillio;
 const num= config.numtwillio
 const app = express();
+app.use(addLogger)
 app.use(compression({
   brotli:{enabled:true, zlib:{}}
 }))
@@ -85,24 +88,26 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
 
-const httpServer = app.listen(PORT, () => console.log("conectado"));
+const httpServer = app.listen(PORT, () => {
+  logger.info("Servidor conectado");
+});
 
 const mang = new ProductManagerFS();
 
 let messageChat = [];
 
 process.on("uncaughtException", (err) => {
-  console.log("Se ha producido una excepción no capturada:");
-  console.log(err);
+  logger.error("Se ha producido una excepción no capturada:");
+  logger.error(err);
 });
 
 export const socketServer = new Server(httpServer);
 
 socketServer.on("connect", (socket) => {
-  console.log("Nuevo cliente conectado");
+  logger.info("Nuevo cliente conectado");
 
   socket.on("message", (data) => {
-    console.log(data);
+    logger.http(data);
   });
   socket.on("newUser", (data) => {
     const { user } = data;
@@ -123,9 +128,9 @@ socketServer.on("connect", (socket) => {
       const messageManager = new MessageManagerBD();
       await messageManager.addMessages({ user, message: messageChat });
 
-      console.log("Mensaje guardado correctamente:", data);
+      logger.info("Mensaje guardado correctamente:", data);
     } catch (error) {
-      console.error("Error al guardar el mensaje:", error);
+      logger.error("Error al guardar el mensaje:", error);
     }
   });
 });
@@ -147,13 +152,52 @@ const connectToDatabase = async () => {
   try {
     await MongoSingleton.getInstance();
 
-    console.log("Conectado a la base de datos");
+    logger.info("Conectado a la base de datos");
   } catch (error) {
-    console.log("No se puede acceder a la base de datos:", error);
+    logger.fatal("No se puede acceder a la base de datos:", error);
     process.exit(1);
   }
 };
 
+
+app.get("/facil", (req, res) => {
+  let sum = 0;
+  for (let i = 0; i < 100000; i++) {
+    sum += i;
+  }
+
+  const response = {
+    status: "success",
+    payload: sum
+  };
+
+  res.json(response); 
+});
+
+app.get("/dificil", (req, res) => {
+  let sum = 0;
+  for (let i = 0; i < 9e8; i++) {
+    sum += i;
+  }
+
+  const response = {
+    status: "success",
+    payload: sum
+  };
+
+  res.json(response); 
+});
+
+app.get("/loggerTest", (req, res) => {
+  req.logger.debug("Mensaje de depuración");
+  req.logger.http("Mensaje de solicitud HTTP");
+  req.logger.info("Mensaje de información");
+  req.logger.warning("Mensaje de advertencia");
+  req.logger.error("Mensaje de error");
+  req.logger.fatal("Mensaje fatal");
+
+  res.send("Prueba de logs realizada");
+});
 /*Owned by: @emigillini
 
 App ID: 359008
