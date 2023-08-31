@@ -104,7 +104,7 @@ process.on("uncaughtException", (err) => {
 export const socketServer = new Server(httpServer);
 
 socketServer.on("connect", (socket) => {
-  logger.info("Nuevo cliente conectado");
+  console.log("Nuevo cliente conectado");
 
   socket.on("message", (data) => {
     logger.http(data);

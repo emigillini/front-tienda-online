@@ -105,7 +105,7 @@
           }
         else{  return done(null, user);}
         } catch (error) {
-          console.error("Error: " + error);
+          logger.error("Error: " + error);
           return done(error);
         }
       }

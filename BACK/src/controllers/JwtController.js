@@ -40,7 +40,7 @@ export class JwtController {
       res.cookie('auth', access_token, { maxAge: 60 * 60 * 1000, httpOnly: true });
       res.send({ message: "Logged in successfully" });
     } catch (error) {
-      console.log(error);
+      logger.error(error);
       res.status(500).send({ status: 'error', error: error.message });
     }
   }

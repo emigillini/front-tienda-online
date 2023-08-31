@@ -24,7 +24,7 @@ export const logger= winston.createLogger({
     levels: customLevelsOptions.levels,
 
     transports:[
-        new winston.transports.Console({level: "error",
+        new winston.transports.Console({level: "info",
         format: winston.format.combine(
             winston.format.colorize({colors: customLevelsOptions.colors}),
             winston.format.simple()

@@ -40,7 +40,7 @@ export class Cookiecontroller{
             const { name } = req.params;
             res.clearCookie(name).send("Cookie borrada");
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.sendServerError("Error interno del servidor");
         }
     }
