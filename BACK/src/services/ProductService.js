@@ -1,6 +1,7 @@
 import { ProductManagerPromise } from "../DAO/factory.js";
 import { productDTO } from "../DAO/DTOS/productDto.js";
 import { productsModel } from "../DAO/models/products_model.js";
+import { logger } from "../logger.js";
 
 const prodman1 = await ProductManagerPromise;
 
@@ -10,7 +11,7 @@ export class ProductService {
       const product = await prodman1.getProductById(id);
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener el producto por ID");
     }
   }
@@ -25,7 +26,7 @@ export class ProductService {
       );
       return response;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error ");
     }
   }
@@ -63,7 +64,7 @@ export class ProductService {
       );
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error ");
     }
   }
@@ -90,7 +91,7 @@ export class ProductService {
       );
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al actualizar productos ");
     }
   }
@@ -99,7 +100,7 @@ export class ProductService {
       const product = await prodman1.deleteProd(id);
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al eliminar productos ");
     }
   }
@@ -113,7 +114,7 @@ export class ProductService {
       );
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al actualizar stock del producto");
     }
   }

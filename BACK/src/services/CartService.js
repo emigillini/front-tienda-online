@@ -1,5 +1,6 @@
 import {  CartManagerPromise } from "../DAO/factory.js";
 import { cartsModel } from "../DAO/models/carts_model.js";
+import { logger } from "../logger.js";
 
 const CartManager1 =  await CartManagerPromise
 
@@ -13,7 +14,7 @@ export class CartService {
         return carts;
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener los carritos");
     }
   }
@@ -22,7 +23,7 @@ export class CartService {
       const lastCartId = await CartManager1.getLastCartId();
       return lastCartId;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener ultimo carrito");
     }
   }
@@ -31,7 +32,7 @@ export class CartService {
       const cart = await CartManager1.getCartById(id);
       return cart;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener el carrito por ID");
     }
   }
@@ -39,7 +40,7 @@ export class CartService {
     try {
       await CartManager1.deleteCartProduct(cid, pid);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al borrar producto");
     }
   }
@@ -47,7 +48,7 @@ export class CartService {
     try {
       await CartManager1.deleteCart(cid);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al borrar producto");
     }
   }
@@ -55,7 +56,7 @@ export class CartService {
     try {
       await CartManager1.deleteAllCartProduct(cid);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al borrar productos");
     }
   }
@@ -63,7 +64,7 @@ export class CartService {
     try {
       await CartManager1.addCart(useremail);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al agregar Cart");
     }
   }
@@ -71,7 +72,7 @@ export class CartService {
     try {
       await CartManager1.addProductToCart(cid, pid, quantity);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al agregar producto al Cart");
     }
   }
@@ -84,7 +85,7 @@ export class CartService {
       );
       return cart;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al actualizar productos del carrito");
     }
   }

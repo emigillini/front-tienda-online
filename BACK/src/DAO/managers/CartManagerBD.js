@@ -1,3 +1,4 @@
+import { logger } from "../../logger.js";
 import { cartsModel } from "../models/carts_model.js";
 
 export class CartManagerBD {
@@ -11,7 +12,7 @@ export class CartManagerBD {
       const lastCart = carts[carts.length - 1];
       return lastCart ? lastCart.id + 1 : 1;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -20,7 +21,7 @@ export class CartManagerBD {
       let carts = await this.model.find();
       return carts;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async getLastCartId() {
@@ -30,11 +31,11 @@ export class CartManagerBD {
         const lastCart = carts[0];
         return lastCart;
       } else {
-        console.log("No se encontraron carritos.");
+        logger.info ("No se encontraron carritos.");
         return null;
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -42,13 +43,13 @@ export class CartManagerBD {
     try {
       const cart = await this.model.findOne({ id: id });
       if (cart) {
-        console.log("Este es su cart:", cart);
+        logger.info("Este es su cart:", cart);
         return cart;
       } else {
-        console.error(`Error: Cart con id ${id} no encontrado.`);
+        logger.error(`Error: Cart con id ${id} no encontrado.`);
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -61,10 +62,10 @@ export class CartManagerBD {
         email: useremail,
       });
 
-      console.log(`Se agregó el carrito${cart}" `);
+      logger.info(`Se agregó el carrito${cart}" `);
       return cartId;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -72,9 +73,9 @@ export class CartManagerBD {
     try {
       const cart = await this.getCartById(cartId);
       await this.model.findOneAndDelete({ _id: cart._id });
-      console.log(`Carrito ${cartId} eliminado con éxito.`);
+      logger.info(`Carrito ${cartId} eliminado con éxito.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -97,21 +98,21 @@ export class CartManagerBD {
         );
 
         if (updateCart) {
-          console.log(
+         logger.info(
             `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
           );
         } else {
-          console.log(
+          logger.warning(
             `Producto con id=${productId} no encontrado en el carrito ${cartId}`
           );
         }
       } else {
-        console.log(
+        logger.warning(
           `Producto con id=${productId} no encontrado en el carrito ${cartId}`
         );
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -125,14 +126,14 @@ export class CartManagerBD {
       );
 
       if (updateCart) {
-        console.log(`Productos ${cartId} con éxito.`);
+        logger.info(`Productos ${cartId} con éxito.`);
       } else {
-        console.log(
+        logger.warning(
           `Producto con id=${productId} no encontrado en el carrito ${cartId}`
         );
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -146,7 +147,7 @@ export class CartManagerBD {
       );
 
       if (productToAdd) {
-        console.log(
+        logger.info(
           `Producto ${productId} actualizado en el carrito ${cartId}.`
         );
         return cart;
@@ -155,12 +156,12 @@ export class CartManagerBD {
         cart.products.push(newProduct);
       }
       await cart.save();
-      console.log(
+      logger.info(
         `Producto ${productId} agregado al carrito ${cartId} con éxito.`
       );
       return cart;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -183,15 +184,15 @@ export class CartManagerBD {
       );
 
       if (update) {
-        console.log(
+        logger.info(
           `Cantidad del producto ${productId} actualizada en el carrito ${cartId} con éxito.`
         );
         return update;
       } else {
-        console.log(`Producto ${productId} no existe en carrito ${cartId}`);
+        logger.warning(`Producto ${productId} no existe en carrito ${cartId}`);
       }
     } catch (error) {
-      console.log("Error updating product quantity.");
+      logger.error ("Error updating product quantity.");
     }
   }
 }

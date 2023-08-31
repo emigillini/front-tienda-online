@@ -1,4 +1,5 @@
 import TicketManagerBD from "../DAO/managers/TicketManagerBD.js";
+import { logger } from "../logger.js";
 
 const ticketman1 = new TicketManagerBD();
 
@@ -8,7 +9,7 @@ export class TicketService {
       const ticket = await ticketman1.getTicketsById(id);
       return ticket;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener el ticket por ID");
     }
   }
@@ -17,7 +18,7 @@ export class TicketService {
       const response = await ticketman1.getTickets();
       return response;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error ");
     }
   }
@@ -26,7 +27,7 @@ export class TicketService {
       const newTicket = await ticketman1.createTicket(ticket);
       return newTicket;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("No se pudo crear ticket ");
     }
   }
@@ -35,7 +36,7 @@ export class TicketService {
       const ticketResolved = ticketman1.resolveTicket(id, ticket);
       return ticketResolved;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("No se pudo actualizar ticket ");
     }
   }

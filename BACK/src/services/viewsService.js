@@ -1,4 +1,5 @@
 import { productsModel } from "../DAO/models/products_model.js";
+import { logger } from "../logger.js";
 
 
 
@@ -36,7 +37,7 @@ export class ViewService{
   
         return result;
      } catch (error) {
-        console.error(error);
+        logger.error (error);
         throw new Error("Internal Server Error");  
         }
     }

@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import config from "./config/config.js";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose"
+import { logger } from "./logger.js";
 
 
 const idValidator = /^[0-9]+$/;
@@ -19,11 +20,11 @@ export default class MongoSingleton{
   }
   static getInstance(){
     if (this.#instance){
-      console.log("already connected")
+      logger.info("already connected")
       return this.#instance
     }
   this.#instance = new MongoSingleton()
-  console.log("connected")
+  logger.info("connected")
   return this.#instance
   }
 }
@@ -34,7 +35,7 @@ export const __dirname = dirname(__filename);
 export const createEmptyArray = (path, utf) => {
   if (!fs.existsSync(path)) {
     fs.writeFileSync(path, "[]", utf);
-    console.log(`El archivo ${path} no existía, se ha creado un array vacío.`);
+    logger.warning(`El archivo ${path} no existía, se ha creado un array vacío.`);
   }
 };
 

@@ -1,7 +1,9 @@
 import fs from "fs";
 import { createEmptyArray } from "../../utils.js";
+import { logger } from "../../logger.js";
 const path = "carts.json";
 const utf = "utf-8";
+
 
 createEmptyArray(path, utf);
 
@@ -19,7 +21,7 @@ export  class CartManagerFS {
       const lastCart = carts[carts.length - 1];
       return lastCart ? lastCart.id + 1 : 1;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -29,7 +31,7 @@ export  class CartManagerFS {
       let carts = JSON.parse(data);
       return carts;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async getCartById(id) {
@@ -37,13 +39,13 @@ export  class CartManagerFS {
       const carts = await this.getCarts();
       const cart = carts.find((p) => p.id === parseInt(id));
       if (cart) {
-        console.log("Este es su cart:", cart);
+        logger.info("Este es su cart:", cart);
         return cart;
       } else {
-        console.error(`Error: Cart con id ${id} no encontrado.`);
+        logger.error (`Error: Cart con id ${id} no encontrado.`);
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -57,9 +59,9 @@ export  class CartManagerFS {
       };
       carts.push(newCart);
       await fs.promises.writeFile(path, JSON.stringify(carts));
-      console.log(`Se agregó el carrito "${cartId}" al archivo ${path}.`);
+      logger.info(`Se agregó el carrito "${cartId}" al archivo ${path}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -68,7 +70,7 @@ export  class CartManagerFS {
       const carts = await this.getCarts();
       const cartIndex = carts.findIndex((c) => c.id === cartId);
       if (cartIndex === -1) {
-        console.error(`Error: Carrito con ID ${cartId} no encontrado.`);
+        logger.error (`Error: Carrito con ID ${cartId} no encontrado.`);
         return;
       }
       const cart = carts[cartIndex];
@@ -80,11 +82,11 @@ export  class CartManagerFS {
         cart.products[productIndex].quantity += quantity;
       }
       await fs.promises.writeFile(this.path, JSON.stringify(carts));
-      console.log(
+      logger.info(
         `Producto ${productId} agregado al carrito ${cartId} con éxito.`
       );
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async deleteCart(cartId) {
@@ -92,9 +94,9 @@ export  class CartManagerFS {
       const carts = await this.getCarts();
       const updatedCarts = carts.filter((cart) => cart.id !== cartId);
       await fs.promises.writeFile(path, JSON.stringify(updatedCarts));
-      console.log(`Carrito ${cartId} eliminado con éxito.`);
+      logger.info(`Carrito ${cartId} eliminado con éxito.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async deleteCartProduct(cartId, productId) {
@@ -111,11 +113,11 @@ export  class CartManagerFS {
       );
       cart.products = updatedProducts;
       await fs.promises.writeFile(path, JSON.stringify(carts));
-      console.log(
+      logger.info(
         `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
       );
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -130,9 +132,9 @@ export  class CartManagerFS {
       const cart = carts[cartIndex];
       cart.products = [];
       await fs.promises.writeFile(path, JSON.stringify(carts));
-      console.log(`Productos del carrito ${cartId} eliminados con éxito.`);
+      logger.info(`Productos del carrito ${cartId} eliminados con éxito.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 

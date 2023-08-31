@@ -1,5 +1,6 @@
 import fs from "fs";
 import { createEmptyArray } from "../../utils.js";
+import { logger } from "../../logger.js";
 const path = "productos.json";
 const utf = "utf-8";
 
@@ -19,7 +20,7 @@ export class ProductManagerFS {
       const lastProduct = products.payload[products.payload.length - 1];
       return lastProduct ? lastProduct.id + 1 : 1;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async getProducts(limit, page, sort, category, stock) {
@@ -66,7 +67,7 @@ export class ProductManagerFS {
       
       return response;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
  
@@ -76,13 +77,13 @@ export class ProductManagerFS {
       const products = await this.getProducts();
       const product = products.payload.find((p) => p.id === parseInt(id));
       if (product) {
-        console.log("Este es su producto:", product);
+        logger.info("Este es su producto:", product);
         return product;
       } else {
-        console.error(`Error: Producto con id ${id} no encontrado.`);
+        logger.error (`Error: Producto con id ${id} no encontrado.`);
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -101,7 +102,7 @@ export class ProductManagerFS {
       const products = await this.getProducts();
       const productExists = products.payload.some((p) => p.code === code);
       if (productExists) {
-        console.error(`Error: El código ${code} ya existe.`);
+        logger.warning(`Error: El código ${code} ya existe.`);
         return;
       }
       const product = {
@@ -117,9 +118,9 @@ export class ProductManagerFS {
       };
       products. payload.push(product);
       await fs.promises.writeFile(path, JSON.stringify(products));
-      console.log(`Se agregó el producto "${title}" al archivo ${path}.`);
+      logger.info(`Se agregó el producto "${title}" al archivo ${path}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -129,9 +130,9 @@ export class ProductManagerFS {
       let indexOf = product.payload.findIndex((p) => p.id === id);
       product.payload.splice(indexOf, 1);
       await fs.promises.writeFile(path, JSON.stringify(product));
-      return console.log(`Se eliminó el producto con id ${id}.`);
+      return logger.info(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async updateProduct(
@@ -148,7 +149,7 @@ export class ProductManagerFS {
       const products = await this.getProducts();
       const productIndex = products.payload.findIndex((p) => p.id === parseInt(id));
       if (productIndex === -1) {
-        console.error(`Error: No se encontró el producto con id ${id}.`);
+        logger.error (`Error: No se encontró el producto con id ${id}.`);
         return;
       }
       const productToUpdate = products.payload[productIndex];
@@ -164,9 +165,9 @@ export class ProductManagerFS {
       };
       products.payload[productIndex] = updatedProduct;
       await fs.promises.writeFile(path, JSON.stringify(products));
-      console.log(`Se actualizó el producto con id ${id}.`);
+      logger.info(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 }

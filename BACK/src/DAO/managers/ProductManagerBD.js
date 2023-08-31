@@ -1,3 +1,4 @@
+import { logger } from "../../logger.js";
 import { productsModel } from "../models/products_model.js";
 
 
@@ -12,7 +13,7 @@ export class ProductManagerBD  {
       const lastProduct = products[products.length - 1];
       return lastProduct ? lastProduct.id + 1 : 1;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   
@@ -81,7 +82,7 @@ export class ProductManagerBD  {
       return response;
       
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -89,13 +90,13 @@ export class ProductManagerBD  {
     try {
       const product = await this.model.findOne({ id: id });
       if (product) {
-        console.log("Este es su producto:", product);
+       logger.info("Este es su producto:", product);
         return product;
       } else {
-        console.error(`Error: Producto con id ${id} no encontrado.`);
+        logger.error (`Error: Producto con id ${id} no encontrado.`);
       }
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -122,10 +123,10 @@ export class ProductManagerBD  {
         category,
         thumbnail,
       });
-      console.log(`Se agregó el producto "${title}" a la base de datos`);
+      logger.info(`Se agregó el producto "${title}" a la base de datos`);
       return product;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 
@@ -133,9 +134,9 @@ export class ProductManagerBD  {
     try {
       await this.model.findOneAndDelete({ id: id });
 
-      return console.log(`Se eliminó el producto con id ${id}.`);
+      return logger.info(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
   async updateProduct(
@@ -151,7 +152,7 @@ export class ProductManagerBD  {
     try {
       const productToUpdate = await this.model.findOne({ id: id });
       if (!productToUpdate) {
-        console.error(`Error: No se encontró el producto con id ${id}.`);
+        logger.warning(`Error: No se encontró el producto con id ${id}.`);
         return;
       }
       const updatedProduct = {
@@ -164,9 +165,9 @@ export class ProductManagerBD  {
         thumbnail: thumbnail || productToUpdate.thumbnail,
       };
       await this.model.updateOne({ id: id }, updatedProduct);
-      console.log(`Se actualizó el producto con id ${id}.`);
+      logger.info(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
-      console.error(error);
+      logger.error (error);
     }
   }
 }

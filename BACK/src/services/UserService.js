@@ -1,5 +1,6 @@
 import { UserManagerBD } from "../DAO/managers/UserManagerBD.js";
 import { userDTO } from "../DAO/DTOS/userDto.js";
+import { logger } from "../logger.js";
 
 const userManager1 = new UserManagerBD();
 
@@ -9,7 +10,7 @@ export class UserService {
       const user = await userManager1.getByEmail(email);
       return user;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener usuario");
     }
   }
@@ -22,7 +23,7 @@ export class UserService {
       );
       return updatedPasword;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al actualizar password");
     }
   }
@@ -42,7 +43,7 @@ export class UserService {
       const newUser = await userManager1.createUser(userDTOs);
       return newUser;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al crear usuario");
     }
   }
@@ -53,7 +54,7 @@ export class UserService {
       const users = await userManager1.getAll();
       return users;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error alpbtener usuarios");
     }
   }
@@ -63,7 +64,7 @@ export class UserService {
       const user = await userManager1.getById(id);
       return user;
     } catch (error) {
-      console.error(error);
+      logger.error (error);
       throw new Error("Error al obtener usuario por id");
     }
   }

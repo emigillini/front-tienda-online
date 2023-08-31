@@ -1,4 +1,5 @@
 import { userModel } from "../models/user_model.js";
+import { logger } from "../../logger.js";
 
 export class UserManagerBD {
   constructor() {
@@ -12,7 +13,7 @@ export class UserManagerBD {
 
       return result;
     } catch (error) {
-      console.log(error);
+      logger.error (error);
     }
   }
 
@@ -21,7 +22,7 @@ export class UserManagerBD {
     try {
       result = await userModel.findOne({ email: email });
     } catch (error) {
-      console.log(error);
+      logger.error (error);
     }
 
     return result;
@@ -31,7 +32,7 @@ export class UserManagerBD {
     try {
       result = await userModel.findOne({ _id: id });
     } catch (error) {
-      console.log(error);
+      logger.error (error);
     }
 
     return result;
@@ -42,7 +43,7 @@ export class UserManagerBD {
     try {
       result = await userModel.create(user);
     } catch (error) {
-      console.log(error);
+      logger.error (error);
     }
 
     return result;
@@ -55,7 +56,7 @@ export class UserManagerBD {
         { $set: { password: newPassword } }
       );
     } catch (error) {
-      console.log(error);
+      logger.error (error);
     }
     return result;
   }

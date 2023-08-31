@@ -1,12 +1,13 @@
 import multer from "multer";
 import { EErrors } from "../../services/errors/Enums.js";
+import { logger } from "../../logger.js";
 
 export const logRequest = (req, res, next) => {
-  console.log(`Request recibida: ${new Date()}`);
+  logger.http(`Request recibida: ${new Date()}`);
   next();
 };
 export const msg = (req, res, next) => {
-  console.log("gracias por consultar");
+  logger.info("gracias por consultar");
   next();
 };
 const storage = multer.diskStorage({

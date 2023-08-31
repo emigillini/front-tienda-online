@@ -1,4 +1,5 @@
 import { ticketModel } from "../models/ticket_model.js";
+import { logger } from "../../logger.js";
 
 export default class TicketManagerBD {
   constructor() {
@@ -11,7 +12,7 @@ export default class TicketManagerBD {
 
       return tickets;
     } catch (error) {
-      console.log(error);
+      logger.error (error);
       return null;
     }
   };
@@ -24,7 +25,7 @@ export default class TicketManagerBD {
         .exec();
       return ticket;
     } catch (error) {
-      console.log(error);
+      logger.error (error);
       return null;
     }
   };
@@ -34,7 +35,7 @@ export default class TicketManagerBD {
       let result = await ticketModel.create(ticket);
       return result;
     } catch (error) {
-      console.log(error);
+      logger.error (error);
       return null;
     }
   };
@@ -44,7 +45,7 @@ export default class TicketManagerBD {
       let result = await ticketModel.updateOne({ _id: id }, { $set: ticket });
       return result;
     } catch (error) {
-      console.log(error);
+      logger.error (error);
       return null;
     }
   };
