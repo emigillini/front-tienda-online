@@ -20,6 +20,17 @@ const productsSchema = new mongoose.Schema({
   stock: Number,
   category: String,
   thumbnail: [],
+  owner: {
+    type: String,
+    default: "admin",
+    validate: {
+      validator: function (email) {
+        
+        return this.owner === "admin" || this.owner === email;
+      },
+      message: "Solo los usuarios premium pueden tener productos con un propietario.",
+    },
+  },
 });
 productsSchema.plugin(mongoosePaginate);
 export const productsModel = mongoose.model(productsCollection, productsSchema);

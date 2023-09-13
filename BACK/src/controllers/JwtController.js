@@ -52,4 +52,5 @@ export class JwtController {
   async current(req, res) {
     res.send("Something");
   }
+
 }

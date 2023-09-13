@@ -34,7 +34,7 @@ export default class SessionRouter extends CustomRouter {
 
     this.get("/login-error", userController1.loginError);
 
-    this.get("/current", authMiddleware, userController1.current);
+    this.get("/current", userController1.current);
 
     this.get("/logout", userController1.logout);
 

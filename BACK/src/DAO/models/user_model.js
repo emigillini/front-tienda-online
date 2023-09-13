@@ -8,7 +8,12 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   age: Number,
+
   role: { type: String, default: "usuario" },
+  products: [{ 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product" 
+  }],
 });
 
 export const userModel = mongoose.model(usersCollection, userSchema);

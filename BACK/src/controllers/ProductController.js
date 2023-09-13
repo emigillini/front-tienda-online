@@ -5,17 +5,22 @@ import { generateProductErrorInfo } from "../services/errors/Info.js";
 import { logger } from "../logger.js";
 
 
+
 const prodman1 = new ProductService();
 
 export class ProductController {
   async getProdByid(req, res) {
     try {
       const product = await prodman1.getProdById(req.params.id);
+      
       if (!product) {
         logger.warning(`Producto no encontrado para el id: ${req.params.id}`); 
+        const user = await req.session.user.role
         return res.sendUserError({
           id: req.params.id,
           message: `id ${req.params.id} no encontrado `,
+          rol: user
+
         });
       }
       
@@ -118,16 +123,24 @@ export class ProductController {
     try {
       const prodId = req.params.id;
       const prod = await prodman1.getProdById(prodId);
+    
       if (!prod) {
-        return res
-          .status(404)
-          .send({ message: `Producto con ID ${prodId} no encontrado.` });
+        return res.sendUserError({ message: `Producto con ID ${prodId} no encontrado.` });
       }
-      const deletedProd = await prodman1.deleteProd(prodId);
-      res.sendSuccess({
-        status: "Producto eliminado exitosamente.",
-        payload: deletedProd,
-      });
+      
+      const currentUserRole = req.session.user.role; 
+      
+     
+      if (currentUserRole === "admin" || (currentUserRole === "premium" && req.session.user.email === prod.owner)) {
+        const deletedProd = await prodman1.deleteProd(prodId);
+        res.sendSuccess({
+          status: "Producto eliminado exitosamente.",
+          payload: deletedProd,
+        });
+      } else {
+        res.status(403).json({ message: "Acceso denegado" });
+      }
+      
       //socketServer.emit("productDeleted", prodId);
     } catch (error) {
       logger.error(error);

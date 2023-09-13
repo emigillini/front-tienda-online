@@ -1,30 +1,31 @@
 import CustomRouter from "./router.js";
 import { transport } from "../App.js";
-import { ProductService } from "../services/ProductService.js";
+import { __dirname } from "../utils.js";
 
-const produ = new ProductService()
 
 export default class MailRouter extends CustomRouter {
   init() {
-    this.get("/", async (req, res) => {
+    this.get("/resetPassword", async (req, res) => {
       try {
-        const prd = await produ.getProdById(1)
-        console.log(prd)
+        
+       const email= "emigillini@hotmail.com"
+        
+       const resetLink=`http://localhost:8080/session/restore-password?`
         let result = await transport.sendMail({
             from: "emigillini@gmail.com",
-            to: "emigillini@hotmail.com",
-            subject:"prueba",
-            html:`<div><h1>Prueba gato${prd}</h1>
-            <img src="cid:imagen"/>   
+            to: email,
+            subject:"Recuperacion",
+            html:`<div><h1>Recuperar </h1>
+            <div>Haga clic en el siguiente enlace para restablecer su contraseña: ${resetLink}</div>
             </div>
             `,
-            attachments:[
+            /*attachments:[
                 {
                     filename :"imagen.jfif",
                     path:__dirname+"../BACK/src/public/imagen/imagen.jfif",
                     cid:"imagen"
                 }
-            ],
+            ],*/
             
         })
         res.send(result)

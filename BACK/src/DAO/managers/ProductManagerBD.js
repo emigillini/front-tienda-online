@@ -90,7 +90,7 @@ export class ProductManagerBD  {
     try {
       const product = await this.model.findOne({ id: id });
       if (product) {
-       logger.info("Este es su producto:", product);
+       logger.info("Este es su producto:", product._doc);
         return product;
       } else {
         logger.error (`Error: Producto con id ${id} no encontrado.`);

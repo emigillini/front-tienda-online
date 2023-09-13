@@ -44,6 +44,14 @@ export const userRole = (req, res, next) => {
   }
 };
 
+export const premiumRole = (req, res, next) => {
+  if (req.session.user && req.session.user.role === "premium") {
+    next();
+  } else {
+    res.status(403).json({ message: "Acceso denegado" });
+  }
+};
+
 export default (error, req, res, next) => {
   console.log(error.cause);
   switch (error.code) {
