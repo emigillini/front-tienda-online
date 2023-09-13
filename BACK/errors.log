@@ -1990,3 +1990,66 @@ warning: argumentos
 info: connected
 info: already connected
 info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+error: Error: Producto con id 45646 no encontrado.
+warning: Producto no encontrado para el id: 45646
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"64db69d3d3bdbd76088e14be","category":"fruta","code":"177","description":"roja","id":12,"owner":"admin","price":5269,"status":true,"stock":100,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"manzanasss"}
+info: Este es su producto: {"__v":0,"_id":"64db69d3d3bdbd76088e14be","category":"fruta","code":"177","description":"roja","id":12,"owner":"admin","price":5269,"status":true,"stock":100,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"manzanasss"}
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"5\"","value":"5","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"8\"","value":"8","valueType":"string"}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado

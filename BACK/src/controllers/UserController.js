@@ -1,6 +1,6 @@
 import passport from "passport";
 import { UserService } from "../services/UserService.js";
-
+import { userModel } from "../DAO/models/user_model.js";
 import { createHash } from "../utils.js";
 import { logger } from "../logger.js";
 
@@ -108,6 +108,32 @@ export class UserController {
       return res.sendSuccess(user);
     } catch (error) {
       logger.error(error);
+    }
+  }
+  async changeUserRole(req, res) {
+    const { uid } = req.params;
+
+    try {
+     
+      const user = await userModel.findById(uid);
+
+      if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
+
+      if (user.role === "usuario") {
+        user.role = "premium";
+      } else if (user.role === "premium") {
+        user.role = "usuario";
+      }
+
+      
+      await user.save();
+
+      return res.json({ message: "Rol del usuario cambiado exitosamente", newUserRole: user.role });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
 }

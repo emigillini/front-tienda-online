@@ -113,6 +113,8 @@ export default class CartController {
   async addProductToCart(req, res) {
     const { cid, pid } = req.params;
     const quantity = 1;
+    const rol = req.session.user.role;
+    const email = req.session.user.email;
     try {
       const product = await prodservice.getProdById(pid);
       if (!product) {
@@ -122,6 +124,9 @@ export default class CartController {
       const cart = await cartService.getCartById(parseInt(cid));
       if (!cart) {
         return res.sendUserError(`Carrito con ID ${cid} no encontrado.`);
+      }
+      if (rol="premium" && product.owner === email) {
+        return res.sendUserError("No puedes agregar tu propio producto al carrito.");
       }
       await cartService.addProductToCart(cid, pid, parseInt(quantity));
       res.sendSuccess(`Producto ${pid} agregado al carrito ${cid}.`);

@@ -128,7 +128,7 @@ export class ProductController {
         return res.sendUserError({ message: `Producto con ID ${prodId} no encontrado.` });
       }
       
-      const currentUserRole = req.session.user.role; 
+      const currentUserRole = await req.session.user.role; 
       
      
       if (currentUserRole === "admin" || (currentUserRole === "premium" && req.session.user.email === prod.owner)) {
