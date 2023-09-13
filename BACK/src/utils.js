@@ -8,6 +8,7 @@ import mongoose from "mongoose"
 import { logger } from "./logger.js";
 
 
+
 const idValidator = /^[0-9]+$/;
 const __filename = fileURLToPath(import.meta.url);
 
@@ -84,3 +85,32 @@ export const validateParam = (paramName, req, res, next) => {
 };
 
 
+// Clave secreta para firmar y verificar el token
+const secretKey = "paraEntregaTrabajo"
+
+// Función para generar un token de restablecimiento de contraseña
+export function generateResetToken(email) {
+  const payload = {
+    email,
+    // Agregar una fecha de expiración de 1 hora desde el momento actual
+    exp: Math.floor(Date.now() / 1000) + 3600, // 3600 segundos = 1 hora
+  };
+
+  return jwt.sign(payload, secretKey);
+}
+
+// Función para verificar un token de restablecimiento de contraseña
+export function verifyResetToken(token) {
+  try {
+    const decoded = jwt.verify(token, secretKey);
+
+    // Verificar si el token ha expirado
+    if (decoded.exp < Date.now() / 1000) {
+      return false; // El token ha expirado
+    }
+
+    return true; // El token es válido
+  } catch (error) {
+    return false; // Error al verificar el token o token inválido
+  }
+}

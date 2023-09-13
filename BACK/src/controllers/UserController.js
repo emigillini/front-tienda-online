@@ -71,8 +71,11 @@ export class UserController {
         return res.render("register", {});
       }
       let newPassword = createHash(user.password);
+      if (newPassword === userFound.password) {
+        return res.sendServerError("no misma")
+      }
       await userServ1.updatePassword(user.email, newPassword);
-      res.render("login", {});
+      res.render("login", {successMessage: "Contraseña restablecida con éxito"});
     } catch (error) {
       logger.error(error);
       res.sendServerError("Error interno del servidor");
