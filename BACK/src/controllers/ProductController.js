@@ -132,10 +132,10 @@ export class ProductController {
       
      
       if (currentUserRole === "admin" || (currentUserRole === "premium" && req.session.user.email === prod.owner)) {
-        const deletedProd = await prodman1.deleteProd(prodId);
+        await prodman1.deleteProd(prodId);
         res.sendSuccess({
           status: "Producto eliminado exitosamente.",
-          payload: deletedProd,
+        
         });
       } else {
         res.status(403).json({ message: "Acceso denegado" });

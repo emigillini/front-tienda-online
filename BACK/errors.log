@@ -2637,3 +2637,119 @@ info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init"
 info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
 info: Producto 1 agregado al carrito 84 con éxito.
 info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[{"id":1,"quantity":1}]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509c740582699848ae9d165","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":17,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Este es su producto: {"__v":0,"_id":"6509c740582699848ae9d165","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":17,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"6509c740582699848ae9d165","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":17,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Este es su producto: {"__v":0,"_id":"6509c740582699848ae9d165","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":17,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: Error: Producto con id 86 no encontrado.
+info: Este es su producto: {"__v":0,"_id":"6509c740582699848ae9d165","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":17,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 17.
+error: undefined
+error: Error: Producto con id 17 no encontrado.
+info: Este es su producto: {"__v":0,"_id":"64dcdc1b3d3eb17ceb9e56a9","category":"fruta","code":"177","description":"amarillo","id":16,"owner":"admin","price":5269,"status":true,"stock":0,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"algo"}
+info: Se eliminó el producto con id 16.
+error: undefined
+error: Error: Producto con id 17 no encontrado.
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509c9b7c28e51274416cb3e","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":13,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 13.
+error: undefined
+info: Se agregó el producto "Producto 1" a la base de datos
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"6509ca95c28e51274416cb43","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":13,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 13.
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509cb8a03763e7ec4760f71","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":13,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 13.
+error: undefined
+error: Error: Producto con id 13 no encontrado.
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509cbe003763e7ec4760f77","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":13,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se actualizó el producto con id 13.
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509cc7f2e1eed7a79477096","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":14,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 14.
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509ccf45b36b2390ae46e98","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":14,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 14.
+error: undefined
