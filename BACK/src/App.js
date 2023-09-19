@@ -29,6 +29,8 @@ import MockRouter from "./routes/mock.js";
 import compression from "express-compression"
 import { addLogger } from "./logger.js";
 import { logger } from "./logger.js";
+import swaggerJSdoc from "swagger-jsdoc"
+import swaggerUiExpress from "swagger-ui-express"
 const mongodbURl = config.mongoURL;
 const mailcontra = config.gmailcontra;
 const PORT = config.port;
@@ -37,6 +39,20 @@ const acountsid= config.sidtwillio;
 const token= config.tokentwillio;
 const num= config.numtwillio
 const app = express();
+const swaggerOptions ={
+  definition:{
+      openapi: "3.0.1",
+      info:{
+          title:"Tienda Online",
+          description:"Tienda",
+        
+      }
+  },
+  apis:[`${__dirname}/**/*.yaml`]
+}//C:\Users\emigi\Desktop\backend\mascota\RecursosBackend-Adoptme
+const specs =swaggerJSdoc(swaggerOptions);
+
+app.use("/apidocs",swaggerUiExpress.serve,swaggerUiExpress.setup(specs))
 app.use(addLogger)
 app.use(compression({
   brotli:{enabled:true, zlib:{}}

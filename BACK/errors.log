@@ -2125,3 +2125,515 @@ warning: argumentos
 info: connected
 info: already connected
 info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+error: Error: Cart con id 1 no encontrado.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"649a072b85989bdc624dba22","id":10,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"649a072b85989bdc624dba22","id":10,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"649a072b85989bdc624dba22","id":10,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 85,
+  products: [],
+  email: 'emigillini@hotmail.com',
+  _id: new ObjectId("6509b5f5e37fb3168653bba7"),
+  __v: 0
+}" 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 86,
+  products: [],
+  email: 'emigillini@hotmail.com',
+  _id: new ObjectId("6509b63cffba153d529de66f"),
+  __v: 0
+}" 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"649a072b85989bdc624dba22","id":10,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6509b63cffba153d529de66f","email":"emigillini@hotmail.com","id":86,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6509b63cffba153d529de66f","email":"emigillini@hotmail.com","id":86,"products":[]}}
+info: Carrito 86 eliminado con éxito.
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6509b5f5e37fb3168653bba7","email":"emigillini@hotmail.com","id":85,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6509b5f5e37fb3168653bba7","email":"emigillini@hotmail.com","id":85,"products":[]}}
+info: Carrito 85 eliminado con éxito.
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: Error: Cart con id 85 no encontrado.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: Productos 84 con éxito.
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+error: undefined
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+error: undefined
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64de42400117ba96a39c850b","email":"emigillini@hotmail.com","id":83,"products":[]}}
+error: undefined
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64de42400117ba96a39c850b","email":"emigillini@hotmail.com","id":83,"products":[]}}
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su producto: {"__v":0,"_id":"64836013b132de05ff412ed8","category":"verdura","code":"1","description":"verde","id":1,"owner":"admin","price":999,"status":true,"stock":90,"thumbnail":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAXxx955FhtETysqE-0JZis1aQplvk9WLgQlwxdpgu&s"],"title":"lechuga"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[]}}
+info: Producto 1 agregado al carrito 84 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"64dfa737ce14239f8ade1686","email":"z@z","id":84,"products":[{"id":1,"quantity":1}]}}

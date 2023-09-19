@@ -125,7 +125,7 @@ export default class CartController {
       if (!cart) {
         return res.sendUserError(`Carrito con ID ${cid} no encontrado.`);
       }
-      if (rol="premium" && product.owner === email) {
+      if (rol=="premium" && product.owner === email) {
         return res.sendUserError("No puedes agregar tu propio producto al carrito.");
       }
       await cartService.addProductToCart(cid, pid, parseInt(quantity));
