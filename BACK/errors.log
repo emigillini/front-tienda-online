@@ -2753,3 +2753,12 @@ info: Se agregó el producto "Producto 1" a la base de datos
 info: Este es su producto: {"__v":0,"_id":"6509ccf45b36b2390ae46e98","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":14,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
 info: Se eliminó el producto con id 14.
 error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el producto "Producto 1" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"6509cd38aef4fd4cdf8f2413","category":"Electrónica","code":"P1","description":"Descripción del producto 1","id":14,"owner":"admin","price":19.99,"status":true,"stock":100,"thumbnail":["thumbnail1.jpg","thumbnail2.jpg"],"title":"Producto 1"}
+info: Se eliminó el producto con id 14.
+info: Productos encontrados 
