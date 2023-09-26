@@ -164,7 +164,7 @@ export const clients = twilio(acountsid,token,num)
 
 
 
-const connectToDatabase = async () => {
+export const connectToDatabase = async () => {
   try {
     await MongoSingleton.getInstance();
 
