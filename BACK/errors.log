@@ -9891,3 +9891,189 @@ info: Este es su producto: {"__v":0,"_id":"6513371bc4219ac9328032ff","category":
 info: Productos encontrados 
 info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
 info: Se agregó el producto "Nuevo Producto" a la base de datos
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 319,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337ab307016e4864f6190"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 320,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337ab307016e4864f6195"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 321,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337ab307016e4864f6199"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 322,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337ab307016e4864f619c"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 323,
+  products: [],
+  email: 'user@example.com',
+  _id: new ObjectId("651337ac307016e4864f61a0"),
+  __v: 0
+}" 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65131e87515087e0b900076c","email":"user1@example.com","id":1,"products":[]}}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"651337ad307016e4864f61a3","category":"Electrónica","code":"PR009","description":"Descripción de Prueba","id":548,"owner":"admin","price":49.99,"status":true,"stock":7,"thumbnail":["imagen9.jpg"],"title":"Producto de Prueba"}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se actualizó el producto con id 550.
+info: Este es su producto: {"__v":0,"_id":"651337ad307016e4864f61aa","category":"Ropa","code":"PR010","description":"Descripción Actualizada","id":550,"owner":"admin","price":69.99,"status":true,"stock":10,"thumbnail":["imagen11.jpg"],"title":"Producto Actualizado"}
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Se agregó el producto "Nuevo Producto" a la base de datos
+info: Se agregó el carrito{
+  id: 324,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337b77510705339610a9e"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 325,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337b87510705339610aa3"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 326,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337b87510705339610aa7"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 327,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337b87510705339610aaa"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 328,
+  products: [],
+  email: 'user@example.com',
+  _id: new ObjectId("651337b97510705339610aae"),
+  __v: 0
+}" 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65131e87515087e0b900076c","email":"user1@example.com","id":1,"products":[]}}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"651337ba7510705339610ab1","category":"Electrónica","code":"PR009","description":"Descripción de Prueba","id":552,"owner":"admin","price":49.99,"status":true,"stock":7,"thumbnail":["imagen9.jpg"],"title":"Producto de Prueba"}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se actualizó el producto con id 554.
+info: Este es su producto: {"__v":0,"_id":"651337ba7510705339610ab8","category":"Ropa","code":"PR010","description":"Descripción Actualizada","id":554,"owner":"admin","price":69.99,"status":true,"stock":10,"thumbnail":["imagen11.jpg"],"title":"Producto Actualizado"}
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Se agregó el producto "Nuevo Producto" a la base de datos
+info: Se agregó el carrito{
+  id: 329,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337c494f3325f9ae864e5"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 330,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337c594f3325f9ae864ea"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 331,
+  products: [],
+  email: 'user1@example.com',
+  _id: new ObjectId("651337c894f3325f9ae864ee"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 332,
+  products: [],
+  email: 'user2@example.com',
+  _id: new ObjectId("651337c994f3325f9ae864f1"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 333,
+  products: [],
+  email: 'user@example.com',
+  _id: new ObjectId("651337c994f3325f9ae864f5"),
+  __v: 0
+}" 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65131e87515087e0b900076c","email":"user1@example.com","id":1,"products":[]}}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Este es su producto: {"__v":0,"_id":"651337ca94f3325f9ae864f8","category":"Electrónica","code":"PR009","description":"Descripción de Prueba","id":556,"owner":"admin","price":49.99,"status":true,"stock":7,"thumbnail":["imagen9.jpg"],"title":"Producto de Prueba"}
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se agregó el producto "Producto de Prueba" a la base de datos
+info: Se actualizó el producto con id 558.
+info: Este es su producto: {"__v":0,"_id":"651337cb94f3325f9ae864ff","category":"Ropa","code":"PR010","description":"Descripción Actualizada","id":558,"owner":"admin","price":69.99,"status":true,"stock":10,"thumbnail":["imagen11.jpg"],"title":"Producto Actualizado"}
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":88,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Se agregó el producto "Nuevo Producto" a la base de datos
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado

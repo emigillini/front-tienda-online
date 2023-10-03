@@ -139,4 +139,31 @@ export class UserController {
       return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
+  async uploadDocuments(req, res) {
+    try {
+      const userId = req.params.uid;
+      const user = await userModel.findById(userId);
+
+      if (!user) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+
+      const uploadedDocuments = req.files.map(file => {
+        return {
+          name: file.originalname,
+          reference: `/uploads/${file.originalname}`,
+           // Ruta de acceso al archivo.//
+        };
+      });
+
+      // Agrega los documentos subidos al usuario
+      user.documents = uploadedDocuments;
+      await user.save();
+
+      return res.status(200).json({ message: 'Documentos subidos exitosamente' });
+    } catch (error) {
+      console.error('Error al subir documentos:', error);
+      return res.status(500).json({ message: 'Error al subir documentos' });
+    }
+  }
 }

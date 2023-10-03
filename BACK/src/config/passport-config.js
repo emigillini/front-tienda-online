@@ -59,6 +59,7 @@
           if (!isValidPassword(user, password)) {
             return done(null, false);
           }
+          await user.updateLastConnection();
           return done(null, user);
         } catch (error) {
           logger.error("Error: " + error);

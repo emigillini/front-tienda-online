@@ -8,12 +8,22 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   age: Number,
-
   role: { type: String, default: "usuario" },
   products: [{ 
     type: mongoose.Schema.Types.ObjectId,
     ref: "Product" 
   }],
+  documents: [{
+    name: String,
+    reference: String,
+  }],
+  last_connection: Date, 
 });
+
+
+userSchema.methods.updateLastConnection = async function() {
+  this.last_connection = new Date();
+  await this.save();
+};
 
 export const userModel = mongoose.model(usersCollection, userSchema);
