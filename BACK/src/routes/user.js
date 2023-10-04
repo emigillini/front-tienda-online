@@ -9,6 +9,13 @@ export default class UserRouter extends CustomRouter {
     this.get("/", userController1.getAll);
     this.get("/:id", userController1.getUserById);
     this.put("/premium/:uid", userController1.changeUserRole);
-    this.post("/:uid/documents", upload.array("documents", 5), userController1.uploadDocuments)
+    this.post("/:uid/documents", upload.fields([
+      { name: 'profileImage', maxCount: 1 },
+      { name: 'productImage', maxCount: 1 },
+      { name: 'identificacion', maxCount: 1 },
+      { name: 'comp_domicilio', maxCount: 1 },
+      { name: 'estado_cuenta', maxCount: 1 },
+      
+    ]), userController1.uploadDocuments)
   }
 }

@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
   documents: [{
     name: String,
     reference: String,
+    doctype: String,
   }],
   last_connection: Date, 
 });

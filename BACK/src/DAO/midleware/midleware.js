@@ -11,9 +11,25 @@ export const msg = (req, res, next) => {
   next();
 };
 const storage = multer.diskStorage({
-  destination: 'src/public/uploads/',
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
+  destination: (req, file, cb) => {
+    let folder;
+    
+    if (file.fieldname === 'profileImage') {
+      folder = 'profiles';
+    } else if (file.fieldname === 'productImage') {
+      folder = 'products';
+    } else if (file.fieldname === 'identificacion') {
+      folder = 'documents';
+    }else if (file.fieldname === 'comp_domicilio') {
+      folder = 'documents';
+    }else if (file.fieldname === 'estado_cuenta') {
+      folder = 'documents';
+    }
+    
+    cb(null, `src/public/uploads/${folder}`);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
   },
 });
 

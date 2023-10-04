@@ -124,14 +124,25 @@ export class UserController {
         return res.status(404).json({ message: "Usuario no encontrado" });
       }
 
-      if (user.role === "usuario") {
-        user.role = "premium";
+      if (user.role === 'usuario') {
+      
+        const requiredDocuments = ['estado_cuenta', 'comp_domicilio', 'identificacion'];
+        const missingDocuments = requiredDocuments.filter(doc => !user.documents.some(d => d.doctype === doc));
+  
+        if (missingDocuments.length === 0) {
+          user.role = 'premium';
+          await user.save();
+          return res.status(200).json({ message: 'Usuario actualizado a premium', newUserRole: user.role });
+        } else {
+          return res.status(400).json({ message: 'El usuario no ha terminado de procesar su documentación', missingDocuments });
+        }
       } else if (user.role === "premium") {
         user.role = "usuario";
+        await user.save();
       }
 
       
-      await user.save();
+   
 
       return res.json({ message: "Rol del usuario cambiado exitosamente", newUserRole: user.role });
     } catch (error) {
@@ -139,4 +150,23 @@ export class UserController {
       return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
+  async uploadDocuments(req, res){
+    const { uid } = req.params;
+    const { file } = req;
+    const { doctype } = req.body;
+    try {
+      const user = await userModel.findById(uid);
+      if (!user) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+      user.documents.push({ file, doctype});
+      await user.save();
+  
+      res.status(200).json({ message: 'Documento subido exitosamente' });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
+    }
+  }
+  
 }
