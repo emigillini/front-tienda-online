@@ -117,18 +117,14 @@ export class UserController {
     const { uid } = req.params;
 
     try {
-     
+    
       const user = await userModel.findById(uid);
-
       if (!user) {
         return res.status(404).json({ message: "Usuario no encontrado" });
       }
-
       if (user.role === 'usuario') {
-      
         const requiredDocuments = ['estado_cuenta', 'comp_domicilio', 'identificacion'];
         const missingDocuments = requiredDocuments.filter(doc => !user.documents.some(d => d.doctype === doc));
-  
         if (missingDocuments.length === 0) {
           user.role = 'premium';
           await user.save();
@@ -140,16 +136,13 @@ export class UserController {
         user.role = "usuario";
         await user.save();
       }
-
-      
-   
-
       return res.json({ message: "Rol del usuario cambiado exitosamente", newUserRole: user.role });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
+  
   async uploadDocuments(req, res){
     const { uid } = req.params;
     const { file } = req;

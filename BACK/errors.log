@@ -10300,3 +10300,13 @@ warning: argumentos
 info: connected
 info: already connected
 info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
