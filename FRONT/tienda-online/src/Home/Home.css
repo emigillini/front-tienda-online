@@ -1,0 +1,110 @@
+/* Estilo para el contenedor principal */
+div {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Estilo para los botones */
+button {
+  margin: 10px;
+  background-color: #3483fa;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para la tarjeta de producto */
+.card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  margin: 10px;
+  display: inline-block;
+  text-align: left;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Estilo para la imagen del producto */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Estilo para el título del producto */
+.card h3 {
+  font-size: 16px;
+  margin: 10px;
+}
+
+/* Estilo para la descripción del producto */
+.card p {
+  font-size: 14px;
+  margin: 10px;
+  color: #555;
+}
+
+/* Estilo para el precio del producto */
+.card .price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* Estilo para el botón "Agregar al carrito" */
+.agregarCart {
+  background-color: #3483fa;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.agregarCart:hover {
+  background-color: #0056b3;
+}
+/* Resto de los estilos anteriores... */
+
+/* Estilo para la imagen del producto */
+.card img {
+  max-width: 100%;
+  height: 200px; /* Establece la altura máxima de la imagen */
+  object-fit: cover; /* Escala y recorta la imagen para que ocupe todo el espacio disponible */
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Estilo para un contenedor que mantiene la relación de aspecto */
+.image-container {
+  width: 100%;
+  height: 200px; /* Establece la altura máxima del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5; /* Color de fondo para el espacio de la imagen */
+}
+
+/* Estilo para el título del producto */
+.card h3 {
+  font-size: 16px;
+  margin: 10px;
+}
+
+/* Resto de los estilos anteriores... */

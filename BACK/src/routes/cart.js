@@ -21,7 +21,7 @@ export default class CartRouter extends CustomRouter {
     this.get("/:id", logRequest, cartController1.getCartById);//
     this.delete(
       "/:cid/product/:pid",
-      userRole,
+      
       logRequest,
       cartController1.deleteCartProduct
     );//

@@ -42,10 +42,10 @@ export class ProductController {
         stock
       );
       logger.info(`Productos encontrados `); 
-      return res.sendSuccess(response)
+      return res.json(response)
 
     } catch (error) {
-      res.sendServerError("Error interno del servidor");
+      res.status(404).json({error:"Error interno del servidor"});
     }
   }
 

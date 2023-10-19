@@ -24,7 +24,7 @@ export default class CartController {
   async lastCart(req, res) {
     try {
       const lastCartId = await cartService.lastCart();
-      res.sendSuccess(lastCartId);
+      res.json(lastCartId);
     } catch (error) {
       logger.error(error);
       res.sendServerError("Error interno del servidor");
@@ -95,7 +95,7 @@ export default class CartController {
       await cartService.deleteAllCartProduct(cid);
       res.sendSuccess(`Se eliminaron todos los productos del carrito ${cid}.`);
     } catch (error) {
-      clogger.error(error);
+      logger.error(error);
       res.sendServerError("Error al eliminar los productos del carrito.");
     }
   }
@@ -104,17 +104,16 @@ export default class CartController {
       const user = req.session.user;
       console.log(user);
       await cartService.addCart(user.email);
-      res.sendSuccess("carro agregado");
+      res.json({ message: "Carro agregado" });
     } catch (error) {
       logger.error(error);
-      res.sendServerError("Error interno del servidor");
+      res.status(500).json({ error: "Error interno del servidor" })
     }
   }
   async addProductToCart(req, res) {
     const { cid, pid } = req.params;
     const quantity = 1;
-    const rol = req.session.user.role;
-    const email = req.session.user.email;
+
     try {
       const product = await prodservice.getProdById(pid);
       if (!product) {
@@ -125,9 +124,7 @@ export default class CartController {
       if (!cart) {
         return res.sendUserError(`Carrito con ID ${cid} no encontrado.`);
       }
-      if (rol=="premium" && product.owner === email) {
-        return res.sendUserError("No puedes agregar tu propio producto al carrito.");
-      }
+      
       await cartService.addProductToCart(cid, pid, parseInt(quantity));
       res.sendSuccess(`Producto ${pid} agregado al carrito ${cid}.`);
     } catch (error) {
