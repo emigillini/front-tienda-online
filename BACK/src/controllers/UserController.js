@@ -7,12 +7,13 @@ import { logger } from "../logger.js";
 const userServ1 = new UserService();
 
 export class UserController {
-  async register(req, res) {
+  /*async register(req, res) {
     res.render("register", {});
-  }
+  }*/
   async postRegister(req, res) {
     try {
-      res.render("login", {});
+      res.json({ success: true, user: req.user });
+      
     } catch (error) {
       logger.error(error);
       res.sendServerError("Error interno del servidor");
@@ -23,9 +24,9 @@ export class UserController {
     res.render("register-error", {});
   }
 
-  async login(req, res) {
+  /*async login(req, res) {
     res.render("login", {});
-  }
+  }*/
 
   async postLogin(req, res) {
     try {
@@ -33,31 +34,72 @@ export class UserController {
         email: req.user.email,
         role: req.user.role,
       };
-
-      res.render("bienvenida-datos", { user: req.session.user });
+      console.log(req.session)
+  
+      if (req.accepts('json')) {
+        // Si el cliente acepta JSON
+        if (req.isAuthenticated()) {
+          // Autenticación exitosa
+          res.json({ success: true, user: req.user });
+        } else {
+          // Autenticación fallida
+          res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
+        }
+      } else {
+        // De lo contrario, si el cliente no acepta JSON, renderiza una vista
+        if (req.isAuthenticated()) {
+          // Autenticación exitosa
+          res.render('bienvenida-datos', { user: req.user });
+        } else {
+          // Autenticación fallida
+          res.render('login-error', {});
+        }
+      }
     } catch (error) {
-      logger.error(error);
-      res.sendServerError("Error interno del servidor");
+      if (req.accepts('json')) {
+        // Si se produce un error, envía una respuesta JSON de error
+        res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
+      } else {
+        // De lo contrario, si el cliente no acepta JSON, renderiza una vista de error
+        res.render('login-error', {});
+      }
     }
   }
+  
 
   async admin(req, res) {
     res.sendSuccess("Welcome to the admin page!");
   }
 
   async loginError(req, res) {
-    res.render("login-error", {});
+    if (req.accepts('json')) {
+      // Si el cliente acepta JSON, envía una respuesta JSON de error
+      res.status(401).json({ success: false, message: 'Error en el inicio de sesión' });
+    } else {
+      // De lo contrario, renderiza una vista de error
+      res.render('login-error', {});
+    }
   }
+  
 
   async current(req, res) {
     let user = req.session.user;
     res.render("bienvenida-datos", { user });
   }
   async logout(req, res) {
-    req.session.destroy((error) => {
-      res.render("login");
+    if (req.accepts('json')){ req.session.destroy((error) => {
+      if (error) {
+        // Error al destruir la sesión
+        res.status(500).json({ message: 'Error al cerrar sesión' });
+      } else {
+        // Sesión destruida con éxito
+        res.status(200).json({ message: 'Sesión cerrada exitosamente' });
+      }
     });
-  }
+    }else{ req.session.destroy((error) => {
+      res.render("login");
+    });}}
+  
 
   async restorePassword(req, res) {
     res.render("restore-password", {});
@@ -65,22 +107,46 @@ export class UserController {
 
   async postRestorePassword(req, res) {
     try {
-      let user = req.body;
-      let userFound = await userServ1.getByEmail(user.email);
+      const user = req.body;
+      const userFound = await userServ1.getByEmail(user.email);
+  
       if (!userFound) {
-        return res.render("register", {});
+        // No se encontró el usuario, renderiza una vista
+        return res.render('register', {});
       }
-      let newPassword = createHash(user.password);
+  
+      const newPassword = createHash(user.password);
+  
       if (newPassword === userFound.password) {
-        return res.sendServerError("no misma")
+        // La nueva contraseña es la misma que la anterior, enviar una respuesta JSON de error
+        if (req.accepts('json')) {
+          return res.status(400).json({ error: 'La nueva contraseña no puede ser la misma que la anterior' });
+        } else {
+          // Renderiza una vista de error
+          return res.render('restore-password-error', {});
+        }
       }
+  
       await userServ1.updatePassword(user.email, newPassword);
-      res.render("login", {successMessage: "Contraseña restablecida con éxito"});
+  
+      // Contraseña restablecida con éxito
+      if (req.accepts('json')) {
+        return res.status(200).json({ success: 'Contraseña restablecida con éxito' });
+      } else {
+        // Renderiza una vista de éxito
+        return res.render('restore-password-success', { successMessage: 'Contraseña restablecida con éxito' });
+      }
     } catch (error) {
-      logger.error(error);
-      res.sendServerError("Error interno del servidor");
+      if (req.accepts('json')) {
+        // Si se produce un error, envía una respuesta JSON de error
+        return res.status(500).json({ error: 'Error interno del servidor' });
+      } else {
+        // Renderiza una vista de error
+        return res.render('restore-password-error', {});
+      }
     }
   }
+  
 
   async github(req, res) {
     passport.authenticate("github", { scope: ["user:email"] })(req, res);

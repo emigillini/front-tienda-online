@@ -1,5 +1,8 @@
 import { logger } from "../../logger.js";
 import { cartsModel } from "../models/carts_model.js";
+import { ProductManagerBD } from "./ProductManagerBD.js";
+
+const man1 = new ProductManagerBD()
 
 export class CartManagerBD {
   constructor() {
@@ -140,6 +143,10 @@ export class CartManagerBD {
   async addProductToCart(cartId, productId, quantity) {
     try {
       const cart = await this.getCartById(cartId);
+      const product= await man1.getProductById(productId)
+
+      
+      
       const productToAdd = await this.model.findOneAndUpdate(
         { _id: cart._id, "products.id": productId },
         { $inc: { "products.$.quantity": 1 } },
@@ -152,7 +159,15 @@ export class CartManagerBD {
         );
         return cart;
       } else {
-        const newProduct = { id: productId, quantity };
+        const newProduct = {
+          id: productId,
+          quantity,
+          title: product.title,
+          price: product.price,
+          category: product.category,
+          stock: product.stock,
+          thumbnail: product.thumbnail, 
+        };
         cart.products.push(newProduct);
       }
       await cart.save();

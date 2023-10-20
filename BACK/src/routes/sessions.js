@@ -7,7 +7,7 @@ const userController1 = new UserController();
 
 export default class SessionRouter extends CustomRouter {
   init() {
-    this.get("/register", logRequest, userController1.register);
+    //this.get("/register", logRequest, userController1.register);
 
     this.post(
       "/register",
@@ -20,7 +20,7 @@ export default class SessionRouter extends CustomRouter {
 
     this.get("/register-error", userController1.registerError);
 
-    this.get("/login", userController1.login);
+    //this.get("/login", userController1.login);
 
     this.post(
       "/login",

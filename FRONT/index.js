@@ -1,5 +1,5 @@
 
-const peticion = () => {
+/*const peticion = () => {
 
     fetch('http://localhost:8080/products/')
       .then(result => result.json())
@@ -64,3 +64,18 @@ const peticion2 = () => {
       console.error("Error en la petición:", error);
     });
 };
+
+//<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="peticion()">COnsultar Productos</button>
+    <button onclick="peticion2()">COnsultar Tickets</button>
+    <div id="mostrar"></div>
+    <script src="/FRONT/index.js"></script>
+</body>
+</html>*/
