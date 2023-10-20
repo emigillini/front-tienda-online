@@ -23,6 +23,12 @@ router.post('/payment-intents', async (req, res) => {
     const paymentIntentInfo = {
         amount: productRequested.price,
         currency: 'usd',
+        metadata:{
+            userId: "de Mongo",
+            orderDetails: JSON.stringify({
+                [productRequested.name]:2
+            },null, "/t")
+        },
         payment_method_types: ["card"],
     }
 

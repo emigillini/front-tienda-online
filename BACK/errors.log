@@ -13229,3 +13229,62 @@ warning: argumentos
 info: connected
 info: already connected
 info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 412,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6532c9da1f425ed35c669f14"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 412 con éxito.
+info: Producto 3 agregado al carrito 412 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6532c9da1f425ed35c669f14","email":"papa@papa","id":412,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":92,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":91,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":91,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 413,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6532ca5a1f425ed35c669f43"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 414,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6532cbc91f425ed35c669f4e"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 415,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6532cdc01f425ed35c669f59"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 

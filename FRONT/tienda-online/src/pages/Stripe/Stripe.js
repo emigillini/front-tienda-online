@@ -6,7 +6,7 @@ import PaymentForm from './components/PaymentForm';
 import Wrapper from '../../components/Wrapper';
 import styles from './Stripe.module.scss';
 import ProductCard from './components/ProductCard';
-import PaymentService from '../../services/
+import PaymentService from '../../services/PaymentService';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
