@@ -13192,3 +13192,30 @@ info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":
 info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":93,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
 info: Productos encontrados 
 info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 

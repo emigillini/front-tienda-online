@@ -31,6 +31,7 @@ import { addLogger } from "./logger.js";
 import { logger } from "./logger.js";
 import swaggerJSdoc from "swagger-jsdoc"
 import swaggerUiExpress from "swagger-ui-express"
+import PaymentRouter from "./routes/payments.router.js"
 const mongodbURl = config.mongoURL;
 const mailcontra = config.gmailcontra;
 const PORT = config.port;
@@ -103,6 +104,7 @@ app.use("/", viewRouter.getRouter());
 initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/api/payments', PaymentRouter)
 
 const httpServer = app.listen(PORT, () => {
   logger.info("Servidor conectado");
