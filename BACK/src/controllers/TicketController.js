@@ -7,7 +7,7 @@ export default class TicketController {
   async getTickets(req, res) {
     try {
       const tickets = await ticketService.getTickets();
-      return res.send(tickets);
+      return res.json(tickets);
     } catch (error) {
       logger.error(error);
       res.sendUserError("Error  no hay tickets encontrado");
@@ -17,7 +17,7 @@ export default class TicketController {
     try {
       const tickets = await ticketService.getTicketsById(req.params.id);
       if (!tickets) {
-        return res.send({
+        return res.json({
           id: req.params.id,
           message: `id ${req.params.id} no encontrado `,
         });

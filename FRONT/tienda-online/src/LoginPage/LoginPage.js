@@ -95,13 +95,12 @@ const LoginPage = () => {
         <Link to="/register" className="btn btn-success my-3">
             Ir a register
           </Link>
+          </div>
           
-          <button className="btn btn-success my-3" onClick={() => {}}>
+          <div className="text-left">
+          <Link to="/restorePassword"  className="btn btn-success my-3">  
             Restaurar contraseña
-          </button>
-          <button className="btn btn-success my-3" onClick={() => {}}>
-            Entrar con GitHub
-          </button>
+            </Link>
           
         </div>
       </div>

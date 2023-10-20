@@ -4,6 +4,8 @@ import LoginError from "../LoginPage/LoginError.js"
 import RegisterPage from '../Register/RegisterPage.js';
 import Home from '../Home/Home';
 import Cart from '../Cart/Cart.js';
+import Ticket from '../Ticket/Ticket.js';
+import RestorePassword from "../LoginPage/RestorePassword.js"
 
 
 
@@ -16,9 +18,12 @@ export const RoutesApp=()=>{
         <Routes>
         <Route path='/Home' element={<Home />} />
         <Route path='/Login' element={<LoginPage />} />
+        <Route path='/Ticket' element={<Ticket />} />
         <Route path='/Register' element={<RegisterPage />} />
         <Route path='/LoginError' element={<LoginError />} />
         <Route path='/Cart' element={<Cart/>} />
+        <Route path='/RestorePassword' element={<RestorePassword/>} />
+      
         
        
       </Routes>

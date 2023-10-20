@@ -107,22 +107,46 @@ export class UserController {
 
   async postRestorePassword(req, res) {
     try {
-      let user = req.body;
-      let userFound = await userServ1.getByEmail(user.email);
+      const user = req.body;
+      const userFound = await userServ1.getByEmail(user.email);
+  
       if (!userFound) {
-        return res.render("register", {});
+        // No se encontró el usuario, renderiza una vista
+        return res.render('register', {});
       }
-      let newPassword = createHash(user.password);
+  
+      const newPassword = createHash(user.password);
+  
       if (newPassword === userFound.password) {
-        return res.sendServerError("no misma")
+        // La nueva contraseña es la misma que la anterior, enviar una respuesta JSON de error
+        if (req.accepts('json')) {
+          return res.status(400).json({ error: 'La nueva contraseña no puede ser la misma que la anterior' });
+        } else {
+          // Renderiza una vista de error
+          return res.render('restore-password-error', {});
+        }
       }
+  
       await userServ1.updatePassword(user.email, newPassword);
-      res.render("login", {successMessage: "Contraseña restablecida con éxito"});
+  
+      // Contraseña restablecida con éxito
+      if (req.accepts('json')) {
+        return res.status(200).json({ success: 'Contraseña restablecida con éxito' });
+      } else {
+        // Renderiza una vista de éxito
+        return res.render('restore-password-success', { successMessage: 'Contraseña restablecida con éxito' });
+      }
     } catch (error) {
-      logger.error(error);
-      res.sendServerError("Error interno del servidor");
+      if (req.accepts('json')) {
+        // Si se produce un error, envía una respuesta JSON de error
+        return res.status(500).json({ error: 'Error interno del servidor' });
+      } else {
+        // Renderiza una vista de error
+        return res.render('restore-password-error', {});
+      }
     }
   }
+  
 
   async github(req, res) {
     passport.authenticate("github", { scope: ["user:email"] })(req, res);
