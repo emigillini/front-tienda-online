@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import Cart from '../Cart/Cart.js';
 import Ticket from '../Ticket/Ticket.js';
 import RestorePassword from "../LoginPage/RestorePassword.js"
+import Stripe from '../pages/Stripe/Stripe.js';
 
 
 
@@ -23,6 +24,7 @@ export const RoutesApp=()=>{
         <Route path='/LoginError' element={<LoginError />} />
         <Route path='/Cart' element={<Cart/>} />
         <Route path='/RestorePassword' element={<RestorePassword/>} />
+        <Route path='/Stripe' element={<Stripe/>} />
       
         
        
