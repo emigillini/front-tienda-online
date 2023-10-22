@@ -29,5 +29,6 @@
         gmailcontra: process.env.MAILCONTRA,
         sidtwillio:process.env.SIDTWILLIO,
         tokentwillio:process.env.TOKENTWILLIO,
-        numtwillio:process.env.NUMTWILLIO
+        numtwillio:process.env.NUMTWILLIO,
+        pkstripe:process.env.PKSTRIPE
     }

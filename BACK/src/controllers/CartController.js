@@ -109,7 +109,7 @@ export default class CartController {
       logger.error(error);
       res.status(500).json({ error: "Error interno del servidor" })
     }
-  }
+  } 
   async addProductToCart(req, res) {
     const { cid, pid } = req.params;
     const quantity = 1;
@@ -141,7 +141,7 @@ export default class CartController {
         if (!cart) {
           return res.status(404).json({ message: "Carrito no encontrado" });
         }
-
+ 
         const productsProcessed = [];
         const productsNotProcessed = [];
         let totalAmount = 0;

@@ -4,28 +4,21 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../cartContext/cartContext';
 import './Cart.css';
 
+
 const Cart = () => {
   const { user, userRole } = useAuth();
-  const { cart, getCart, deleteAllProducts, deleteProduct } = useCart();
+  const { cart, getCart, deleteAllProducts, deleteProduct, calculateTotalPrice } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     getCart();
   }, []);
 
-  const calculateTotalPrice = () => {
-    if (cart && cart.products && cart.products.length > 0) {
-      let total = 0;
-      cart.products.forEach((product) => {
-        total += product.price * product.quantity;
-      });
-      return total;
-    }
-    return 0;
-  };
+ 
 
   useEffect(() => {
-    setTotalPrice(calculateTotalPrice());
+    const total= calculateTotalPrice()
+    setTotalPrice(total)
   }, [cart]);
 
   return (
@@ -74,7 +67,7 @@ const Cart = () => {
               Eliminar Todos los Productos
             </button>
             <button id="finalizarCompraBtn" className="cart-button home-button">
-            <Link to="/Ticket" className="cart-button home-button">
+            <Link to="/stripe" className="cart-button home-button">
               Finalizar Compra
               </Link>
             </button>
@@ -88,3 +81,10 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+/* <button id="finalizarCompraBtn" className="cart-button home-button">
+<Link to="/Ticket" className="cart-button home-button">
+Finalizar Compra
+</Link>
+</button>*/

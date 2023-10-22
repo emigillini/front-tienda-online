@@ -67,7 +67,24 @@ export const CartProvider = ({ children }) => {
       console.error('Error al eliminar el producto del carrito:', error);
     }
   };
-
+const createCart= async ()=>{
+  try {
+    const response = await fetch(`http://localhost:8080/cart/addCart`, {
+      method: 'POST',
+    });
+    
+    if (response.ok) {
+      // No es necesario actualizar el carrito después de agregar el producto
+      console.log(' agregado carrito');
+    } else {
+      console.error('Error al agregar carrito:', response.status);
+    }
+  } catch (error) {
+    console.error('Error al agregar  carrito:', error);
+  }
+  
+}
+  
   const addProduct = async (productId) => {
     try {
       // Llama al endpoint para agregar un producto al carrito
@@ -86,8 +103,19 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const calculateTotalPrice = () => {
+    if (cart && cart.products && cart.products.length > 0) {
+      let total = 0;
+      cart.products.forEach((product) => {
+        total += product.price * product.quantity;
+      });
+      return total;
+    }
+    return 0;
+  };
+
   return (
-    <CartContext.Provider value={{ cart, cartId, getCart, deleteProduct, addProduct, deleteAllProducts }}>
+    <CartContext.Provider value={{ cart,createCart, cartId,calculateTotalPrice, getCart, deleteProduct, addProduct, deleteAllProducts }}>
       {children}
     </CartContext.Provider>
   );

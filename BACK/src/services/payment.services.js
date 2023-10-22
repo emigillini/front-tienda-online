@@ -1,5 +1,9 @@
+import config from '../config/config.js';
 import Stripe from 'stripe';
-const key = "sk_test_51O3J2CCGlDuVGi3dYNpD0tuFeq42jeTcwzFq6w6ZHFOsnxYyFHkGqDyx6fb3Mwng1EcacDT8wyZADWtDclAu3TrV005YtOnzB5"
+
+const strkey = config.pkstripe
+const key = strkey
+
 
 export default class PaymentService {
     constructor() {

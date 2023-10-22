@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../cartContext/cartContext';
 import './Ticket.css';
 
 const Ticket = () => {
-  const { cart } = useCart();
+  const { cart, createCart } = useCart();
   const [ticket, setTicket] = useState(null);
+  const navigate = useNavigate();
   
   console.log(cart)
 
-  
+
 
   useEffect(() => {
     if (cart) {
@@ -23,7 +24,7 @@ const Ticket = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          setTicket(data.ticket); // Guardar el ticket en el estado local
+          setTicket(data.ticket); 
         })
         .catch((error) => {
           console.error('Error al generar el ticket:', error);
@@ -31,7 +32,13 @@ const Ticket = () => {
     }
   }, [cart]);
 
-  
+  const handleConfirmTicket = () => {
+   
+    createCart(); // Llama a la función para crear un nuevo carrito
+
+    // Redirección a la página de inicio
+    navigate('/Home')
+  };
 
   return (
     <div className="ticket-container">
@@ -62,10 +69,10 @@ const Ticket = () => {
           <p className="ticket-total">Total: ${ticket.amount}</p>
           <p className="ticket-info">Email: {ticket.purchaser}</p>
           <div className="ticket-buttons">
-            <Link to="/Home" className="ticket-button home-button">
-              Volver al Inicio
-            </Link>
-          </div>
+      <button className="ticket-button home-button" onClick={handleConfirmTicket}>
+        Volver al Inicio
+      </button>
+    </div>
         </div>
       ) : (
         <p className="ticket-info">Generando el ticket...</p>
