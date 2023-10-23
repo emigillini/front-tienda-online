@@ -4,6 +4,7 @@ import  "./login.css"
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../cartContext/cartContext';
 
 
 const LoginPage = () => {
@@ -11,6 +12,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const {login} = useAuth()
   const navigate = useNavigate();
+  const {cart, addCart} = useCart()
   
 
   const handleSubmit = async(e) => {
@@ -28,6 +30,7 @@ const LoginPage = () => {
       console.log('Respuesta del backend:', response);
       
        if (response.success) {
+        addCart();
         Swal.fire({
           title: 'Inicio de sesión exitoso',
           showConfirmButton: true,

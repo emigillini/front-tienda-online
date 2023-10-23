@@ -52,13 +52,13 @@ const swaggerOptions ={
   apis:[`${__dirname}/**/*.yaml`]
 }//C:\Users\emigi\Desktop\backend\mascota\RecursosBackend-Adoptme
 const specs =swaggerJSdoc(swaggerOptions);
-
+app.use(cors());
 app.use("/apidocs",swaggerUiExpress.serve,swaggerUiExpress.setup(specs))
 app.use(addLogger)
 app.use(compression({
   brotli:{enabled:true, zlib:{}}
 }))
-app.use(cors());
+
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");

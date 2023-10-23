@@ -6,10 +6,7 @@
   import jwt from "passport-jwt";
   import config from "./config.js";
   import { logger } from "../logger.js";
-import { CartManagerBD } from "../DAO/managers/CartManagerBD.js";
 
-
-  const mana1= new CartManagerBD()
   const secret= config.githubAPIKey
   const userman1 = new UserManagerBD();
 
@@ -62,7 +59,7 @@ import { CartManagerBD } from "../DAO/managers/CartManagerBD.js";
           if (!isValidPassword(user, password)) {
             return done(null, false);
           }
-          await mana1.addCart(user.email)
+        
           await user.updateLastConnection();
            
           return done(null, user);

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../cartContext/cartContext';
+
 import './Ticket.css';
 
 const Ticket = () => {
-  const { cart, createCart } = useCart();
+  const { cart, addCart} = useCart();
+ 
+  
   const [ticket, setTicket] = useState(null);
   const navigate = useNavigate();
+
   
   console.log(cart)
 
@@ -25,6 +29,7 @@ const Ticket = () => {
         .then((response) => response.json())
         .then((data) => {
           setTicket(data.ticket); 
+         
         })
         .catch((error) => {
           console.error('Error al generar el ticket:', error);
@@ -33,10 +38,8 @@ const Ticket = () => {
   }, [cart]);
 
   const handleConfirmTicket = () => {
-   
-    createCart(); // Llama a la función para crear un nuevo carrito
-
-    // Redirección a la página de inicio
+ 
+    addCart()
     navigate('/Home')
   };
 

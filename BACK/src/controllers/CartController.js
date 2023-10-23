@@ -137,6 +137,7 @@ export default class CartController {
 
       try {
         const cart = await cartService.getCartById(cartId);
+      
 
         if (!cart) {
           return res.status(404).json({ message: "Carrito no encontrado" });
@@ -182,6 +183,8 @@ export default class CartController {
         await tickserv.createTicket(ticket);
 
         await cartService.updateCartProducts(cartId, productsNotProcessed);
+
+        
 
         return res.json({
           message: "Compra finalizada exitosamente",

@@ -14527,3 +14527,1207 @@ warning: argumentos
 info: connected
 info: already connected
 info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 447,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("653684c1ce7f0e4d4684eee6"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 447 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Producto 4 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":74,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":89,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":73,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+info: Productos encontrados 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Producto 4 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":88,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":4,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":72,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+error: undefined
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":5,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":71,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+error: undefined
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":6,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":7,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":7,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":70,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":7,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":7,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 447 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":8,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":8,"_id":"653684c1ce7f0e4d4684eee6","email":"papa@papa","id":447,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":69,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+error: undefined
+error: undefined
+info: Se agregó el carrito{
+  id: 448,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("65368c133feed6df34e3144b"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 449,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("65368c153feed6df34e31450"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 449 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":73,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 449 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65368c153feed6df34e31450","email":"papa@papa","id":449,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":72,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: Productos encontrados 
+error: undefined
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+info: Nuevo cliente conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 450,
+  products: [],
+  email: 'a@a',
+  _id: new ObjectId("653690653b8327021312079b"),
+  __v: 0
+}" 
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 451,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536952bbfbc932941c0a095"),
+  __v: 0
+}" 
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 452,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("65369543bfbc932941c0a0a6"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 453,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("65369553bfbc932941c0a0b1"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369553bfbc932941c0a0b1","email":"papa@papa","id":453,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369553bfbc932941c0a0b1","email":"papa@papa","id":453,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 453 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369553bfbc932941c0a0b1","email":"papa@papa","id":453,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369553bfbc932941c0a0b1","email":"papa@papa","id":453,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":68,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Se agregó el carrito{
+  id: 454,
+  products: [],
+  _id: new ObjectId("65369590bfbc932941c0a0d2"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":454}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369590bfbc932941c0a0d2","id":454,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369590bfbc932941c0a0d2","id":454,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 454 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369590bfbc932941c0a0d2","id":454,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369590bfbc932941c0a0d2","id":454,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":67,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Se agregó el carrito{
+  id: 455,
+  products: [],
+  _id: new ObjectId("65369628bfbc932941c0a0fa"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":455}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 455 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 455 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 actualizado en el carrito 455.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":2,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369628bfbc932941c0a0fa","id":455,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":2,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":66,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":71,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Se agregó el carrito{
+  id: 456,
+  products: [],
+  _id: new ObjectId("653696a9bfbc932941c0a133"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":456}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653696a9bfbc932941c0a133","id":456,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653696a9bfbc932941c0a133","id":456,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 456 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"653696a9bfbc932941c0a133","id":456,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"653696a9bfbc932941c0a133","id":456,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":69,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Se agregó el carrito{
+  id: 457,
+  products: [],
+  _id: new ObjectId("65369735bfbc932941c0a159"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":457}}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369735bfbc932941c0a159","id":457,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369735bfbc932941c0a159","id":457,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 457 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369735bfbc932941c0a159","id":457,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369735bfbc932941c0a159","id":457,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":458}}
+info: Se agregó el carrito{
+  id: 458,
+  products: [],
+  _id: new ObjectId("65369854fcd7043fd7a4a98c"),
+  __v: 0
+}" 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":65,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 458 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":64,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 458 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":63,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"65369854fcd7043fd7a4a98c","id":458,"products":[]}}
+info: Se agregó el carrito{
+  id: 459,
+  products: [],
+  _id: new ObjectId("65369970e01545491993bd3a"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":459}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369970e01545491993bd3a","id":459,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"65369970e01545491993bd3a","id":459,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 459 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369970e01545491993bd3a","id":459,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+error: undefined
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369970e01545491993bd3a","id":459,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369970e01545491993bd3a","id":459,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"65369970e01545491993bd3a","id":459,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Se agregó el carrito{
+  id: 460,
+  products: [],
+  _id: new ObjectId("65369b0e8abf96973ded5933"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":460}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":62,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: Se agregó el carrito{
+  id: 461,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("65369b91e71e624c36e187aa"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 462,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536a74a51e5fd0d17b00781"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 463,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536a7aa4b7b61ea7f1d85f6"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a7aa4b7b61ea7f1d85f6","email":"papa@papa","id":463,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a7aa4b7b61ea7f1d85f6","email":"papa@papa","id":463,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 463 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536a7aa4b7b61ea7f1d85f6","email":"papa@papa","id":463,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536a7aa4b7b61ea7f1d85f6","email":"papa@papa","id":463,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 464,
+  products: [],
+  _id: new ObjectId("6536a7db4b7b61ea7f1d8615"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":464}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":68,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a7db4b7b61ea7f1d8615","id":464,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a7db4b7b61ea7f1d8615","id":464,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 464 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536a7db4b7b61ea7f1d8615","id":464,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536a7db4b7b61ea7f1d8615","id":464,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 465,
+  products: [],
+  _id: new ObjectId("6536a8254b7b61ea7f1d863f"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":465}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":67,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+error: undefined
+error: undefined
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a8254b7b61ea7f1d863f","id":465,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536a8254b7b61ea7f1d863f","id":465,"products":[]}}
+info: Se agregó el carrito{
+  id: 466,
+  products: [],
+  _id: new ObjectId("6536b178ae6d30149f364269"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":466}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b178ae6d30149f364269","id":466,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b178ae6d30149f364269","id":466,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 466 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b178ae6d30149f364269","id":466,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b178ae6d30149f364269","id":466,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 467,
+  products: [],
+  _id: new ObjectId("6536b1a4ae6d30149f36428f"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":467}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":66,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 467 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":61,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":61,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 467 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":2,"price":999,"quantity":1,"stock":61,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536b1a4ae6d30149f36428f","id":467,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":2,"price":999,"quantity":1,"stock":61,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Se agregó el carrito{
+  id: 468,
+  products: [],
+  _id: new ObjectId("6536b1ceae6d30149f3642c7"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":468}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":65,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":61,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":60,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 469,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536b31eae6d30149f3642e9"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 470,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536b3e52f68ad3530a57e97"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 471,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536b47e399060bdb351b903"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b47e399060bdb351b903","email":"as@as","id":471,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b47e399060bdb351b903","email":"as@as","id":471,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 471 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b47e399060bdb351b903","email":"as@as","id":471,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b47e399060bdb351b903","email":"as@as","id":471,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 472,
+  products: [],
+  _id: new ObjectId("6536b4af399060bdb351b922"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":472}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":64,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b4af399060bdb351b922","id":472,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536b4af399060bdb351b922","id":472,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 472 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b4af399060bdb351b922","id":472,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536b4af399060bdb351b922","id":472,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":473}}
+info: Se agregó el carrito{
+  id: 473,
+  products: [],
+  _id: new ObjectId("6536b4d7399060bdb351b954"),
+  __v: 0
+}" 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":63,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+info: Nuevo cliente conectado
+info: Se agregó el carrito{
+  id: 474,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536b536399060bdb351b975"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 475,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536b552399060bdb351b97b"),
+  __v: 0
+}" 
+info: Se agregó el carrito{
+  id: 476,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536b59f399060bdb351b97e"),
+  __v: 0
+}" 
+error: undefined
+info: Se agregó el carrito{
+  id: 477,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536b742399060bdb351b982"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 478,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536b9a1399060bdb351b999"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":478}}
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 479,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536ba32399060bdb351b99f"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 480,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536ba34399060bdb351b9a7"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 481,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536ba38399060bdb351b9ac"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 482,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536ba52399060bdb351b9b8"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":482}}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 483,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536ba94399060bdb351b9c4"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Producto 4 agregado al carrito 483 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 483 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536ba94399060bdb351b9c4","email":"papa@papa","id":483,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 484,
+  products: [],
+  _id: new ObjectId("6536bab4399060bdb351b9e1"),
+  __v: 0
+}" 
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":484}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":87,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":62,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 485,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536babb399060bdb351b9fa"),
+  __v: 0
+}" 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bab4399060bdb351b9e1","id":484,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bab4399060bdb351b9e1","id":484,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 484 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 485 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 actualizado en el carrito 485.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[{"category":"verdura","id":3,"price":9919,"quantity":2,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536babb399060bdb351b9fa","email":"as@as","id":485,"products":[{"category":"verdura","id":3,"price":9919,"quantity":2,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Se agregó el carrito{
+  id: 486,
+  products: [],
+  _id: new ObjectId("6536baee399060bdb351ba1d"),
+  __v: 0
+}" 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":61,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+error: undefined {"code":11000,"index":0,"keyPattern":{"id":1},"keyValue":{"id":486}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":59,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 487,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536bb06399060bdb351ba32"),
+  __v: 0
+}" 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 488,
+  products: [],
+  email: 'papa@papa',
+  _id: new ObjectId("6536bb6b5b30a8e0b6aa10cb"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Producto 2 agregado al carrito 488 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":57,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":57,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 488 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":57,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bb6b5b30a8e0b6aa10cb","email":"papa@papa","id":488,"products":[{"category":"fruta","id":2,"price":999,"quantity":1,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"},{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":57,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":57,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su producto: {"__v":0,"_id":"64836040b132de05ff412edb","category":"fruta","code":"2","description":"roja","id":2,"owner":"admin","price":999,"status":true,"stock":59,"thumbnail":["https://us.123rf.com/450wm/irinagutyryak/irinagutyryak2210/irinagutyryak221000021/192165600-dos-manzanas-rojas-enteras-sobre-un-fondo-blanco-aislado.jpg?ver=6"],"title":"manzanas"}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":56,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 489,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536bb9b5b30a8e0b6aa110b"),
+  __v: 0
+}" 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: Se agregó el carrito{
+  id: 490,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536bc3f9d480cbc08a0243e"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":55,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bc3f9d480cbc08a0243e","email":"as@as","id":490,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bc3f9d480cbc08a0243e","email":"as@as","id":490,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":55,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 490 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bc3f9d480cbc08a0243e","email":"as@as","id":490,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":55,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":55,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bc3f9d480cbc08a0243e","email":"as@as","id":490,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":55,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":54,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 491,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536bc679d480cbc08a02463"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+error: undefined
+error: undefined
+error: undefined
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836054b132de05ff412ede","category":"verdura","code":"3","description":"naranja","id":3,"owner":"admin","price":9919,"status":true,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}
+info: Producto 3 agregado al carrito 491 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836065b132de05ff412ee1","category":"fruta","code":"4","description":"muy rica","id":4,"owner":"admin","price":1000,"status":true,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}
+info: Producto 4 agregado al carrito 491 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"verdura","id":3,"price":9919,"quantity":1,"stock":53,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"naranjas"},{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Producto 3 eliminado del carrito 491 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[{"category":"fruta","id":4,"price":1000,"quantity":1,"stock":86,"thumbnail":["https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I="],"title":"mandarina"}]}}
+info: Producto 4 eliminado del carrito 491 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"6536bc679d480cbc08a02463","email":"as@as","id":491,"products":[]}}
+info: Productos 491 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 492,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536bf629d480cbc08a0249c"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 493,
+  products: [],
+  email: 'as@as',
+  _id: new ObjectId("6536c4aa9d480cbc08a024a9"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado

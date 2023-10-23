@@ -32,6 +32,28 @@ export const CartProvider = ({ children }) => {
       console.error('Error al crear el carrito:', error);
     }
   };
+  const addCart = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/cart/addCart', {
+        method: 'POST',
+        credentials: "include", 
+      });
+
+      if (response.ok) {
+        const cart = await response.json();
+       
+        console.log('Carrito agregado');
+        console.log(cart);
+      } else {
+        // Manejo de errores en caso de respuesta no exitosa
+        console.error('Error al crear el carrito:', response.status);
+      }
+    } catch (error) {
+      // Manejo de errores en caso de error de red u otros
+      console.error('Error al crear el carrito:', error);
+    }
+  };
+  
   const deleteAllProducts = async () => {
     try {
       const response = await fetch(`http://localhost:8080/cart/deleteallproducts/${cartId}`, {
@@ -67,23 +89,7 @@ export const CartProvider = ({ children }) => {
       console.error('Error al eliminar el producto del carrito:', error);
     }
   };
-const createCart= async ()=>{
-  try {
-    const response = await fetch(`http://localhost:8080/cart/addCart`, {
-      method: 'POST',
-    });
-    
-    if (response.ok) {
-      // No es necesario actualizar el carrito después de agregar el producto
-      console.log(' agregado carrito');
-    } else {
-      console.error('Error al agregar carrito:', response.status);
-    }
-  } catch (error) {
-    console.error('Error al agregar  carrito:', error);
-  }
-  
-}
+
   
   const addProduct = async (productId) => {
     try {
@@ -115,7 +121,7 @@ const createCart= async ()=>{
   };
 
   return (
-    <CartContext.Provider value={{ cart,createCart, cartId,calculateTotalPrice, getCart, deleteProduct, addProduct, deleteAllProducts }}>
+    <CartContext.Provider value={{ cart,addCart, cartId,calculateTotalPrice, getCart, deleteProduct, addProduct, deleteAllProducts }}>
       {children}
     </CartContext.Provider>
   );

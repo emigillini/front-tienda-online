@@ -9,14 +9,15 @@ import { useCart } from '../cartContext/cartContext';
 const Home = () => {
   const [products, setProducts] = useState([]);
   const { user, handleLogout} = useAuth();
-  const { addProduct, deleteProduct, getCart } = useCart();
+  const { addProduct, deleteProduct, getCart} = useCart();
 
   useEffect(() => {
     getProducts();
+  
     getCart()
   }, []);
 
- 
+  
   const getProducts = async () => {
     try {
       const response = await fetch('http://localhost:8080/products');
@@ -71,19 +72,4 @@ const Home = () => {
 };
 
 export default Home;
-/*  <ul className="pagination">
-<li>
-<a href="#">Anterior</a>
-</li>
-<li>
-<a href="#">Siguiente</a>
-</li>
-</ul>
-
-<button
-              className="agregarCart"
-              onClick={() => addProductToCart(product.id)}
-              productid={product.id}
-            >
-              Agregar al carrito
-            </button>*/
+ 
