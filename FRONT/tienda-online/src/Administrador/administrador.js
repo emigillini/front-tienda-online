@@ -9,13 +9,13 @@ import {
 } from "../services/BackServices";
 
 const Administrador = () => {
-  const [userId, setUserId] = useState(""); // Estado para almacenar el ID de usuario
+  const [userId, setUserId] = useState("");
   const { userRole } = useAuth();
 
   console.log(userRole);
   const cambiarRol = (userId) => {
     if (userRole === "admin") {
-      // Verifica si el usuario tiene permisos de administrador
+    
       fetch(`http://localhost:8080/user/premium/${userId}`, {
         method: "PUT",
       })
@@ -23,7 +23,7 @@ const Administrador = () => {
         .then((data) => {
           if (data.newUserRole) {
             console.log(`Rol cambiado a ${data.newUserRole}`);
-            consultarUsuarios(); // Vuelve a cargar la lista de usuarios después del cambio
+            consultarUsuarios(); 
           } else {
             console.error("No se pudo cambiar el rol del usuario.");
           }
@@ -46,7 +46,7 @@ const Administrador = () => {
         .then((data) => {
           if (data.message === "Usuario eliminado exitosamente") {
             console.log("Usuario eliminado exitosamente");
-            consultarUsuarios(); // Vuelve a cargar la lista de usuarios después de la eliminación
+            consultarUsuarios(); 
           } else {
             console.error("No se pudo eliminar al usuario.");
           }
@@ -60,7 +60,7 @@ const Administrador = () => {
     }
   };
   const handleUserIdChange = (event) => {
-    setUserId(event.target.value); // Actualizar el estado con el valor del cuadro de texto
+    setUserId(event.target.value);
   };
 
   return (
