@@ -41,21 +41,21 @@ export class UserController {
   
    
         if (req.isAuthenticated()) {
-          // Autenticación exitosa
+       
       
           res.json({ success: true, user: req.session.user });
         } else {
-          // Autenticación fallida
+       
           res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
         }
       
     
     } catch (error) {
       if (req.accepts('json')) {
-        // Si se produce un error, envía una respuesta JSON de error
+
         res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
       } else {
-        // De lo contrario, si el cliente no acepta JSON, renderiza una vista de error
+       
         res.render('login-error', {});
       }
     }
@@ -68,10 +68,10 @@ export class UserController {
 
   async loginError(req, res) {
     if (req.accepts('json')) {
-      // Si el cliente acepta JSON, envía una respuesta JSON de error
+  
       res.status(401).json({ success: false, message: 'Error en el inicio de sesión' });
     } else {
-      // De lo contrario, renderiza una vista de error
+   
       res.render('login-error', {});
     }
   }
@@ -84,10 +84,10 @@ export class UserController {
   async logout(req, res) {
     if (req.accepts('json')){ req.session.destroy((error) => {
       if (error) {
-        // Error al destruir la sesión
+      
         res.status(500).json({ message: 'Error al cerrar sesión' });
       } else {
-        // Sesión destruida con éxito
+    
         res.status(200).json({ message: 'Sesión cerrada exitosamente' });
       }
     });
@@ -106,37 +106,36 @@ export class UserController {
       const userFound = await userServ1.getByEmail(user.email);
   
       if (!userFound) {
-        // No se encontró el usuario, renderiza una vista
+      
         return res.render('register', {});
       }
   
       const newPassword = createHash(user.password);
   
       if (newPassword === userFound.password) {
-        // La nueva contraseña es la misma que la anterior, enviar una respuesta JSON de error
+       
         if (req.accepts('json')) {
           return res.status(400).json({ error: 'La nueva contraseña no puede ser la misma que la anterior' });
         } else {
-          // Renderiza una vista de error
+       
           return res.render('restore-password-error', {});
         }
       }
   
       await userServ1.updatePassword(user.email, newPassword);
   
-      // Contraseña restablecida con éxito
       if (req.accepts('json')) {
         return res.status(200).json({ success: 'Contraseña restablecida con éxito' });
       } else {
-        // Renderiza una vista de éxito
+     
         return res.render('restore-password-success', { successMessage: 'Contraseña restablecida con éxito' });
       }
     } catch (error) {
       if (req.accepts('json')) {
-        // Si se produce un error, envía una respuesta JSON de error
+       
         return res.status(500).json({ error: 'Error interno del servidor' });
       } else {
-        // Renderiza una vista de error
+    
         return res.render('restore-password-error', {});
       }
     }
@@ -197,19 +196,19 @@ export class UserController {
     }
   }
   async eliminarUsuariosInactivos(req, res) {
-    const inactivityThreshold = 2 * 24 * 60 * 60 * 1000; // 2 días en milisegundos
+    const inactivityThreshold = 2 * 24 * 60 * 60 * 1000; 
     const currentTime = new Date();
   
     try {
       const users = await userModel.find();
-      let inactivosEliminados = 0; // Variable para rastrear la cantidad de usuarios eliminados
+      let inactivosEliminados = 0; 
   
       for (const user of users) {
-        const lastConnectionTime = user.last_connection; // Fecha y hora de la última conexión
+        const lastConnectionTime = user.last_connection; 
         const timeSinceLastConnection = currentTime - lastConnectionTime;
   
         if (timeSinceLastConnection > inactivityThreshold) {
-          // El usuario es inactivo, elimínalo
+    
           await userModel.findByIdAndDelete(user._id);
           inactivosEliminados++;
           const mailOptions = {

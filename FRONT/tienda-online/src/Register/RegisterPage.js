@@ -16,10 +16,10 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // Realiza la solicitud de registro y maneja la respuesta
+    
       const response = await fetch('http://localhost:8080/session/register', {
         method: 'POST',
-        // Agrega los datos del formulario en el cuerpo de la solicitud
+
         body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json',
@@ -27,17 +27,17 @@ const RegisterPage = () => {
       });
 
       if (response.ok) {
-        // Registro exitoso
+       
         Swal.fire({
           icon: 'success',
           title: 'Registro exitoso',
           showConfirmButton: false,
         }).then(() => {
-          // Redirige al usuario a la página de inicio de sesión
+     
           navigate('/login');
         });
       } else {
-        // Registro fallido
+    
         setRegistrationError('Hubo un error en el registro. Verifica tus datos.');
       }
     } catch (error) {

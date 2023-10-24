@@ -19823,3 +19823,91 @@ info: Se agregó el carrito{
 }" 
 info: Productos encontrados 
 info: Productos encontrados 
+info: Productos encontrados 
+info: Serializando usuario
+info: Se agregó el carrito{
+  id: 754,
+  products: [],
+  email: 'qq@qq',
+  _id: new ObjectId("653804bc0364a1c040dc4e73"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":0,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Producto 5 agregado al carrito 754 con éxito.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":1,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"},{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Producto 5 agregado al carrito 754 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Producto 5 actualizado en el carrito 754.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":2,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"},{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":2,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"},{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Productos 754 con éxito.
+info: Productos encontrados 
+info: Productos encontrados 
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":2,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[]}}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Producto 5 agregado al carrito 754 con éxito.
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":1,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Producto 5 actualizado en el carrito 754.
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":2,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":2,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Producto 5 actualizado en el carrito 754.
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":3,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su cart: {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","id":"init","products":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"id":true,"products":true},"require":{}}},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"653804bc0364a1c040dc4e73","email":"qq@qq","id":754,"products":[{"category":"verdura","id":5,"price":919,"quantity":3,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}]}}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Este es su producto: {"__v":0,"_id":"64836073b132de05ff412ee4","category":"verdura","code":"5","description":"verde","id":5,"owner":"admin","price":919,"status":true,"stock":88,"thumbnail":["https://static9.depositphotos.com/1642482/1148/i/450/depositphotos_11489364-stock-photo-ripe-orange.jpg"],"title":"apio"}
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 755,
+  products: [],
+  email: 'qq@qq',
+  _id: new ObjectId("653804fb0364a1c040dc4ebe"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Serializando usuario
+info: Productos encontrados 
+info: Productos encontrados 
+info: Se agregó el carrito{
+  id: 756,
+  products: [],
+  email: 'emigillini@hotmail.com',
+  _id: new ObjectId("653805540364a1c040dc4edf"),
+  __v: 0
+}" 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: Productos encontrados 
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado
+info: options {"mode":"development","persistence":"mongo"}
+warning: argumentos
+info: connected
+info: already connected
+info: Servidor conectado

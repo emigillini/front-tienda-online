@@ -10,15 +10,13 @@ const RestorePassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Crear un objeto con los datos del formulario
     const formData = {
       email,
       password,
     };
 
-    // Lógica para enviar la solicitud de restablecimiento de contraseña al servidor
     try {
-      // Realiza una solicitud fetch al endpoint '/session/restore-password' en tu servidor
+
       const response = await fetch('http://localhost:8080/session/restore-password', {
         method: 'POST',
         headers: {
@@ -28,7 +26,7 @@ const RestorePassword = () => {
       });
 
       if (response.ok) {
-        // Éxito: la contraseña se restableció correctamente
+
         const data = await response.json();
 
         Swal.fire({
@@ -37,11 +35,11 @@ const RestorePassword = () => {
           confirmButtonText: 'Ingresar',
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/login'); // Redirige al usuario a la página de inicio de sesión
+            navigate('/login');
           }
         });
       } else {
-        // Error en la solicitud (puede ser un error de servidor)
+    
         Swal.fire({
           title: 'Error',
           text: 'No se pudo restablecer la contraseña. Por favor, inténtalo de nuevo más tarde.',
@@ -61,7 +59,7 @@ const RestorePassword = () => {
         <br />
         <form
           className="form"
-          action="/session/restore-password" // Puedes mantener esto para referencia, pero no se usará en la solicitud Fetch
+          action="/session/restore-password"
           method="post"
           autoComplete="off"
           onSubmit={handleSubmit}
@@ -101,13 +99,13 @@ const RestorePassword = () => {
         <div className="text-left">
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/register')} // Redirige al usuario a la página de registro
+            onClick={() => navigate('/register')}
           >
             Ir a Register
           </button>
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/login')} // Redirige al usuario a la página de inicio de sesión
+            onClick={() => navigate('/login')} 
           >
             Ir a Login
           </button>

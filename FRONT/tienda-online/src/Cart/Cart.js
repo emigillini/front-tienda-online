@@ -83,8 +83,3 @@ const Cart = () => {
 export default Cart;
 
 
-/* <button id="finalizarCompraBtn" className="cart-button home-button">
-<Link to="/Ticket" className="cart-button home-button">
-Finalizar Compra
-</Link>
-</button>*/

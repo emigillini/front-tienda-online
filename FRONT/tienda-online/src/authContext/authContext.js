@@ -46,15 +46,15 @@ export const AuthProvider = ({ children }) => {
       });
   
       if (response.ok) {
-        // La sesión se ha cerrado con éxito, puedes redirigir al usuario a la página de inicio de sesión u otra página.
-        window.location.href = '/login'; // Redirige al usuario a la página de inicio de sesión.
+       
+        window.location.href = '/login'; 
       } else {
         console.error('Error al cerrar sesión:', response.status);
-        // Maneja el error de cierre de sesión, por ejemplo, mostrando un mensaje de error.
+        
       }
     } catch (error) {
       console.error('Error al cerrar sesión:', error);
-      // Maneja el error de cierre de sesión, por ejemplo, mostrando un mensaje de error.
+     
     }
   };
 console.log(userEmail)

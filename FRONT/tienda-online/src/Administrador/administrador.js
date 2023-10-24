@@ -75,7 +75,7 @@ const Administrador = () => {
           onChange={handleUserIdChange}
         />
         <button onClick={() => cambiarRol(userId)}>Cambiar Rol</button>
-        <button onClick={() => eliminarUsuario(userId)}>Eliminar Usuario</button> {/* Agregar botón de eliminación */}
+        <button onClick={() => eliminarUsuario(userId)}>Eliminar Usuario</button> {}
       </div>
       <div id="mostrar" className="product-container"></div>
     </div>

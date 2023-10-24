@@ -22,7 +22,7 @@ const LoginPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: email, // Debes reemplazar esto con el correo real del usuario
+          email: email, 
         }),
        
       });
@@ -33,11 +33,11 @@ const LoginPage = () => {
         console.log('Carrito agregado');
         console.log(cart);
       } else {
-        // Manejo de errores en caso de respuesta no exitosa
+    
         console.error('Error al crear el carrito:', response.status);
       }
     } catch (error) {
-      // Manejo de errores en caso de error de red u otros
+
       console.error('Error al crear el carrito:', error);
     }
   };
@@ -47,14 +47,14 @@ const LoginPage = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    // Crear un objeto con los datos del formulario
+
     const formData = {
       email,
       password,
     };
 
     try {
-      const response = await login(formData); // Llama a la función login de forma asíncrona
+      const response = await login(formData); 
   
       console.log('Respuesta del backend:', response);
       
@@ -69,8 +69,8 @@ const LoginPage = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             
-            // Utiliza Link para redirigir al usuario a la página de inicio (Home)
-            navigate('/Home'); // Navega a la ruta /Home
+        
+            navigate('/Home');
           }
         });
       }

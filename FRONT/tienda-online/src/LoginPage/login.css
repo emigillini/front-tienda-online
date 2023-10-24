@@ -1,4 +1,4 @@
-/* login.css */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -65,13 +65,13 @@ body {
     justify-content: space-between;
   }
   
-  /* Estilo para los botones de acción */
+
   .btn-action {
     flex: 1;
     margin-right: 10px;
   }
   
-  /* Estilo para el botón de entrada con GitHub */
+
   .btn-github {
     background-color: #333;
     color: #fff;
@@ -81,7 +81,7 @@ body {
     background-color: #222;
   }
   
-  /* Estilo para el botón de restaurar contraseña */
+  
   .btn-restore {
     background-color: #ffc107;
     color: #333;
@@ -91,7 +91,7 @@ body {
     background-color: #ffa000;
   }
   
-  /* Estilo para el botón de registro */
+
   .btn-register {
     background-color: #28a745;
     color: #fff;

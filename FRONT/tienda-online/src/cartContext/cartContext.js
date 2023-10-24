@@ -23,15 +23,15 @@ export const CartProvider = ({ children }) => {
       if (response.ok) {
         const cart = await response.json();
         setCart(cart);
-        setCartId(cart.id); // Establece el cartId
+        setCartId(cart.id); 
         console.log('Carrito Obtenido');
         console.log(cart);
       } else {
-        // Manejo de errores en caso de respuesta no exitosa
+  
         console.error('Error al crear el carrito:', response.status);
       }
     } catch (error) {
-      // Manejo de errores en caso de error de red u otros
+     
       console.error('Error al crear el carrito:', error);
     }
   };
@@ -43,7 +43,7 @@ export const CartProvider = ({ children }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: userEmail, // Debes reemplazar esto con el correo real del usuario
+          email: userEmail, 
         }),
        
       });
@@ -54,11 +54,11 @@ export const CartProvider = ({ children }) => {
         console.log('Carrito agregado');
         console.log(cart);
       } else {
-        // Manejo de errores en caso de respuesta no exitosa
+      
         console.error('Error al crear el carrito:', response.status);
       }
     } catch (error) {
-      // Manejo de errores en caso de error de red u otros
+    
       console.error('Error al crear el carrito:', error);
     }
   };
@@ -82,14 +82,14 @@ export const CartProvider = ({ children }) => {
   };
   const deleteProduct = async (productId) => {
     try {
-      // Llama al endpoint para eliminar un producto del carrito
+   
       const response = await fetch(`http://localhost:8080/cart/${cartId}/product/${productId}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
         getCart()
-        // No es necesario actualizar el carrito después de eliminar el producto
+     
         console.log('Producto eliminado del carrito');
       } else {
         console.error('Error al eliminar el producto del carrito:', response.status);
@@ -102,13 +102,13 @@ export const CartProvider = ({ children }) => {
   
   const addProduct = async (productId) => {
     try {
-      // Llama al endpoint para agregar un producto al carrito
+
       const response = await fetch(`http://localhost:8080/cart/addProductToCart/${cartId}/product/${productId}`, {
         method: 'PUT',
       });
 
       if (response.ok) {
-        // No es necesario actualizar el carrito después de agregar el producto
+        
         console.log('Producto agregado al carrito');
       } else {
         console.error('Error al agregar el producto al carrito:', response.status);

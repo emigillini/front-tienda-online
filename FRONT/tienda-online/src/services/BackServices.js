@@ -63,7 +63,7 @@ export const consultarTickets = () => {
 };
 
 export const consultarUsuarios = () => {
-  fetch('http://localhost:8080/user/') // Reemplaza la URL con la ruta correcta para consultar usuarios
+  fetch('http://localhost:8080/user/')
     .then(result => result.json())
     .then(data => {
       let htmlContent = '';
@@ -81,7 +81,7 @@ export const consultarUsuarios = () => {
         `;
       });
 
-      const mostrarElement = document.getElementById('mostrar'); // Asegúrate de tener un elemento HTML con el ID "mostrar" en tu página
+      const mostrarElement = document.getElementById('mostrar'); 
       mostrarElement.innerHTML = htmlContent;
     })
     .catch(error => {
