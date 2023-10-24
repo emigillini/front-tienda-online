@@ -13,8 +13,18 @@ export class UserManagerBD {
 
       return result;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
+  }
+  async eliminarUsuario(id) {
+    let result;
+    try {
+      result = await this.model.findByIdAndDelete(id);
+    } catch (error) {
+      logger.error(error);
+    }
+
+    return result;
   }
 
   async getByEmail(email) {
@@ -22,7 +32,7 @@ export class UserManagerBD {
     try {
       result = await userModel.findOne({ email: email });
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
 
     return result;
@@ -32,7 +42,7 @@ export class UserManagerBD {
     try {
       result = await userModel.findOne({ _id: id });
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
 
     return result;
@@ -43,7 +53,7 @@ export class UserManagerBD {
     try {
       result = await userModel.create(user);
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
 
     return result;
@@ -56,7 +66,7 @@ export class UserManagerBD {
         { $set: { password: newPassword } }
       );
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
     return result;
   }

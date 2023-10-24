@@ -1,49 +1,73 @@
- import React, { useState } from 'react';
-import { useAuth } from '../authContext/authContext';
-import  "./login.css"
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { useAuth } from "../authContext/authContext";
+import "./login.css";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const {login} = useAuth()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuth();
   const navigate = useNavigate();
-  
 
-  const handleSubmit = async(e) => {
+  const addCart = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/cart/addCart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      });
+
+      if (response.ok) {
+        const cart = await response.json();
+
+        console.log("Carrito agregado");
+        console.log(cart);
+      } else {
+        console.error("Error al crear el carrito:", response.status);
+      }
+    } catch (error) {
+      console.error("Error al crear el carrito:", error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Crear un objeto con los datos del formulario
     const formData = {
       email,
       password,
     };
 
     try {
-      const response = await login(formData); // Llama a la función login de forma asíncrona
-  
-      console.log('Respuesta del backend:', response);
-      
-       if (response.success) {
+      const response = await login(formData);
+
+      console.log("Respuesta del backend:", response);
+
+      if (response.success) {
+        addCart();
+
         Swal.fire({
-          title: 'Inicio de sesión exitoso',
+          title: "Inicio de sesión exitoso",
           showConfirmButton: true,
-          confirmButtonText: 'Ingresar',
+          confirmButtonText: "Ingresar",
         }).then((result) => {
           if (result.isConfirmed) {
-            // Utiliza Link para redirigir al usuario a la página de inicio (Home)
-            navigate('/Home'); // Navega a la ruta /Home
+            navigate("/Home");
           }
         });
       }
-     
     } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
+      console.error("Error al enviar la solicitud:", error);
       if (error instanceof SyntaxError) {
-        console.error('La respuesta del servidor no es válida JSON. Puede haber un problema en el servidor.');
+        console.error(
+          "La respuesta del servidor no es válida JSON. Puede haber un problema en el servidor."
+        );
       }
     }
   };
@@ -86,22 +110,30 @@ const LoginPage = () => {
           </div>
 
           <div className="form-group">
-            <input className="btn btn-success my-3" type="submit" value="Login" />
+            <input
+              className="btn btn-success my-3"
+              type="submit"
+              value="Login"
+            />
           </div>
         </form>
 
         <hr />
         <div className="text-left">
-        <Link to="/register" className="btn btn-success my-3">
+          <Link to="/register" className="btn btn-success my-3">
             Ir a register
           </Link>
-          </div>
-          
-          <div className="text-left">
-          <Link to="/restorePassword"  className="btn btn-success my-3">  
+        </div>
+
+        <div className="text-left">
+          <Link to="/restorePassword" className="btn btn-success my-3">
             Restaurar contraseña
-            </Link>
-          
+          </Link>
+        </div>
+        <div className="text-left">
+          <Link to="/Administrador" className="btn btn-success my-3">
+            Panel de Administracion
+          </Link>
         </div>
       </div>
     </div>

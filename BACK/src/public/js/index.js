@@ -1,5 +1,3 @@
-
-
 const socket = io();
 socket.emit("message", "Hola, WebSocket emitiendo");
 
@@ -53,7 +51,6 @@ const removeProductCard = (productId) => {
     productElement.remove();
   }
 };
-
 
 /*Aqui comienza config del Chat*/
 

@@ -1,56 +1,54 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const RestorePassword = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Crear un objeto con los datos del formulario
     const formData = {
       email,
       password,
     };
 
-    // Lógica para enviar la solicitud de restablecimiento de contraseña al servidor
     try {
-      // Realiza una solicitud fetch al endpoint '/session/restore-password' en tu servidor
-      const response = await fetch('http://localhost:8080/session/restore-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "http://localhost:8080/session/restore-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
-        // Éxito: la contraseña se restableció correctamente
         const data = await response.json();
 
         Swal.fire({
-          title: 'Contraseña restablecida con éxito',
+          title: "Contraseña restablecida con éxito",
           showConfirmButton: true,
-          confirmButtonText: 'Ingresar',
+          confirmButtonText: "Ingresar",
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/login'); // Redirige al usuario a la página de inicio de sesión
+            navigate("/login");
           }
         });
       } else {
-        // Error en la solicitud (puede ser un error de servidor)
         Swal.fire({
-          title: 'Error',
-          text: 'No se pudo restablecer la contraseña. Por favor, inténtalo de nuevo más tarde.',
-          icon: 'error',
-          confirmButtonText: 'OK',
+          title: "Error",
+          text: "No se pudo restablecer la contraseña. Por favor, inténtalo de nuevo más tarde.",
+          icon: "error",
+          confirmButtonText: "OK",
         });
       }
     } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
+      console.error("Error al enviar la solicitud:", error);
     }
   };
 
@@ -61,7 +59,7 @@ const RestorePassword = () => {
         <br />
         <form
           className="form"
-          action="/session/restore-password" // Puedes mantener esto para referencia, pero no se usará en la solicitud Fetch
+          action="/session/restore-password"
           method="post"
           autoComplete="off"
           onSubmit={handleSubmit}
@@ -93,7 +91,11 @@ const RestorePassword = () => {
           </div>
 
           <div className="form-group">
-            <input className="btn btn-success my-3" type="submit" value="Restaurar" />
+            <input
+              className="btn btn-success my-3"
+              type="submit"
+              value="Restaurar"
+            />
           </div>
         </form>
 
@@ -101,13 +103,13 @@ const RestorePassword = () => {
         <div className="text-left">
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/register')} // Redirige al usuario a la página de registro
+            onClick={() => navigate("/register")}
           >
             Ir a Register
           </button>
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/login')} // Redirige al usuario a la página de inicio de sesión
+            onClick={() => navigate("/login")}
           >
             Ir a Login
           </button>

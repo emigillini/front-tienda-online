@@ -101,13 +101,12 @@ export default class CartController {
   }
   async addCart(req, res) {
     try {
-      const user = req.session.user;
-      console.log(user);
-      await cartService.addCart(user.email);
+      const { email } = req.body;
+      await cartService.addCart(email);
       res.json({ message: "Carro agregado" });
     } catch (error) {
       logger.error(error);
-      res.status(500).json({ error: "Error interno del servidor" })
+      res.status(500).json({ error: "Error interno del servidor" });
     }
   }
   async addProductToCart(req, res) {
@@ -124,7 +123,7 @@ export default class CartController {
       if (!cart) {
         return res.sendUserError(`Carrito con ID ${cid} no encontrado.`);
       }
-      
+
       await cartService.addProductToCart(cid, pid, parseInt(quantity));
       res.sendSuccess(`Producto ${pid} agregado al carrito ${cid}.`);
     } catch (error) {
@@ -132,65 +131,65 @@ export default class CartController {
       res.sendServerError("Error al agregar el producto al carrito.");
     }
   }
-    async purchaseCart(req, res) {
-      const cartId = req.params.cid;
+  async purchaseCart(req, res) {
+    const cartId = req.params.cid;
 
-      try {
-        const cart = await cartService.getCartById(cartId);
+    try {
+      const cart = await cartService.getCartById(cartId);
 
-        if (!cart) {
-          return res.status(404).json({ message: "Carrito no encontrado" });
-        }
-
-        const productsProcessed = [];
-        const productsNotProcessed = [];
-        let totalAmount = 0;
-
-        for (const cartProduct of cart.products) {
-          const productId = cartProduct.id;
-          const quantity = cartProduct.quantity;
-
-          const product = await prodservice.getProdById(productId);
-
-          if (!product || product.stock < quantity) {
-            productsNotProcessed.push({
-              id: productId,
-              productData: product,
-              requestedQuantity: quantity,
-            });
-          } else {
-            const updatedProduct = await prodservice.updateProductStock(
-              productId,
-              product.stock - quantity
-            );
-            productsProcessed.push({
-              updatedProduct,
-              purchasedQuantity: quantity,
-            });
-
-            totalAmount += updatedProduct.price * quantity;
-          }
-        }
-
-        const ticket = {
-          productsProcessed,
-          productsNotProcessed,
-          amount: totalAmount,
-          cart: cart._id,
-          purchaser: cart.email,
-        };
-        await tickserv.createTicket(ticket);
-
-        await cartService.updateCartProducts(cartId, productsNotProcessed);
-
-        return res.json({
-          message: "Compra finalizada exitosamente",
-          ticket,
-          amount: totalAmount,
-        });
-      } catch (error) {
-        logger.error(error);
-        return res.status(500).json({ message: "Error al finalizar la compra" });
+      if (!cart) {
+        return res.status(404).json({ message: "Carrito no encontrado" });
       }
+
+      const productsProcessed = [];
+      const productsNotProcessed = [];
+      let totalAmount = 0;
+
+      for (const cartProduct of cart.products) {
+        const productId = cartProduct.id;
+        const quantity = cartProduct.quantity;
+
+        const product = await prodservice.getProdById(productId);
+
+        if (!product || product.stock < quantity) {
+          productsNotProcessed.push({
+            id: productId,
+            productData: product,
+            requestedQuantity: quantity,
+          });
+        } else {
+          const updatedProduct = await prodservice.updateProductStock(
+            productId,
+            product.stock - quantity
+          );
+          productsProcessed.push({
+            updatedProduct,
+            purchasedQuantity: quantity,
+          });
+
+          totalAmount += updatedProduct.price * quantity;
+        }
+      }
+
+      const ticket = {
+        productsProcessed,
+        productsNotProcessed,
+        amount: totalAmount,
+        cart: cart._id,
+        purchaser: cart.email,
+      };
+      await tickserv.createTicket(ticket);
+
+      await cartService.updateCartProducts(cartId, productsNotProcessed);
+
+      return res.json({
+        message: "Compra finalizada exitosamente",
+        ticket,
+        amount: totalAmount,
+      });
+    } catch (error) {
+      logger.error(error);
+      return res.status(500).json({ message: "Error al finalizar la compra" });
     }
   }
+}

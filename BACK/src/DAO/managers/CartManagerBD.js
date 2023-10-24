@@ -2,7 +2,7 @@ import { logger } from "../../logger.js";
 import { cartsModel } from "../models/carts_model.js";
 import { ProductManagerBD } from "./ProductManagerBD.js";
 
-const man1 = new ProductManagerBD()
+const man1 = new ProductManagerBD();
 
 export class CartManagerBD {
   constructor() {
@@ -15,7 +15,7 @@ export class CartManagerBD {
       const lastCart = carts[carts.length - 1];
       return lastCart ? lastCart.id + 1 : 1;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -24,7 +24,7 @@ export class CartManagerBD {
       let carts = await this.model.find();
       return carts;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
   async getLastCartId() {
@@ -34,11 +34,11 @@ export class CartManagerBD {
         const lastCart = carts[0];
         return lastCart;
       } else {
-        logger.info ("No se encontraron carritos.");
+        logger.info("No se encontraron carritos.");
         return null;
       }
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -52,7 +52,7 @@ export class CartManagerBD {
         logger.error(`Error: Cart con id ${id} no encontrado.`);
       }
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -68,7 +68,7 @@ export class CartManagerBD {
       logger.info(`Se agregó el carrito${cart}" `);
       return cartId;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -78,7 +78,7 @@ export class CartManagerBD {
       await this.model.findOneAndDelete({ _id: cart._id });
       logger.info(`Carrito ${cartId} eliminado con éxito.`);
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -101,7 +101,7 @@ export class CartManagerBD {
         );
 
         if (updateCart) {
-         logger.info(
+          logger.info(
             `Producto ${productId} eliminado del carrito ${cartId} con éxito.`
           );
         } else {
@@ -115,7 +115,7 @@ export class CartManagerBD {
         );
       }
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -136,17 +136,15 @@ export class CartManagerBD {
         );
       }
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
   async addProductToCart(cartId, productId, quantity) {
     try {
       const cart = await this.getCartById(cartId);
-      const product= await man1.getProductById(productId)
+      const product = await man1.getProductById(productId);
 
-      
-      
       const productToAdd = await this.model.findOneAndUpdate(
         { _id: cart._id, "products.id": productId },
         { $inc: { "products.$.quantity": 1 } },
@@ -166,7 +164,7 @@ export class CartManagerBD {
           price: product.price,
           category: product.category,
           stock: product.stock,
-          thumbnail: product.thumbnail, 
+          thumbnail: product.thumbnail,
         };
         cart.products.push(newProduct);
       }
@@ -176,7 +174,7 @@ export class CartManagerBD {
       );
       return cart;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -207,7 +205,7 @@ export class CartManagerBD {
         logger.warning(`Producto ${productId} no existe en carrito ${cartId}`);
       }
     } catch (error) {
-      logger.error ("Error updating product quantity.");
+      logger.error("Error updating product quantity.");
     }
   }
 }

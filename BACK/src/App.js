@@ -31,6 +31,7 @@ import { addLogger } from "./logger.js";
 import { logger } from "./logger.js";
 import swaggerJSdoc from "swagger-jsdoc"
 import swaggerUiExpress from "swagger-ui-express"
+import PaymentRouter from "./routes/payments.router.js"
 const mongodbURl = config.mongoURL;
 const mailcontra = config.gmailcontra;
 const PORT = config.port;
@@ -51,13 +52,13 @@ const swaggerOptions ={
   apis:[`${__dirname}/**/*.yaml`]
 }//C:\Users\emigi\Desktop\backend\mascota\RecursosBackend-Adoptme
 const specs =swaggerJSdoc(swaggerOptions);
-
+app.use(cors());
 app.use("/apidocs",swaggerUiExpress.serve,swaggerUiExpress.setup(specs))
 app.use(addLogger)
 app.use(compression({
   brotli:{enabled:true, zlib:{}}
 }))
-app.use(cors());
+
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
@@ -76,8 +77,16 @@ app.use(
     secret: secret,
     resave: true,
     saveUninitialized: true,
+    cookie: {
+      // Aquí configura las opciones de las cookies
+      secure: false, // Configúralo como 'true' si estás utilizando HTTPS
+      maxAge: 3600000, // Tiempo de vida de la cookie en milisegundos (1 hora en este caso)
+    },
   })
 );
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
 const mockRouter = new MockRouter();
 app.use("/mockingproducts", mockRouter.getRouter())
 const sessionRouter = new SessionRouter();
@@ -100,9 +109,8 @@ const jwtRouter = new JwtRouter();
 app.use("/jwt", jwtRouter.getRouter());
 const viewRouter = new ViewRouter();
 app.use("/", viewRouter.getRouter());
-initializePassport();
-app.use(passport.initialize());
-app.use(passport.session());
+
+app.use('/api/payments', PaymentRouter)
 
 const httpServer = app.listen(PORT, () => {
   logger.info("Servidor conectado");
@@ -214,11 +222,3 @@ app.get("/loggerTest", (req, res) => {
 
   res.send("Prueba de logs realizada");
 });
-/*Owned by: @emigillini
-
-App ID: 359008
-
-Client ID: Iv1.6feaa2bc46883067
-
-client secret:ed9cf008bd382819dc251189d080c9e0444d63d9
-*/
