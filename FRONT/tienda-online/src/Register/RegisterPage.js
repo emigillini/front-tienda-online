@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    password: '',
-    email: '',
-    age: '',
+    first_name: "",
+    last_name: "",
+    password: "",
+    email: "",
+    age: "",
   });
   const [registrationError, setRegistrationError] = useState(null);
   const navigate = useNavigate();
@@ -16,32 +16,30 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-    
-      const response = await fetch('http://localhost:8080/session/register', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8080/session/register", {
+        method: "POST",
 
         body: JSON.stringify(formData),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
-       
         Swal.fire({
-          icon: 'success',
-          title: 'Registro exitoso',
+          icon: "success",
+          title: "Registro exitoso",
           showConfirmButton: false,
         }).then(() => {
-     
-          navigate('/login');
+          navigate("/login");
         });
       } else {
-    
-        setRegistrationError('Hubo un error en el registro. Verifica tus datos.');
+        setRegistrationError(
+          "Hubo un error en el registro. Verifica tus datos."
+        );
       }
     } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
+      console.error("Error al enviar la solicitud:", error);
     }
   };
 
@@ -58,11 +56,7 @@ const RegisterPage = () => {
       <div className="jumbotron">
         <h1>REGISTER</h1>
         <br />
-        <form
-          className="form"
-          autoComplete="off"
-          onSubmit={handleRegister}
-        >
+        <form className="form" autoComplete="off" onSubmit={handleRegister}>
           <div className="form-group">
             <input
               name="first_name"
@@ -124,7 +118,11 @@ const RegisterPage = () => {
           </div>
 
           <div className="form-group">
-            <input className="btn btn-success my-3" type="submit" value="Register" />
+            <input
+              className="btn btn-success my-3"
+              type="submit"
+              value="Register"
+            />
           </div>
         </form>
 

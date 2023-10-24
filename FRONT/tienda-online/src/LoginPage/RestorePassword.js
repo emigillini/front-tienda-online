@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const RestorePassword = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -16,39 +16,39 @@ const RestorePassword = () => {
     };
 
     try {
-
-      const response = await fetch('http://localhost:8080/session/restore-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "http://localhost:8080/session/restore-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
-
         const data = await response.json();
 
         Swal.fire({
-          title: 'Contraseña restablecida con éxito',
+          title: "Contraseña restablecida con éxito",
           showConfirmButton: true,
-          confirmButtonText: 'Ingresar',
+          confirmButtonText: "Ingresar",
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/login');
+            navigate("/login");
           }
         });
       } else {
-    
         Swal.fire({
-          title: 'Error',
-          text: 'No se pudo restablecer la contraseña. Por favor, inténtalo de nuevo más tarde.',
-          icon: 'error',
-          confirmButtonText: 'OK',
+          title: "Error",
+          text: "No se pudo restablecer la contraseña. Por favor, inténtalo de nuevo más tarde.",
+          icon: "error",
+          confirmButtonText: "OK",
         });
       }
     } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
+      console.error("Error al enviar la solicitud:", error);
     }
   };
 
@@ -91,7 +91,11 @@ const RestorePassword = () => {
           </div>
 
           <div className="form-group">
-            <input className="btn btn-success my-3" type="submit" value="Restaurar" />
+            <input
+              className="btn btn-success my-3"
+              type="submit"
+              value="Restaurar"
+            />
           </div>
         </form>
 
@@ -99,13 +103,13 @@ const RestorePassword = () => {
         <div className="text-left">
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/register')}
+            onClick={() => navigate("/register")}
           >
             Ir a Register
           </button>
           <button
             className="btn btn-success my-3"
-            onClick={() => navigate('/login')} 
+            onClick={() => navigate("/login")}
           >
             Ir a Login
           </button>

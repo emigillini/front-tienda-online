@@ -1,50 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import "./Home.css"
-import { useAuth } from '../authContext/authContext';
-import { Link } from 'react-router-dom';
-import { useCart} from '../cartContext/cartContext';
-
-
+import React, { useEffect, useState } from "react";
+import "./Home.css";
+import { useAuth } from "../authContext/authContext";
+import { Link } from "react-router-dom";
+import { useCart } from "../cartContext/cartContext";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const { userEmail, handleLogout} = useAuth();
-  const { addProduct, deleteProduct,getCart} = useCart();
-  
- 
+  const { userEmail, handleLogout } = useAuth();
+  const { addProduct, deleteProduct, getCart } = useCart();
+
   useEffect(() => {
-
     getProducts();
-   getCart()
-   
+    getCart();
   }, []);
-
-
 
   const getProducts = async () => {
     try {
-      const response = await fetch('http://localhost:8080/products');
-      
+      const response = await fetch("http://localhost:8080/products");
+
       if (response.ok) {
         const data = await response.json();
         setProducts(data.payload);
-        
-        
       } else {
-        console.error('Error al obtener productos:', response.status);
+        console.error("Error al obtener productos:", response.status);
       }
     } catch (error) {
-      console.error('Error al obtener productos:', error);
+      console.error("Error al obtener productos:", error);
     }
   };
-
 
   return (
     <div>
       <h1>Bienvenido, {userEmail}</h1>
       <h1>Formulario de productos</h1>
 
-      
       <button>
         <Link to="/Cart">Ir al Carrito</Link>
       </button>
@@ -63,13 +52,21 @@ const Home = () => {
             <p>Precio: $ {product.price}</p>
             <p>Stock: {product.stock}</p>
             <p>Categoría: {product.category}</p>
-            <button onClick={() => addProduct(product.id)}>Agregar al Carrito</button>
-            <button onClick={() => deleteProduct(product.id)}>Eliminar del Carrito</button>
+            <button onClick={() => addProduct(product.id)}>
+              Agregar al Carrito
+            </button>
+            <button onClick={() => deleteProduct(product.id)}>
+              Eliminar del Carrito
+            </button>
           </div>
         ))}
       </div>
 
-      <form action="/src/public/uploads/" encType="multipart/form-data" method="POST">
+      <form
+        action="/src/public/uploads/"
+        encType="multipart/form-data"
+        method="POST"
+      >
         <label htmlFor="nombre">Nombre:</label>
         <input type="file" name="Archivo" id="nombre" />
         <input type="submit" value="Subir archivo" />
@@ -79,4 +76,3 @@ const Home = () => {
 };
 
 export default Home;
- 

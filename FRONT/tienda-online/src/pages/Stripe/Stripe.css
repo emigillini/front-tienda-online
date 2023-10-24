@@ -1,16 +1,15 @@
-
 .container {
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 24px;
-    margin: 20px 0;
-  }
-  
-  .highlighted {
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-  }
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.highlighted {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}

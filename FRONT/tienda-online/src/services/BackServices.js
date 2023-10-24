@@ -1,13 +1,9 @@
-
-
 export const consultarProductos = () => {
-
-  fetch('http://localhost:8080/products/')
-    .then(result => result.json())
-    .then(data => {
-   
-      let htmlContent = '';
-      data.payload.forEach(product => { 
+  fetch("http://localhost:8080/products/")
+    .then((result) => result.json())
+    .then((data) => {
+      let htmlContent = "";
+      data.payload.forEach((product) => {
         htmlContent += `
           <div class="card">
             <h3>${product.title}</h3>
@@ -22,30 +18,30 @@ export const consultarProductos = () => {
         `;
       });
 
-      const mostrarElement = document.getElementById('mostrar');
+      const mostrarElement = document.getElementById("mostrar");
       mostrarElement.innerHTML = htmlContent;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error en la petición:", error);
     });
 };
-  
+
 export const consultarTickets = () => {
-  fetch('http://localhost:8080/tickets/')
-    .then(result => result.json())
-    .then(data => {
-      let htmlContent = '';
-      data.forEach(ticket => {
+  fetch("http://localhost:8080/tickets/")
+    .then((result) => result.json())
+    .then((data) => {
+      let htmlContent = "";
+      data.forEach((ticket) => {
         htmlContent += `
           <div class="card">
             <h3>${ticket.code}</h3>
             <p>Total: ${ticket.amount}</p>
             <p>Comprador: ${ticket.purchaser}</p>
-            <p>ID del Carrito: ${ticket.cart ? ticket.cart.id : 'N/A'}</p>
+            <p>ID del Carrito: ${ticket.cart ? ticket.cart.id : "N/A"}</p>
             <ul>Productos Procesados:
         `;
 
-        ticket.productsProcessed.forEach(product => {
+        ticket.productsProcessed.forEach((product) => {
           htmlContent += `
             <li>ID del Producto: ${product.updatedProduct.id}, Cantidad: ${product.purchasedQuantity}</li>
           `;
@@ -54,20 +50,20 @@ export const consultarTickets = () => {
         htmlContent += `</ul></div>`;
       });
 
-      const mostrarElement = document.getElementById('mostrar');
+      const mostrarElement = document.getElementById("mostrar");
       mostrarElement.innerHTML = htmlContent;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error en la petición:", error);
     });
 };
 
 export const consultarUsuarios = () => {
-  fetch('http://localhost:8080/user/')
-    .then(result => result.json())
-    .then(data => {
-      let htmlContent = '';
-      data.payload.forEach(usuario => {
+  fetch("http://localhost:8080/user/")
+    .then((result) => result.json())
+    .then((data) => {
+      let htmlContent = "";
+      data.payload.forEach((usuario) => {
         htmlContent += `
           <div class="card">
             <h3>Nombre: ${usuario.first_name}</h3>
@@ -81,29 +77,25 @@ export const consultarUsuarios = () => {
         `;
       });
 
-      const mostrarElement = document.getElementById('mostrar'); 
+      const mostrarElement = document.getElementById("mostrar");
       mostrarElement.innerHTML = htmlContent;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error en la petición:", error);
     });
 };
 export const eliminarUsuariosInactivos = () => {
-  
-  fetch('/ruta/al/backend/para/eliminar/inactivos', {
-    method: 'DELETE',
+  fetch("/ruta/al/backend/para/eliminar/inactivos", {
+    method: "DELETE",
   })
-    .then(response => {
+    .then((response) => {
       if (response.status === 200) {
-        alert('Usuarios inactivos eliminados con éxito');
-      } else  {
-        alert('No hay usuarios inactivos para eliminar');
-      } 
-        
-    
+        alert("Usuarios inactivos eliminados con éxito");
+      } else {
+        alert("No hay usuarios inactivos para eliminar");
+      }
     })
-    .catch(error => {
-      console.error('Error:', error);
+    .catch((error) => {
+      console.error("Error:", error);
     });
-  
 };

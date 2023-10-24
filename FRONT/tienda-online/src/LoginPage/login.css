@@ -1,103 +1,97 @@
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .jumbotron {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .btn-success {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-success:hover {
-    background-color: #0056b3;
-  }
-  
-  .text-left {
-    text-align: left;
-  }
-  
-  .btn-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  .btn-action {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
+.container {
+  text-align: center;
+}
 
-  .btn-github {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .btn-github:hover {
-    background-color: #222;
-  }
-  
-  
-  .btn-restore {
-    background-color: #ffc107;
-    color: #333;
-  }
-  
-  .btn-restore:hover {
-    background-color: #ffa000;
-  }
-  
+.jumbotron {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
-  .btn-register {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .btn-register:hover {
-    background-color: #218838;
-  }
-  
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn-success {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #0056b3;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-action {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.btn-github {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-github:hover {
+  background-color: #222;
+}
+
+.btn-restore {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-restore:hover {
+  background-color: #ffa000;
+}
+
+.btn-register {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-register:hover {
+  background-color: #218838;
+}
