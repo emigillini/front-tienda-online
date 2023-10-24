@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../LoginPage/LoginPage.js";
 import LoginError from "../LoginPage/LoginError.js";
 import RegisterPage from "../Register/RegisterPage.js";
@@ -12,6 +12,7 @@ import Administrador from "../Administrador/administrador.js";
 export const RoutesApp = () => {
   return (
     <Routes>
+     <Route path="/" element={<Navigate to="/Login" />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Administrador" element={<Administrador />} />
       <Route path="/Login" element={<LoginPage />} />
