@@ -1,8 +1,7 @@
 import { logger } from "../../logger.js";
 import { productsModel } from "../models/products_model.js";
 
-
-export class ProductManagerBD  {
+export class ProductManagerBD {
   constructor() {
     this.model = productsModel;
   }
@@ -13,13 +12,12 @@ export class ProductManagerBD  {
       const lastProduct = products[products.length - 1];
       return lastProduct ? lastProduct.id + 1 : 1;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
-  
+
   async getProducts(limit, page, sort, category, stock) {
     try {
-      
       let queryOptions = {};
       if (category) {
         queryOptions.category = category;
@@ -78,11 +76,10 @@ export class ProductManagerBD  {
         nextLink: nextLink,
         payload: transformedDocs,
       };
-      
+
       return response;
-      
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -90,13 +87,13 @@ export class ProductManagerBD  {
     try {
       const product = await this.model.findOne({ id: id });
       if (product) {
-       logger.info("Este es su producto:", product._doc);
+        logger.info("Este es su producto:", product._doc);
         return product;
       } else {
-        logger.error (`Error: Producto con id ${id} no encontrado.`);
+        logger.error(`Error: Producto con id ${id} no encontrado.`);
       }
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -126,7 +123,7 @@ export class ProductManagerBD  {
       logger.info(`Se agregó el producto "${title}" a la base de datos`);
       return product;
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 
@@ -136,7 +133,7 @@ export class ProductManagerBD  {
 
       return logger.info(`Se eliminó el producto con id ${id}.`);
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
   async updateProduct(
@@ -167,7 +164,7 @@ export class ProductManagerBD  {
       await this.model.updateOne({ id: id }, updatedProduct);
       logger.info(`Se actualizó el producto con id ${id}.`);
     } catch (error) {
-      logger.error (error);
+      logger.error(error);
     }
   }
 }
