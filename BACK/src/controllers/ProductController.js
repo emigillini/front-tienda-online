@@ -3,6 +3,7 @@ import CustomError from "../services/errors/CustomError.js";
 import { EErrors } from "../services/errors/Enums.js";
 import { generateProductErrorInfo } from "../services/errors/Info.js";
 import { logger } from "../logger.js";
+import { transport } from "../App.js";
 
 
 
@@ -137,6 +138,21 @@ export class ProductController {
           status: "Producto eliminado exitosamente.",
         
         });
+        if (currentUserRole === "premium"){
+          const mailOptions = {
+            from: 'emigillini@gmail.com', // Remitente
+            to: req.session.user.email, // Dirección de correo del usuario premium
+            subject: 'Producto eliminado',
+            text: `Tu producto con ID ${prodId} ha sido eliminado. Si tienes alguna pregunta, por favor, contacta al soporte.`,
+          };
+          transport.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.error('Error al enviar el correo al usuario premium:', error);
+            } else {
+              console.log('Correo enviado al usuario premium:', info.response);
+            }
+          });
+        }
       } else {
         res.status(403).json({ message: "Acceso denegado" });
       }

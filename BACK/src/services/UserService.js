@@ -14,7 +14,18 @@ export class UserService {
       throw new Error("Error al obtener usuario");
     }
   }
-
+  
+  async eliminarUsuario(userId) {
+    try {
+      const user = await userManager1.eliminarUsuario(userId);
+      return user;
+    } catch (error) {
+      logger.error(error);
+      throw new Error("Error al eliminar usuario");
+    }
+  }
+  
+  
   async updatePassword(email, newPassword) {
     try {
       const updatedPasword = await userManager1.updatePassword(

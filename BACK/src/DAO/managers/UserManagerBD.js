@@ -16,7 +16,17 @@ export class UserManagerBD {
       logger.error (error);
     }
   }
+  async eliminarUsuario(id) {
+    let result;
+    try {
+      result = await this.model.findByIdAndDelete(id);
+    } catch (error) {
+      logger.error(error);
+    }
 
+    return result;
+  }
+  
   async getByEmail(email) {
     let result;
     try {
@@ -60,4 +70,5 @@ export class UserManagerBD {
     }
     return result;
   }
+  
 }

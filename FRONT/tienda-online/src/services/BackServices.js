@@ -74,6 +74,7 @@ export const consultarUsuarios = () => {
             <p>Email: ${usuario.email}</p>
             <p>Rol: ${usuario.role}</p>
             <p>id: ${usuario._id}</p>
+          
             
             
           </div>
@@ -86,4 +87,23 @@ export const consultarUsuarios = () => {
     .catch(error => {
       console.error("Error en la petición:", error);
     });
+};
+export const eliminarUsuariosInactivos = () => {
+  
+  fetch('/ruta/al/backend/para/eliminar/inactivos', {
+    method: 'DELETE',
+  })
+    .then(response => {
+      if (response.status === 200) {
+        alert('Usuarios inactivos eliminados con éxito');
+      } else  {
+        alert('No hay usuarios inactivos para eliminar');
+      } 
+        
+    
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  
 };

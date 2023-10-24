@@ -3,6 +3,9 @@ import { UserService } from "../services/UserService.js";
 import { userModel } from "../DAO/models/user_model.js";
 import { createHash } from "../utils.js";
 import { logger } from "../logger.js";
+import { transport } from "../App.js";
+
+
 
 const userServ1 = new UserService();
 
@@ -173,33 +176,87 @@ export class UserController {
   }
   async changeUserRole(req, res) {
     const { uid } = req.params;
-
+  
     try {
-    
       const user = await userModel.findById(uid);
-      if (!user) {
-        return res.status(404).json({ message: "Usuario no encontrado" });
-      }
+  
       if (user.role === 'usuario') {
-        const requiredDocuments = ['estado_cuenta', 'comp_domicilio', 'identificacion'];
-        const missingDocuments = requiredDocuments.filter(doc => !user.documents.some(d => d.doctype === doc));
-        if (missingDocuments.length === 0) {
-          user.role = 'premium';
-          await user.save();
-          return res.status(200).json({ message: 'Usuario actualizado a premium', newUserRole: user.role });
-        } else {
-          return res.status(400).json({ message: 'El usuario no ha terminado de procesar su documentación', missingDocuments });
-        }
+        user.role = 'premium';
+        await user.save();
+        return res.status(200).json({ message: 'Usuario actualizado a premium', newUserRole: user.role });
       } else if (user.role === "premium") {
         user.role = "usuario";
         await user.save();
+        return res.json({ message: "Rol del usuario cambiado exitosamente", newUserRole: user.role });
+      } else {
+        return res.status(400).json({ message: "Rol no reconocido" });
       }
-      return res.json({ message: "Rol del usuario cambiado exitosamente", newUserRole: user.role });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
+  async eliminarUsuariosInactivos(req, res) {
+    const inactivityThreshold = 2 * 24 * 60 * 60 * 1000; // 2 días en milisegundos
+    const currentTime = new Date();
+  
+    try {
+      const users = await userModel.find();
+      let inactivosEliminados = 0; // Variable para rastrear la cantidad de usuarios eliminados
+  
+      for (const user of users) {
+        const lastConnectionTime = user.last_connection; // Fecha y hora de la última conexión
+        const timeSinceLastConnection = currentTime - lastConnectionTime;
+  
+        if (timeSinceLastConnection > inactivityThreshold) {
+          // El usuario es inactivo, elimínalo
+          await userModel.findByIdAndDelete(user._id);
+          inactivosEliminados++;
+          const mailOptions = {
+            from: 'emigillini@gmail.com',
+            to: deletedUser.email,
+            subject: 'Eliminación de cuenta por inactividad',
+            text: 'Tu cuenta ha sido eliminada debido a inactividad. Si deseas restaurarla, contacta al soporte.',
+          };
+      
+          transport.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.error('Error al enviar el correo al usuario eliminado:', error);
+            } else {
+              console.log('Correo enviado al usuario eliminado:', info.response);
+            }
+          });
+        }
+      }
+  
+      if (inactivosEliminados === 0) {
+        res.json({ message: 'No se encontraron usuarios inactivos para eliminar.' });
+      } else {
+        res.json({ message: `Se eliminaron ${inactivosEliminados} usuarios inactivos con éxito.` });
+      }
+    } catch (error) {
+      console.error('Error al eliminar usuarios inactivos:', error);
+      res.status(500).json({ message: 'Error al eliminar usuarios inactivos' });
+    }
+  };
+  
+  async eliminarUsuario(req, res) {
+    const { id } = req.params;
+  
+    try {
+      const user = await userServ1.eliminarUsuario(id);
+  
+      if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
+  
+      res.status(200).json({ message: "Usuario eliminado exitosamente" });
+    } catch (error) {
+      logger.error(error);
+      res.status(500).json({ message: "Error al eliminar el usuario" });
+    }
+  }
+
   
   async uploadDocuments(req, res){
     const { uid } = req.params;
@@ -219,5 +276,5 @@ export class UserController {
       return res.status(500).json({ message: "Error al cambiar el rol del usuario" });
     }
   }
-  
+
 }

@@ -48,6 +48,9 @@ const Home = () => {
       <button>
         <Link to="/Cart">Ir al Carrito</Link>
       </button>
+      <button>
+        <Link to="/Administrador">Ir a Panel Administrador</Link>
+      </button>
       <button onClick={handleLogout}>Cerrar Sesión</button>
 
       <div className="prods">
