@@ -2,22 +2,25 @@ import React, { useEffect, useState } from 'react';
 import "./Home.css"
 import { useAuth } from '../authContext/authContext';
 import { Link } from 'react-router-dom';
-import { useCart } from '../cartContext/cartContext';
+import { useCart} from '../cartContext/cartContext';
 
 
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const { user, handleLogout} = useAuth();
-  const { addProduct, deleteProduct, getCart} = useCart();
-
-  useEffect(() => {
-    getProducts();
+  const { userEmail, handleLogout} = useAuth();
+  const { addProduct, deleteProduct,getCart} = useCart();
   
-    getCart()
+ 
+  useEffect(() => {
+
+    getProducts();
+   getCart()
+   
   }, []);
 
-  
+
+
   const getProducts = async () => {
     try {
       const response = await fetch('http://localhost:8080/products');
@@ -25,6 +28,7 @@ const Home = () => {
       if (response.ok) {
         const data = await response.json();
         setProducts(data.payload);
+        
         
       } else {
         console.error('Error al obtener productos:', response.status);
@@ -37,7 +41,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Bienvenido, {user.email}</h1>
+      <h1>Bienvenido, {userEmail}</h1>
       <h1>Formulario de productos</h1>
 
       

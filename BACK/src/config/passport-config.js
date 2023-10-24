@@ -116,10 +116,12 @@
   );
 
     passport.serializeUser((user, done) => {
+      logger.info("Serializando usuario");
       done(null, user._id)
   });
 
   passport.deserializeUser(async (id, done) => {
+    logger.info("Deserializando usuario");
       let user = await userman1.getById(id);
       done(null, user);
   })

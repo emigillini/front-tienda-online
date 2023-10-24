@@ -36,25 +36,17 @@ export class UserController {
       };
       console.log(req.session)
   
-      if (req.accepts('json')) {
-        // Si el cliente acepta JSON
+   
         if (req.isAuthenticated()) {
           // Autenticación exitosa
-          res.json({ success: true, user: req.user });
+      
+          res.json({ success: true, user: req.session.user });
         } else {
           // Autenticación fallida
           res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
         }
-      } else {
-        // De lo contrario, si el cliente no acepta JSON, renderiza una vista
-        if (req.isAuthenticated()) {
-          // Autenticación exitosa
-          res.render('bienvenida-datos', { user: req.user });
-        } else {
-          // Autenticación fallida
-          res.render('login-error', {});
-        }
-      }
+      
+    
     } catch (error) {
       if (req.accepts('json')) {
         // Si se produce un error, envía una respuesta JSON de error

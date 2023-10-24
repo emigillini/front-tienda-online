@@ -7,6 +7,7 @@ import Cart from '../Cart/Cart.js';
 import Ticket from '../Ticket/Ticket.js';
 import RestorePassword from "../LoginPage/RestorePassword.js"
 import Stripe from '../pages/Stripe/Stripe.js';
+import Administrador from '../Administrador/administrador.js';
 
 
 
@@ -18,6 +19,7 @@ export const RoutesApp=()=>{
     return (
         <Routes>
         <Route path='/Home' element={<Home />} />
+        <Route path='/Administrador' element={<Administrador/>} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Ticket' element={<Ticket />} />
         <Route path='/Register' element={<RegisterPage />} />

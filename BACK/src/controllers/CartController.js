@@ -101,9 +101,8 @@ export default class CartController {
   }
   async addCart(req, res) {
     try {
-      const user = req.session.user;
-      console.log(user);
-      await cartService.addCart(user.email);
+      const { email } = req.body;
+      await cartService.addCart(email);
       res.json({ message: "Carro agregado" });
     } catch (error) {
       logger.error(error);

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
+
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -7,8 +8,9 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
   const [userRole, setUserRole] = useState(null);
+
 
   const login = async (formData) => {
     try {
@@ -22,8 +24,9 @@ export const AuthProvider = ({ children }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setUser(data.user);
+        setUserEmail(data.user.email);
         setUserRole(data.user.role);
+        console.log("esteesteeste")
         
     
         return { success: true };
@@ -54,10 +57,10 @@ export const AuthProvider = ({ children }) => {
       // Maneja el error de cierre de sesión, por ejemplo, mostrando un mensaje de error.
     }
   };
-console.log(user)
+console.log(userEmail)
 console.log(userRole)
   return (
-    <AuthContext.Provider value={{ user, login, handleLogout, userRole }}>
+    <AuthContext.Provider value={{ userEmail, login, handleLogout, userRole }}>
       {children}
     </AuthContext.Provider>
   );

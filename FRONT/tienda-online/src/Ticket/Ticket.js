@@ -39,7 +39,7 @@ const Ticket = () => {
 
   const handleConfirmTicket = () => {
  
-    addCart()
+ addCart()
     navigate('/Home')
   };
 

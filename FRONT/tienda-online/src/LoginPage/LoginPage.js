@@ -4,7 +4,8 @@ import  "./login.css"
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../cartContext/cartContext';
+
+
 
 
 const LoginPage = () => {
@@ -12,7 +13,35 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const {login} = useAuth()
   const navigate = useNavigate();
-  const {cart, addCart} = useCart()
+ 
+  const addCart = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/cart/addCart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email, // Debes reemplazar esto con el correo real del usuario
+        }),
+       
+      });
+
+      if (response.ok) {
+        const cart = await response.json();
+       
+        console.log('Carrito agregado');
+        console.log(cart);
+      } else {
+        // Manejo de errores en caso de respuesta no exitosa
+        console.error('Error al crear el carrito:', response.status);
+      }
+    } catch (error) {
+      // Manejo de errores en caso de error de red u otros
+      console.error('Error al crear el carrito:', error);
+    }
+  };
+  
   
 
   const handleSubmit = async(e) => {
@@ -30,13 +59,16 @@ const LoginPage = () => {
       console.log('Respuesta del backend:', response);
       
        if (response.success) {
-        addCart();
+       
+       addCart()
+       
         Swal.fire({
           title: 'Inicio de sesión exitoso',
           showConfirmButton: true,
           confirmButtonText: 'Ingresar',
         }).then((result) => {
           if (result.isConfirmed) {
+            
             // Utiliza Link para redirigir al usuario a la página de inicio (Home)
             navigate('/Home'); // Navega a la ruta /Home
           }
@@ -103,6 +135,12 @@ const LoginPage = () => {
           <div className="text-left">
           <Link to="/restorePassword"  className="btn btn-success my-3">  
             Restaurar contraseña
+            </Link>
+          
+        </div>
+        <div className="text-left">
+          <Link to="/Administrador"  className="btn btn-success my-3">  
+            Panel de Administracion
             </Link>
           
         </div>

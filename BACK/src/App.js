@@ -77,8 +77,16 @@ app.use(
     secret: secret,
     resave: true,
     saveUninitialized: true,
+    cookie: {
+      // Aquí configura las opciones de las cookies
+      secure: false, // Configúralo como 'true' si estás utilizando HTTPS
+      maxAge: 3600000, // Tiempo de vida de la cookie en milisegundos (1 hora en este caso)
+    },
   })
 );
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
 const mockRouter = new MockRouter();
 app.use("/mockingproducts", mockRouter.getRouter())
 const sessionRouter = new SessionRouter();
@@ -101,9 +109,7 @@ const jwtRouter = new JwtRouter();
 app.use("/jwt", jwtRouter.getRouter());
 const viewRouter = new ViewRouter();
 app.use("/", viewRouter.getRouter());
-initializePassport();
-app.use(passport.initialize());
-app.use(passport.session());
+
 app.use('/api/payments', PaymentRouter)
 
 const httpServer = app.listen(PORT, () => {

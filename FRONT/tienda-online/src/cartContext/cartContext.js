@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState} from 'react';
+import { useAuth } from '../authContext/authContext';
 
 
 const CartContext = createContext();
@@ -10,6 +11,8 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [cartId, setCartId] = useState(null);
+  const {userEmail} = useAuth()
+  
 
   const getCart = async () => {
     try {
@@ -36,7 +39,13 @@ export const CartProvider = ({ children }) => {
     try {
       const response = await fetch('http://localhost:8080/cart/addCart', {
         method: 'POST',
-        credentials: "include", 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: userEmail, // Debes reemplazar esto con el correo real del usuario
+        }),
+       
       });
 
       if (response.ok) {
@@ -121,7 +130,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart,addCart, cartId,calculateTotalPrice, getCart, deleteProduct, addProduct, deleteAllProducts }}>
+    <CartContext.Provider value={{ cart ,addCart, cartId,calculateTotalPrice, getCart, deleteProduct, addProduct, deleteAllProducts }}>
       {children}
     </CartContext.Provider>
   );
