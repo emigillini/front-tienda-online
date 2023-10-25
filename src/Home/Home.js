@@ -11,12 +11,9 @@ const Home = () => {
 
   useEffect(() => {
     getProducts();
-    
-  } );
-  useEffect(() => {
-    
     getCart()
-  } );
+  } ,[ getCart]);
+ 
 
   const getProducts = async () => {
     try {
