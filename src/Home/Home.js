@@ -11,9 +11,9 @@ const Home = () => {
 
   useEffect(() => {
     getProducts();
-    getCart()
+  
   } );
-
+  getCart()
   const getProducts = async () => {
     try {
       const response = await fetch("https://back-tienda-online-production.up.railway.app/products");
