@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      const response = await fetch("https://back-tienda-online-production.up.railway.app/login", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/session/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
