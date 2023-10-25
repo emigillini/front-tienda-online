@@ -7,8 +7,8 @@ import { useCart } from "../cartContext/cartContext";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const { userEmail } = useAuth();
-  const { addProduct, deleteProduct,getCart} = useCart();
-
+  const { addProduct, deleteProduct} = useCart();
+const{getCart}=useCart()
 
   useEffect(() => {
     getProducts();
@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     getCart();
-  }, [getCart]);
+  }, []);
 
   const getProducts = async () => {
     try {
