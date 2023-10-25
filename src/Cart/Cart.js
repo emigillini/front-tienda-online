@@ -15,9 +15,12 @@ const Cart = () => {
   } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
+  useEffect(() => {
+  
+  }, [getCart]);
 
   useEffect(() => {
-    // Calcula el totalPrice solo cuando se carga el carrito inicialmente
+   
     if (cart && cart.products) {
       const total = calculateTotalPrice();
       setTotalPrice(total);
