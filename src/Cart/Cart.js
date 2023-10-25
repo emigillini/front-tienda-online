@@ -17,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     getCart();
-  }, [getCart]);
+  }, []);
 
   useEffect(() => {
     const total = calculateTotalPrice();
