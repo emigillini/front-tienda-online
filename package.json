@@ -28,10 +28,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+
+    ],"rules": {
+      "react-hooks/exhaustive-deps": "off"
+    }
   },
   "browserslist": {
-    "production": [
+    "production": [ 
       ">0.2%",
       "not dead",
       "not op_mini all"
