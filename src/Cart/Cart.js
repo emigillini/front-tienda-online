@@ -15,9 +15,7 @@ const Cart = () => {
   } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  useEffect(() => {
-  
-  }, [getCart]);
+
 
   useEffect(() => {
    
