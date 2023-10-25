@@ -8,7 +8,6 @@ const Cart = () => {
   const { user, userRole } = useAuth();
   const {
     cart,
-   
     deleteAllProducts,
     deleteProduct,
     calculateTotalPrice,
