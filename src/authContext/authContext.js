@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      const response = await fetch("http://localhost:8080/session/login", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:8080/session/logout", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/session/logout", {
         method: "GET",
       });
 
