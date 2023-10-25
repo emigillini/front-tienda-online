@@ -61,6 +61,12 @@ const LoginPage = () => {
             navigate("/Home");
           }
         });
+      }else {
+        Swal.fire({
+          icon: "error",
+          title: "Error de inicio de sesión",
+          text: "Credenciales incorrectas. Verifica tus datos e intenta nuevamente.",
+        });
       }
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
