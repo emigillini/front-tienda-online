@@ -14,12 +14,12 @@ const Stripe = () => {
 
   useEffect(() => {
     getCart();
-  }, []);
+  }, [getCart]);
 
   useEffect(() => {
     const total = calculateTotalPrice();
     setTotalPrice(total);
-  }, [cart]);
+  }, [cart, calculateTotalPrice]);
 
   return (
     <div className="container">

@@ -29,7 +29,7 @@ const RestorePassword = () => {
 
       if (response.ok) {
         const data = await response.json();
-
+        console.log(data)
         Swal.fire({
           title: "Contraseña restablecida con éxito",
           showConfirmButton: true,
