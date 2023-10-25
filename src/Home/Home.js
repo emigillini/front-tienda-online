@@ -9,11 +9,16 @@ const Home = () => {
   const { userEmail } = useAuth();
   const { addProduct, deleteProduct,getCart} = useCart();
 
+
   useEffect(() => {
     getProducts();
-    getCart()
-  } ,[ getCart]);
- 
+    
+    
+  },[] );
+
+  useEffect(() => {
+    getCart();
+  }, [getCart]);
 
   const getProducts = async () => {
     try {

@@ -51,7 +51,8 @@ export const AuthProvider = ({ children }) => {
       console.error("Error al cerrar sesión:", error);
     }
   };
-
+  console.log(userEmail);
+  console.log(userRole);
   return (
     <AuthContext.Provider value={{ userEmail, login, handleLogout, userRole }}>
       {children}

@@ -9,10 +9,12 @@ import { useState, useEffect } from "react";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Stripe = () => {
-  const { cartid, calculateTotalPrice, cart } = useCart();
+  const { cartid, calculateTotalPrice, getCart, cart } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
-
+  useEffect(() => {
+    getCart();
+  }, [getCart]);
 
   useEffect(() => {
     const total = calculateTotalPrice();
