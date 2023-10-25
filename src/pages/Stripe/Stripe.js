@@ -14,7 +14,7 @@ const Stripe = () => {
 
   useEffect(() => {
     getCart();
-  }, [getCart]);
+  }, []);
 
   useEffect(() => {
     const total = calculateTotalPrice();

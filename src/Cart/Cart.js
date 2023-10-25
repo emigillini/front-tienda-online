@@ -11,10 +11,13 @@ const Cart = () => {
     deleteAllProducts,
     deleteProduct,
     calculateTotalPrice,
+    getCart
   } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
-
+  useEffect(() => {
+    getCart();
+  }, []);
 
   useEffect(() => {
    
