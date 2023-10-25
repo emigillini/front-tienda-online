@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
 
   const getCart = async () => {
     try {
-      const response = await fetch("http://localhost:8080/cart/lastCart", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/cart/lastCart", {
         method: "GET",
       });
 
@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
   };
   const addCart = async () => {
     try {
-      const response = await fetch("http://localhost:8080/cart/addCart", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/cart/addCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const CartProvider = ({ children }) => {
   const deleteAllProducts = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/cart/deleteallproducts/${cartId}`,
+        `https://back-tienda-online-production.up.railway.app/cart/deleteallproducts/${cartId}`,
         {
           method: "DELETE",
         }
@@ -84,7 +84,7 @@ export const CartProvider = ({ children }) => {
   const deleteProduct = async (productId) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/cart/${cartId}/product/${productId}`,
+        `https://back-tienda-online-production.up.railway.app/cart/${cartId}/product/${productId}`,
         {
           method: "DELETE",
         }
@@ -108,7 +108,7 @@ export const CartProvider = ({ children }) => {
   const addProduct = async (productId) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/cart/addProductToCart/${cartId}/product/${productId}`,
+        `https://back-tienda-online-production.up.railway.app/cart/addProductToCart/${cartId}/product/${productId}`,
         {
           method: "PUT",
         }

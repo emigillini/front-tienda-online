@@ -16,7 +16,7 @@ const Home = () => {
 
   const getProducts = async () => {
     try {
-      const response = await fetch("http://localhost:8080/products");
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/products");
 
       if (response.ok) {
         const data = await response.json();

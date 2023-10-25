@@ -22,7 +22,7 @@ const PaymentForm = ({ cartId, amount }) => {
       console.log(paymentMethod);
       const { id } = paymentMethod;
       const response = await fetch(
-        "http://localhost:8080/api/payments/payment-intents",
+        "https://back-tienda-online-production.up.railway.app/api/payments/payment-intents",
         {
           method: "POST",
           headers: {

@@ -16,7 +16,7 @@ const Administrador = () => {
   const cambiarRol = (userId) => {
     if (userRole === "admin") {
     
-      fetch(`http://localhost:8080/user/premium/${userId}`, {
+      fetch(`https://back-tienda-online-production.up.railway.app/user/premium/${userId}`, {
         method: "PUT",
       })
         .then((response) => response.json())
@@ -39,7 +39,7 @@ const Administrador = () => {
 
   const eliminarUsuario = (userId) => {
     if (userRole === "admin") {
-      fetch(`http://localhost:8080/user/${userId}`, {
+      fetch(`https://back-tienda-online-production.up.railway.app/user/${userId}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

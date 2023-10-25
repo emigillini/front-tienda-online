@@ -1,5 +1,5 @@
 export const consultarProductos = () => {
-  fetch("http://localhost:8080/products/")
+  fetch("https://back-tienda-online-production.up.railway.app/products/")
     .then((result) => result.json())
     .then((data) => {
       let htmlContent = "";
@@ -27,7 +27,7 @@ export const consultarProductos = () => {
 };
 
 export const consultarTickets = () => {
-  fetch("http://localhost:8080/tickets/")
+  fetch("https://back-tienda-online-production.up.railway.app/tickets/")
     .then((result) => result.json())
     .then((data) => {
       let htmlContent = "";
@@ -59,7 +59,7 @@ export const consultarTickets = () => {
 };
 
 export const consultarUsuarios = () => {
-  fetch("http://localhost:8080/user/")
+  fetch("https://back-tienda-online-production.up.railway.app/user/")
     .then((result) => result.json())
     .then((data) => {
       let htmlContent = "";

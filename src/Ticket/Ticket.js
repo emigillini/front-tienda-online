@@ -15,7 +15,7 @@ const Ticket = () => {
   useEffect(() => {
     if (cart) {
       // Realizar la solicitud POST para generar el ticket
-      fetch(`http://localhost:8080/cart/${cart.id}/purchase`, {
+      fetch(`https://back-tienda-online-production.up.railway.app/cart/${cart.id}/purchase`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

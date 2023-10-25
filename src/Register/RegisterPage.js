@@ -16,7 +16,7 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/session/register", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/session/register", {
         method: "POST",
 
         body: JSON.stringify(formData),
