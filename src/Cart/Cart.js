@@ -17,12 +17,12 @@ const Cart = () => {
 
   useEffect(() => {
     getCart();
-  }, []);
+  }, [getCart]);
 
   useEffect(() => {
     const total = calculateTotalPrice();
     setTotalPrice(total);
-  }, [cart]);
+  }, [cart, calculateTotalPrice]);
 
   return (
     <div className="cart-container">
