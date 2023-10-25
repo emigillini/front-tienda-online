@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("https://back-tienda-online-production.up.railway.app/session/logout", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/session/login", {
         method: "GET",
       });
 
