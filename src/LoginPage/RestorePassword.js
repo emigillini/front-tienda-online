@@ -17,7 +17,7 @@ const RestorePassword = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/session/restore-password",
+        "https://back-tienda-online-production.up.railway.app/restore-password",
         {
           method: "POST",
           headers: {

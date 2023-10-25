@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   const addCart = async () => {
     try {
-      const response = await fetch("http://localhost:8080/cart/addCart", {
+      const response = await fetch("https://back-tienda-online-production.up.railway.app/cart/addCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const LoginPage = () => {
         <br />
         <form
           className="form"
-          action="http://localhost:8080/session/login"
+          action="https://back-tienda-online-production.up.railway.app/session/login"
           method="post"
           autoComplete="off"
           onSubmit={handleSubmit}
