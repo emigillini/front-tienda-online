@@ -10,7 +10,7 @@ const Ticket = () => {
   const [ticket, setTicket] = useState(null);
   const navigate = useNavigate();
 
-  console.log(cart);
+
 
   useEffect(() => {
     if (cart) {
