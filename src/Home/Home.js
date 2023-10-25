@@ -40,7 +40,7 @@ const Home = () => {
       <button>
         <Link to="/Administrador">Ir a Panel Administrador</Link>
       </button>
-      <button >   <Link to="/Login">Cerrar Sesión</Link>Cerrar Sesión</button>
+      <button >   <Link to="/Login">Cerrar Sesión</Link></button>
 
       <div className="prods">
         {products.map((product) => (
