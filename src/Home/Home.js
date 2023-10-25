@@ -7,12 +7,12 @@ import { useCart } from "../cartContext/cartContext";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const { userEmail } = useAuth();
-  const { addProduct, deleteProduct} = useCart();
+  const { addProduct, deleteProduct, getCart} = useCart();
 
   useEffect(() => {
     getProducts();
     
-  }, [ ]);
+  }, [ getCart]);
 
   const getProducts = async () => {
     try {
