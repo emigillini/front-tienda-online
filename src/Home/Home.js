@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     getProducts();
     getCart();
-  }, [ getCart]);
+  }, );
 
   const getProducts = async () => {
     try {

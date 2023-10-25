@@ -8,13 +8,16 @@ const Cart = () => {
   const { user, userRole } = useAuth();
   const {
     cart,
+    getCart,
     deleteAllProducts,
     deleteProduct,
     calculateTotalPrice,
   } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
 
-
+  useEffect(() => {
+    getCart();
+  }, [getCart]);
 
   useEffect(() => {
    
