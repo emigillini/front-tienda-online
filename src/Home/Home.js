@@ -6,7 +6,7 @@ import { useCart } from "../cartContext/cartContext";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const { userEmail, handleLogout } = useAuth();
+  const { userEmail } = useAuth();
   const { addProduct, deleteProduct, getCart } = useCart();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Home = () => {
       <button>
         <Link to="/Administrador">Ir a Panel Administrador</Link>
       </button>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
+      <button >   <Link to="/Login">Cerrar Sesión</Link>Cerrar Sesión</button>
 
       <div className="prods">
         {products.map((product) => (

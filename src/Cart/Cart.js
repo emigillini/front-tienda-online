@@ -17,11 +17,14 @@ const Cart = () => {
 
   useEffect(() => {
     getCart();
-  });
+  }, [getCart]);
 
   useEffect(() => {
-    const total = calculateTotalPrice();
-    setTotalPrice(total);
+    // Calcula el totalPrice solo cuando se carga el carrito inicialmente
+    if (cart && cart.products) {
+      const total = calculateTotalPrice();
+      setTotalPrice(total);
+    }
   }, [cart, calculateTotalPrice]);
 
   return (
